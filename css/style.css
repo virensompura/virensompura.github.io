@@ -9216,7 +9216,7 @@ textarea.form-control {
 
 .img,
 .blog-img,
-.user-img {
+.slider-item.user-img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }

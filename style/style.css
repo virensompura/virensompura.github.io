@@ -900,6 +900,22 @@ body::before{
   .hero-actions{flex-direction:column;}
   .hero-stats{flex-wrap:wrap;}
 }
+
+/* ─── MOBILE HERO NAME FIX ─── */
+@media(max-width:480px){
+  .hero-name{
+    font-size:clamp(2.2rem,9vw,3rem);
+    overflow:visible;
+  }
+  .hero-name .name-last{
+    display:block;
+    overflow:visible;
+    white-space:nowrap;
+  }
+  .hero-name .name-last::before{
+    display:none;
+  }
+}
 /* ─── HORIZONTAL TIMELINE (home preview) ─── */
 .htl-wrapper{
   overflow-x:auto;

@@ -1,747 +1,1166 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Viren Sompura Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=1.0, user-scalable=yes">
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
+<title>Viren Sompura | Robotics Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style/style.css"/>
+</head>
+<body>
 
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">V<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="navigate('about')">About</a></li>
+    <li><a href="#" onclick="navigate('experience')">Experience</a></li>
+    <li><a href="#" onclick="navigate('projects')">Projects</a></li>
+    <li><a href="#" onclick="navigate('blog')">Blog</a></li>
+    <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme" id="themeBtn">☀️</button>
+    <button class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" onclick="navigate('home');closeMobileNav()">Home</a>
+  <a href="#" onclick="navigate('about');closeMobileNav()">About</a>
+  <a href="#" onclick="navigate('experience');closeMobileNav()">Experience</a>
+  <a href="#" onclick="navigate('projects');closeMobileNav()">Projects</a>
+  <a href="#" onclick="navigate('blog');closeMobileNav()">Blog</a>
+  <a href="#" onclick="navigate('contact');closeMobileNav()">Contact</a>
+</div>
 
-    <link rel="stylesheet" href="css/aos.css">
+<!-- ══════ PAGE: HOME ══════ -->
+<div class="page active" id="page-home">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Viren</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <!-- <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li> -->
-	          <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
-	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-	          <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li> -->
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <!------------------------------- HOME VIEW --------------------------------->
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	      <div class="slider-item ">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_03.png);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Viren Sompura</span></h1>
-			            <h2 class="mb-4">Robotic Engineer</h2>
-			            <p><a href="tel:+919825885177" class="btn btn-primary py-3 px-4">Hire me</a> <a href="https://drive.google.com/drive/folders/1-N_lamHz9trtk43rRTvo55dQXPBXFD0H?usp=sharing" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-			<!------------------------------- SLIDER VIEW --------------------------------->
-	      <!-- <div class="slider-item">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_2.png);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm a <span>robotic engineer</span> based in Ahmedabad</h1>
-			            <p><a href="tel:+919825885177" class="btn btn-primary py-3 px-4">Hire me</a> <a href="https://drive.google.com/drive/folders/1-N_lamHz9trtk43rRTvo55dQXPBXFD0H?usp=sharing" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div> -->
-	    </div>
-    </section>
-	<!-------------------------- ABOUT SECTION ------------------------------>
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex">
-    			<div class="col-md-6 col-lg-5 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/bg_03.png);">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<h1 class="big">About</h1>
-		            <h2 class="mb-4">About Me</h2>
-		            <p>I am Viren Sompura, Seeking a challenging position as a ROS Engineer or Robotics Software Engineer where I can leverage my expertise in ROS/ROS2, robotics systems, and software development to contribute to innovative robotics solutions.</p>
-		            <ul class="about-info mt-4 px-md-0 px-2">
-		            	<li class="d-flex"><span>Name:</span> <span>Viren Sompura</span></li>
-		            	<li class="d-flex"><span>Date of birth:</span> <span>January 28, 1999</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>Ahmedabad Gujarat</span></li>
-		            	<li class="d-flex"><span>Zip code:</span> <span>380058</span></li>
-		            	<li class="d-flex"><span>Email:</span> <span>sompuraviren03@gmail.com</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+91-9825885177</span></li>
-		            </ul>
-		          </div>
-		        </div>
-	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-              	<p class="mb-4">
-	                <span class="number" data-number="5">0</span>
-	                <span>Project complete</span>
-                </p>
-                <p><a href="./resource/Resume_1.pdf" class="btn btn-primary py-3 px-3" download="Viren_Resume">Download CV</a></p>
-              </div>
-	          </div>
-	        </div>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-left">
+      <div class="hero-eyebrow">Available for opportunities</div>
+      <h1 class="hero-name"><span class="name-first">Viren</span><span class="name-last">Sompura</span></h1>
+      <div class="hero-role">Robotics Engineer</div>
+      <p class="hero-desc">Designing intelligent machines that perceive, decide, and act. Specializing in ROS2, autonomous navigation, SLAM, and sensor-fused systems from hardware to software.</p>
+      <div class="hero-stats">
+        <div><div class="stat-val">2+</div><div class="stat-lab">Years Exp.</div></div>
+        <div><div class="stat-val">8+</div><div class="stat-lab">Projects</div></div>
+        <div><div class="stat-val">9.0</div><div class="stat-lab">M.Tech CGPA</div></div>
+      </div>
+      <div class="hero-actions">
+        <a href="tel:+919825885177" class="btn btn-primary">Hire Me ↗</a>
+        <a href="#" onclick="navigate('projects')" class="btn btn-outline">View Projects</a>
+        <a href="assets/Viren_Sompura_Resume_1.pdf" download class="btn btn-outline">Download CV ↓</a>
+        <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer" class="btn btn-social" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer" class="btn btn-social" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-ring">
+        <div class="ring ring-1"><div class="ring-dot"></div></div>
+        <div class="ring ring-2"><div class="ring-dot" style="top:50%;left:100%;margin-top:-4px;margin-left:-4px;background:var(--blue);box-shadow:0 0 12px var(--glow-blue);"></div></div>
+        <div class="ring ring-3"><div class="ring-dot" style="top:100%;left:50%;margin-top:-4px;margin-left:-4px;"></div></div>
+        <div class="ring-core">
+          <div class="ring-core-icon">⚙️</div>
+          <div class="ring-core-text">Robotics</div>
         </div>
-    	</div>
-    </section>
-	<!------------------------------- RESUME SECTION --------------------------------->
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>I am Viren Sompura, a passionate Robotic Engineer with expertise in ROS/ROS2, robotics systems, and software development...</p>
-          </div>
+        <div class="orbit-label" style="top:6%;left:70%;">ROS2</div>
+        <div class="orbit-label" style="top:4%;right:65%;">Isaac-Sim</div>
+        <div class="orbit-label" style="top:25%;left:25%;">V-SLAM</div>
+        <div class="orbit-label" style="top:30%;right:20%;">Linux</div>
+        <div class="orbit-label" style="top:40%;right:-12px;">SLAM</div>
+        <div class="orbit-label" style="top:60%;left:80%;">Docker</div>
+        <div class="orbit-label" style="bottom:8%;left:45%;">Nav2</div>
+        <div class="orbit-label" style="bottom:10%;left:75%;">Micro-ROS</div>
+        <div class="orbit-label" style="top:70%;right:75%;">Microcontrollers</div>
+        <div class="orbit-label" style="top:40%;left:-5px;">LiDAR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS MARQUEE -->
+  <div class="skills-marquee">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-label">Who I am</div>
+    <div class="section-title">Building robots that<br/>change the world</div>
+    <p class="section-sub">From embedded microcontrollers to high-level navigation stacks — I bridge the gap between hardware and software to create autonomous systems that actually work.</p>
+    <div class="hero-actions">
+      <a href="#" onclick="navigate('about')" class="btn btn-outline">Learn More About Me →</a>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS PREVIEW -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-label">Recent Work</div>
+    <div class="section-title">Featured Projects</div>
+    <p class="section-sub">A selection of robotics systems I've designed, built, and deployed.</p>
+    <div class="projects-grid" id="featuredProjects"></div>
+    <div style="margin-top:2rem;">
+      <a href="#" onclick="navigate('projects')" class="btn btn-outline">View All Projects →</a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE PREVIEW - HORIZONTAL TIMELINE -->
+  <section class="section" style="padding-top:0;overflow:visible;">
+    <div class="section-label">Career Path</div>
+    <div class="section-title">Experience &amp; Education</div>
+    <p class="section-sub">A journey from mechatronics foundations to cutting-edge autonomous robotics.</p>
+    <div class="htl-wrapper" id="htlWrapper">
+      <div class="htl-track" id="homeTimeline"></div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center;">
+      <a href="#" onclick="navigate('experience')" class="btn btn-outline">View Full Timeline →</a>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-label">Latest Writing</div>
+    <div class="section-title">From the Blog</div>
+    <p class="section-sub">Deep dives into ROS2, navigation, SLAM, and the craft of building autonomous machines.</p>
+    <div class="blog-grid" id="homeBlogGrid"></div>
+    <div style="margin-top:2rem;">
+      <a href="#" onclick="navigate('blog')" class="btn btn-outline">Read All Articles →</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Ready to build something <span class="text-accent">remarkable</span>?</h2>
+    <p>I'm open to full-time roles, contracts, and collaborative research in robotics, autonomous systems, and embedded intelligence.</p>
+    <a href="#" onclick="navigate('contact')" class="btn btn-primary">Get in Touch ↗</a>
+  </div>
+
+</div>
+
+<!-- ══════ PAGE: ABOUT ══════ -->
+<div class="page" id="page-about">
+  <section class="section" style="padding-top:8rem;">
+    <div class="section-label">About me</div>
+    <div class="section-title">The engineer behind<br/>the machine</div>
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-placeholder">
+          <img src="assets/bg_11.png" alt="Viren Sompura" class="about-img" />
+          <div class="about-tag">Robotics Engineer</div>
         </div>
-    		<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Sept 2023-Present</span>
-    					<h2>Robotic Engineer</h2>
-    					<span class="position">Vama Communication Pvt. Ltd.</span>
-    					<p class="mt-4">Spearheading the development of Curio Robot’s hardware and software in the R&D department. Improving and implementing ROS2-based Navigation annd SLAM on Jetson Nano.</p>
-    				</div>
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Sept 2021-Aug 2023</span>
-    					<h2>Masters in Robotics Engineering</h2>
-    					<span class="position">M.S. Ramaiah University of Applied Science </span>
-    					<p class="mt-4">CGPA: 9.0</p>
-    				</div>
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Aug 2016-Aug 2020</span>
-    					<h2>Bachalor's in Mechatronics Enginnering</h2>
-    					<span class="position">Sal College of Engineering</span>
-    					<p class="mt-4">CGPA: 8.02</p>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">April 2023-July 2023</span>
-    					<h2>Intern</h2>
-    					<span class="position">Fenwick and Ravi(F.A.R.)</span>
-    					<p class="mt-4">Developed Tkinter GUI software for a AS/RS Radio Shuttle. Created an Autonomous Mobile Robot using ROS2 framework and implementing custom navigation algorithm.</p>
-    				</div>
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Sept 2020-March 2021</span>
-    					<h2>Engineer Trainee</h2>
-    					<span class="position">Raicam Automotive Private Limited </span>
-    					<p class="mt-4">Contributed to the production of Clutch Actuation systems, focusing on Clutch Master Cylinder and Concentric Slave Cylinder development. Implemented process improvements that increased production efficiency by 15%</p>
-    				</div>
-    				<!-- <div class="resume-wrap ftco-animate">
-    					<span class="date">2017-2018</span>
-    					<h2>UI/UX Designer</h2>
-    					<span class="position">Cambridge University</span>
-    					<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-    				</div> -->
-    			</div>
-    		</div>
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="./resource/Resume_1.pdf" class="btn btn-primary py-4 px-5" download="Viren_Resume">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-	<!---------------------------------------------- Service Section ------------------------------------------------------>
-    <!-- <section class="ftco-section" id="services-section">
-    	<div class="container">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Services</h1>
-            <h2 class="mb-4">Services</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-    		<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Design</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Phtography</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Developer</h3>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">App Developing</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Branding</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Product Strategy</h3>
-							</div>
-						</a>
-					</div>
-				</div>
-    	</div>
-    </section> -->
-
-		<!--------------------------------------- Skill Section ------------------------------------------->
-		<section class="ftco-section" id="skills-section">
-			<div class="container">
-				<div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Skills</h1>
-            <h2 class="mb-4">My Skills</h2>
-            <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
-          </div>
-        </div>
-				<div class="row">
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>ROS/ROS2 Framework</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-							    <span>90%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>Autonomous Navigation</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-							    <span>90%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>SLAM</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-							    <span>75%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>Sensor Fusion and Sensor Integration</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-							    <span>85%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>Python</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-							    <span>85%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>C/C++</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-							    <span>75%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>Robot Hardware and Software Integration</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-							    <span>90%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>Version Control (Git)</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-							    <span>85%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>Linux System</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-							    <span>80%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box">
-						<div class="progress-wrap ftco-animate">
-							<h3>Embedded System Programming</h3>
-							<div class="progress">
-							 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
-							  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-							    <span>75%</span>
-							  	</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
- 
-	<!------------------------------------------------------ Project Section ------------------------------------------------------>
-    <section class="ftco-section ftco-project" id="projects-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
-          </div>
-        </div>
-    		<div class="row">
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/1.jpeg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="https://drive.google.com/file/d/1SGBgsC9yg2MlOd70hP9E2P-MdjG-vpHD/view?usp=sharing">Curio: Museum Guidance Robot</a></h3>
-	    					<span>Mobile Robot</span>
-	    				</div>
-    				</div>
-  				</div>
-  				<div class="col-md-8">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/3.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=sharing">Autonomous Mobile Robot with LiDAR  &amp; A* Search Algorithm</a></h3>
-	    					<span>Mobile Robot</span>
-	    				</div>
-    				</div>
-  				</div>
-
-    			<div class="col-md-8">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/4.PNG);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="https://drive.google.com/drive/folders/1-N_lamHz9trtk43rRTvo55dQXPBXFD0H?usp=sharing">ROS2 Sensor Integration &amp; Driver Development</a></h3>
-	    					<span>Sensor Fusion and Integration</span>
-	    				</div>
-    				</div>
-
-    				<!-- <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-6.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div> -->
-    			</div>
-    			<div class="col-md-4">
-    				<!-- <div class="row">
-    					<div class="col-md-12">
-		    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-2.jpg);">
-		    					<div class="overlay"></div>
-			    				<div class="text text-center p-4">
-			    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-			    					<span>Web Design</span>
-			    				</div>
-		    				</div>
-	    				</div>
-	    				<div class="col-md-12">
-		    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-3.jpg);">
-		    					<div class="overlay"></div>
-			    				<div class="text text-center p-4">
-			    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-			    					<span>Web Design</span>
-			    				</div>
-		    				</div>
-	    				</div>
-    				</div> -->
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-
-    <!-- <section class="ftco-section" id="blog-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Blog</h1>
-            <h2 class="mb-4">Our Blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">June 21, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">June 21, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">June 21, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
+        <div class="about-info">
+          <div class="info-row"><span class="info-label">Name</span><span class="info-val">Viren Sompura</span></div>
+          <div class="info-row"><span class="info-label">DOB</span><span class="info-val">January 28, 1999</span></div>
+          <div class="info-row"><span class="info-label">Location</span><span class="info-val">Ahmedabad, Gujarat</span></div>
+          <div class="info-row"><span class="info-label">Email</span><span class="info-val" style="word-break:break-all;"><a href="mailto:sompuraviren03@gmail.com"><span class="__cf_email__" data-cfemail="7e0d11130e0b0c1f08170c1b104e4d3e19131f1712501d1113">[email&#160;protected]</span></a></span></div>
+          <div class="info-row"><span class="info-label">Phone</span><span class="info-val">+91-9825885177</span></div>
         </div>
       </div>
-    </section> -->
-
-    <!-- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    	<div class="container">
-				<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="100">0</strong>
-                <span>Awards</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1200">0</strong>
-                <span>Complete Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1200">0</strong>
-                <span>Happy Customers</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
-          </div>
+      <div class="about-content reveal" style="transition-delay:.1s;">
+        <h2>I build machines that think, move, and adapt.</h2>
+        <p>I'm a Robotics Engineer with a Master's in Robotics Engineering (CGPA 9.0) and hands-on experience across the full robotics stack — from designing custom PCBs and writing embedded firmware to implementing SLAM, navigation, and sensor fusion at the system level.</p>
+        <p>Currently at <strong>Kion Group</strong> as a Robotics Engineer, and previously drove R&D at Vama Communications where I spearheaded the development of Curio, a museum guidance robot running ROS2 on Jetson Nano with full autonomous navigation.</p>
+        <p>I thrive at the intersection of hardware and software — whether that's deploying micro-ROS on ESP32 microcontrollers, tuning FreeRTOS schedulers for deterministic control loops, or integrating ORB-SLAM3 with Nav2 for visual SLAM.</p>
+        <div class="about-skills-mini">
+          <span class="skill-chip">ROS/ROS2</span>
+          <span class="skill-chip">SLAM</span>
+          <span class="skill-chip">Nav2</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">C/C++</span>
+          <span class="skill-chip">Jetson Nano</span>
+          <span class="skill-chip">Raspberry Pi 4</span>
+          <span class="skill-chip">micro-ROS</span>
+          <span class="skill-chip">FreeRTOS</span>
+          <span class="skill-chip">ORB-SLAM3</span>
+          <span class="skill-chip">RTAB-Map</span>
+          <span class="skill-chip">Gazebo</span>
+          <span class="skill-chip">Linux</span>
+          <span class="skill-chip">Docker</span>
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">RS-485</span>
+          <span class="skill-chip">PCB Design</span>
+          <span class="skill-chip">SOLIDWORKS</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="assets/Viren_Sompura_Resume_1.pdf" download class="btn btn-primary">Download Full CV ↓</a>
         </div>
       </div>
-    </section> -->
+    </div>
+  </section>
+</div>
 
-    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>I'm <span>Available</span> for freelancing</h2>
-						<!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p> -->
-						<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
-					</div>
-				</div>
-			</div>
-		</section>
+<!-- ══════ PAGE: EXPERIENCE ══════ -->
+<div class="page" id="page-experience">
+  <section class="section" style="padding-top:8rem;">
+    <div class="section-label">Career</div>
+    <div class="section-title">Experience &<br/>Education</div>
+    <p class="section-sub">A journey from mechatronics student to robotics engineer across research labs, startups, and industry.</p>
+    <div class="timeline reveal" id="timelineEl"></div>
+  </section>
+</div>
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
-          </div>
-        </div>
+<!-- ══════ PAGE: PROJECTS ══════ -->
+<div class="page" id="page-projects">
+  <section class="section" style="padding-top:8rem;">
+    <div class="section-label">Portfolio</div>
+    <div class="section-title">All Projects</div>
+    <p class="section-sub">Autonomous systems, sensor integration, and robot software — built, tested, and deployed in real environments.</p>
+    <div class="projects-grid" id="allProjectsGrid"></div>
+  </section>
+</div>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <!-- <p>198 West 21th Street, Suite 721 New York NY 10016</p> -->
-				<p>Ahmedabad, Gujarat</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel:+919825885177">+91-9825885177</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Website</h3>
-	            <p><a href="https://virensompura.github.io">Website</a></p>
-	          </div>
-          </div>
-        </div>
+<!-- ══════ PAGE: BLOG ══════ -->
+<div class="page" id="page-blog">
+  <section class="section" style="padding-top:8rem;">
+    <div class="section-label">Knowledge Base</div>
+    <div class="section-title">Blog & Tutorials</div>
+    <p class="section-sub">Deep dives into ROS2, robotics systems, simulation, and the craft of building autonomous machines.</p>
+    <div class="blog-grid" id="blogGrid"></div>
+  </section>
+</div>
 
-        <div class="row no-gutters block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="mailto:sompuraviren03@gmail.com" class="bg-light p-4 p-md-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
-          
-          </div>
+<!-- ══════ PAGE: BLOG POST ══════ -->
+<div class="page" id="page-blogpost">
+  <section class="section" style="padding-top:8rem;max-width:860px;margin:0 auto;">
+    <button class="back-btn" onclick="navigate('blog')">← Back to Blog</button>
+    <div id="blogPostContent"></div>
+  </section>
+</div>
 
-          <div class="col-md-6 d-flex">
-          	<div class="img" style="background-image: url(images/image_1.jpg);"></div>
+<!-- ══════ PAGE: CONTACT ══════ -->
+<div class="page" id="page-contact">
+  <section class="section" style="padding-top:8rem;">
+    <div class="section-label">Let's connect</div>
+    <div class="section-title">Get in Touch</div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Let's build something extraordinary together.</h3>
+        <p>I'm open to full-time roles in robotics engineering, ROS/ROS2 development, and autonomous systems. I also take on select freelance projects and research collaborations.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div><div class="ci-label">Location</div><div class="ci-val">Ahmedabad, Gujarat, India</div></div>
           </div>
+          <a href="tel:+919825885177" class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div><div class="ci-label">Phone</div><div class="ci-val">+91-9825885177</div></div>
+          </a>
+          <a href="mailto:sompuraviren03@gmail.com" class="contact-item">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-val"><span class="__cf_email__" data-cfemail="7704181a07020516011e051219474437101a161e1b5914181a">[email&#160;protected]</span></div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" class="contact-item">
+            <div class="ci-icon">💼</div>
+            <div><div class="ci-label">LinkedIn</div><div class="ci-val">linkedin.com/in/viren-sompura</div></div>
+          </a>
+          <a href="https://github.com/virensompura" target="_blank" class="contact-item">
+            <div class="ci-icon">🐙</div>
+            <div><div class="ci-label">GitHub</div><div class="ci-val">github.com/virensompura</div></div>
+          </a>
         </div>
       </div>
-    </section>
-		
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-				<li class="ftco-animate"><a href="https://github.com/virensompura"><span class="icon-github"></span></a></li>
-                <li class="ftco-animate"><a href="https://x.com/VirenSompura01"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.linkedin.com/in/viren-sompura/"><span class="icon-linkedin"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.instagram.com/virensompura/?hl=en"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Software Development</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Hardware Integration</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Research and Development</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Navigation Algorithm</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>SLAM</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">26, Binori Rosella, Nr. Aarohi Club Road, Ghuma, Ahmedabad- 380058</span></li>
-	                <li><a href="tel:+919825885177"><span class="icon icon-phone"></span><span class="text">+91-9825885177</span></a></li>
-	                <li><a href="mailto:sompuraviren03@gmail.com"><span class="icon icon-envelope"></span><span class="text">sompuraviren03@gmail.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
+      <div class="contact-form reveal" style="transition-delay:.15s;">
+        <div class="section-label" style="margin-bottom:1.5rem;">Send a message</div>
+        <div class="form-row">
+          <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"/></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="your-email@email.com"/></div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
+        <div class="form-group"><label>Subject</label><input type="text" placeholder="What's this about?"/></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell me about your project, role, or idea..."></textarea></div>
+        <button class="btn btn-primary" style="width:100%;" onclick="handleFormSubmit(this)">Send Message ↗</button>
       </div>
-    </footer>
-    
-  
+    </div>
+  </section>
+</div>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<!-- FOOTER (shared) -->
+<footer class="footer" id="siteFooter">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">V<span>.</span></div>
+      <p class="footer-desc">Robotics Engineer specializing in autonomous systems, ROS2, and the intersection of hardware and intelligent software.</p>
+      <div class="social-row" style="margin-top:1.5rem;">
+        <a href="https://github.com/virensompura" target="_blank" class="social-btn" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" class="social-btn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/VirenSompura01" target="_blank" class="social-btn" title="Twitter/X">𝕏</a>
+        <a href="mailto:sompuraviren03@gmail.com" class="social-btn" title="Email">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#" onclick="navigate('home')">Home</a></li>
+        <li><a href="#" onclick="navigate('about')">About</a></li>
+        <li><a href="#" onclick="navigate('experience')">Experience</a></li>
+        <li><a href="#" onclick="navigate('projects')">Projects</a></li>
+        <li><a href="#" onclick="navigate('blog')">Blog</a></li>
+        <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul class="footer-links">
+        <li><a href="#">ROS / ROS2</a></li>
+        <li><a href="#">SLAM & Navigation</a></li>
+        <li><a href="#">Sensor Integration</a></li>
+        <li><a href="#">Embedded Systems</a></li>
+        <li><a href="#">Robot Hardware</a></li>
+        <li><a href="#">Simulation (Gazebo)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:sompuraviren03@gmail.com">Email Me</a></li>
+        <li><a href="tel:+919825885177">+91-9825885177</a></li>
+        <li><a href="assets/Viren_Sompura_Resume_1.pdf" download>Download CV</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Viren Sompura — All rights reserved</span>
+    <span>Built with ❤️ for Robotics</span>
+  </div>
+</footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ─── DATA ───────────────────────────────────────────────
+const SKILLS = [
+  'ROS2 Framework','Autonomous Navigation','SLAM','Sensor Fusion','Jetson Nano',
+  'Raspberry Pi 4','Python','C++','micro-ROS','FreeRTOS','ORB-SLAM3','RTAB-Map',
+  'Nav2 Stack','LiDAR Integration','RS-485','PCB Design','Gazebo','RViz',
+  'Linux Systems','Docker','Git','Arduino','ESP32','SOLIDWORKS','Flask',
+  'Machine Learning Basics','Computer Vision'
+];
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+const TIMELINE = [
+  {
+    type:'work',
+    title:'Robotics Engineer',
+    company:'Kion Group',
+    date:'Sept 2025 — Present',
+    location:'Ahmedabad, Gujarat',
+    desc:'Leading advanced robotics development for industrial automation systems. Implementing ROS2-based solutions for autonomous material handling and intelligent warehouse robotics.'
+  },
+  {
+    type:'work',
+    title:'Robotic Engineer',
+    company:'Vama Communications Pvt. Ltd.',
+    date:'Sept 2023 — Sept 2025',
+    location:'Ahmedabad, Gujarat',
+    desc:'Spearheaded development of Curio Robot\'s hardware and software in the R&D department. Designed custom PCB solutions, implemented ROS2-based navigation and SLAM on Jetson Nano improving robot autonomy by 40%, and developed software modules reducing system latency by 25%.'
+  },
+  {
+    type:'work',
+    title:'Intern',
+    company:'Fenwick and Ravi (F.A.R.)',
+    date:'April 2023 — July 2023',
+    location:'Bangalore, Karnataka',
+    desc:'Developed software for a radio-shuttle AS/RS system improving warehouse automation efficiency by 30%. Created an Autonomous Mobile Robot using ROS2 framework with custom navigation algorithms.'
+  },
+  {
+    type:'edu',
+    title:'M.Tech. in Robotics Engineering',
+    company:'M.S. Ramaiah University of Applied Science',
+    date:'2021 — 2023',
+    location:'Bangalore, Karnataka',
+    desc:'CGPA: 9.0 / 10. Advanced coursework in autonomous systems, robot kinematics, SLAM, computer vision, and embedded robotics.'
+  },
+  {
+    type:'work',
+    title:'Trainee Engineer',
+    company:'Raicam Automotive Private Limited',
+    date:'Sept 2020 — March 2021',
+    location:'Sanand, Ahmedabad',
+    desc:'Contributed to production of Clutch Actuation systems (Clutch Master Cylinder & Concentric Slave Cylinder). Implemented process improvements that increased production efficiency by 15%.'
+  },
+  {
+    type:'edu',
+    title:'B.Tech. in Mechatronics Engineering',
+    company:'Sal College of Engineering',
+    date:'2016 — 2020',
+    location:'Ahmedabad, Gujarat',
+    desc:'CGPA: 8.02 / 10. Foundation in mechanical engineering, electronics, control systems, and embedded programming.'
+  }
+];
+
+const PROJECTS = [
+  {
+    id:'curio',
+    title:'Curio: Museum Guidance Robot',
+    category:'Mobile Robot',
+    desc:'Full-stack guidance robot for Kolkata Museum using Jetson Nano with ROS2-based autonomous navigation, SLAM, and natural language Q&A for museum exhibits.',
+    tags:['ROS2','Nav2','SLAM','Jetson Nano','Atmega2560','PCB Design'],
+    videoSrc:'assets/videos/curio_robot.mp4',
+    link:'https://drive.google.com/file/d/1SGBgsC9yg2MlOd70hP9E2P-MdjG-vpHD/view?usp=sharing',
+    icon:'🤖'
+  },
+  {
+    id:'humanoid',
+    title:'Humanoid Greeter Robot',
+    category:'Humanoid Robot',
+    desc:'Companion humanoid robot that greets and interacts with museum visitors using motion sensors, speech synthesis, and crowd-aware behavior logic.',
+    tags:['Humanoid','Sensors','Speech','Interaction'],
+    videoSrc:'assets/videos/humanoid-robot-landscape.mp4',
+    link:'https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=sharing',
+    icon:'🦾'
+  },
+  {
+    id:'amr',
+    title:'AMR with LiDAR & A* Algorithm',
+    category:'Autonomous Mobile Robot',
+    desc:'Prototype AMR using Raspberry Pi 4 for ROS integration and Arduino Mega for low-level control. Real-time obstacle mapping with RPLiDAR A1M8 and A* path planning.',
+    tags:['ROS2','LiDAR','A*','Raspberry Pi 4','Arduino Mega'],
+    videoSrc:'assets/videos/amr-lidar.mp4',
+    link:'https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=drive_link',
+    icon:'🚗'
+  },
+  {
+    id:'ros2dev',
+    title:'ROS2 Advanced Development Suite',
+    category:'Software Stack',
+    desc:'Comprehensive ROS2 development including ORB-SLAM3 integration, RTAB-Map 3D mapping, autonomous docking, web control interface, RS-485 motor driver, micro-ROS MCU deployment, and FreeRTOS optimization.',
+    tags:['ORB-SLAM3','RTAB-Map','micro-ROS','FreeRTOS','RS-485','Nav2'],
+    videoSrc:'assets/videos/rs-com.mp4',
+    link:'https://drive.google.com/drive/folders/1UoL6GgpReF8u6i3Q7rhB1vBSPKt9ppLa?usp=sharing',
+    icon:'⚙️'
+  },
+  {
+    id:'sensor',
+    title:'ROS2 Sensor Integration & Driver Development',
+    category:'Sensor Fusion',
+    desc:'Custom ROS2 drivers for Qwiic ICM20948 IMU and VL53L0X ToF sensor. Engineered robust sensor fusion algorithm significantly enhancing localization accuracy and obstacle detection reliability.',
+    tags:['ROS2','IMU','ToF Sensor','Sensor Fusion','Custom Drivers'],
+    videoSrc:'assets/videos/IMU-Integration-ROS2.mp4',
+    link:'https://drive.google.com/drive/folders/1-N_lamHz9trtk43rRTvo55dQXPBXFD0H?usp=sharing',
+    icon:'📡'
+  },
+  {
+    id:'cocoon',
+    title:'Automatic Cocoon Sorting Machine',
+    category:'Industrial Automation',
+    desc:'Low-cost prototype for automated sorting of male and female cocoons by weight. Achieved 600 cocoons/hour sorting rate, improving efficiency in silk production.',
+    tags:['Arduino','Weight Sensors','Automation','Mechanical Design'],
+    videoSrc:'assets/videos/cocoon.mp4',
+    link:'https://drive.google.com/drive/folders/1Y7df3zIDsXdp7yoCfvPIMWGKgUo8jSRw?usp=sharing',
+    icon:'🏭'
+  }
+];
+
+const BLOGS = [
+  {
+    id:'ros2-install',
+    emoji:'🤖',
+    category:'ROS2',
+    date:'Mar 2025',
+    readTime:'10 min read',
+    title:'Getting Started with ROS2: Complete Installation & Workspace Setup',
+    excerpt:'A step-by-step guide to installing ROS2 Humble on Ubuntu 22.04, configuring your environment, and building your first workspace.',
+    content:`
+<h2>Introduction</h2>
+<p>ROS2 (Robot Operating System 2) is the industry-standard middleware for building robotic systems. Unlike ROS1, it's built on DDS (Data Distribution Service), offers real-time capability, and supports multiple platforms including Linux, Windows, and macOS.</p>
+<p>In this guide, we'll install <strong>ROS2 Humble</strong> on Ubuntu 22.04 LTS — the most stable and widely-used combination for production robotics work.</p>
+
+<h2>1. Set Up Locale</h2>
+<pre><code>locale  # check for UTF-8
+
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8</code></pre>
+
+<h2>2. Add the ROS2 Repository</h2>
+<pre><code>sudo apt install software-properties-common
+sudo add-apt-repository universe
+
+sudo apt update && sudo apt install curl -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+  -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
+  http://packages.ros.org/ros2/ubuntu \
+  $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
+  | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null</code></pre>
+
+<h2>3. Install ROS2 Humble</h2>
+<pre><code>sudo apt update && sudo apt upgrade -y
+sudo apt install ros-humble-desktop</code></pre>
+
+<h2>4. Configure Your Environment</h2>
+<p>Add this to your <code>~/.bashrc</code> so ROS2 is available in every terminal:</p>
+<pre><code>echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+source ~/.bashrc</code></pre>
+
+<h2>5. Create Your First Workspace</h2>
+<pre><code>mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws
+colcon build
+source install/setup.bash</code></pre>
+
+<h2>6. Test Your Installation</h2>
+<p>Open two terminals and run the classic talker-listener demo:</p>
+<pre><code># Terminal 1
+ros2 run demo_nodes_cpp talker
+
+# Terminal 2
+ros2 run demo_nodes_py listener</code></pre>
+
+<h2>Key Concepts to Know</h2>
+<ul>
+<li><strong>Workspace</strong>: A directory where you build and store ROS2 packages</li>
+<li><strong>Package</strong>: The fundamental unit of ROS2 software organization</li>
+<li><strong>colcon</strong>: The build tool used in ROS2 (replaces catkin_make)</li>
+<li><strong>ament</strong>: The build system used by ROS2 packages</li>
+</ul>
+<p>Next up: understanding how nodes, topics, and services work together to create a distributed robot system.</p>
+    `
+  },
+  {
+    id:'nodes-topics',
+    emoji:'⚡',
+    category:'ROS2',
+    date:'Apr 2025',
+    readTime:'12 min read',
+    title:'ROS2 Architecture: Nodes, Topics, Services & Actions Explained',
+    excerpt:'Understand the core communication primitives of ROS2 and how they map to real robot behaviors — with practical examples.',
+    content:`
+<h2>The ROS2 Communication Model</h2>
+<p>Everything in ROS2 revolves around <strong>nodes</strong> — processes that perform computation — and several communication patterns they use to talk to each other. Choosing the right pattern is critical for system performance and reliability.</p>
+
+<h2>Nodes</h2>
+<p>A node is the smallest computational unit in ROS2. Each node typically handles one responsibility: reading a sensor, computing odometry, or planning a path.</p>
+<pre><code>import rclpy
+from rclpy.node import Node
+
+class MyRobot(Node):
+    def __init__(self):
+        super().__init__('my_robot_node')
+        self.get_logger().info('Robot node started!')
+
+def main():
+    rclpy.init()
+    node = MyRobot()
+    rclpy.spin(node)
+    rclpy.shutdown()</code></pre>
+
+<h2>Topics: Publish / Subscribe</h2>
+<p>Topics are the backbone of sensor data and state streaming. They're asynchronous and support many-to-many communication.</p>
+<pre><code># Publisher
+self.pub = self.create_publisher(LaserScan, '/scan', 10)
+
+# Subscriber
+self.sub = self.create_subscription(
+    LaserScan, '/scan', self.scan_callback, 10)</code></pre>
+<p><strong>Use topics for</strong>: sensor data (LiDAR, IMU, camera), velocity commands, robot state, and any continuous stream.</p>
+
+<h2>Services: Request / Response</h2>
+<p>Services are synchronous — the client blocks until the server responds. Use for discrete, short-duration tasks.</p>
+<pre><code># Service call
+from nav_msgs.srv import GetMap
+client = self.create_client(GetMap, '/map_server/map')
+req = GetMap.Request()
+future = client.call_async(req)</code></pre>
+<p><strong>Use services for</strong>: getting map data, triggering resets, querying robot configuration.</p>
+
+<h2>Actions: Long-running Tasks</h2>
+<p>Actions are ideal for navigation goals, arm movements, or any task that takes time and needs progress feedback.</p>
+<pre><code>from nav2_msgs.action import NavigateToPose
+from rclpy.action import ActionClient
+
+self._action_client = ActionClient(
+    self, NavigateToPose, 'navigate_to_pose')</code></pre>
+<p><strong>Use actions for</strong>: go-to-pose goals, manipulation sequences, docking procedures.</p>
+
+<h2>Choosing the Right Pattern</h2>
+<ul>
+<li><strong>Continuous stream</strong> → Topic (pub/sub)</li>
+<li><strong>Quick request/response</strong> → Service</li>
+<li><strong>Long task with feedback</strong> → Action</li>
+<li><strong>Shared global state</strong> → Parameter server</li>
+</ul>
+    `
+  },
+  {
+    id:'nav2',
+    emoji:'🗺️',
+    category:'Navigation',
+    date:'May 2025',
+    readTime:'14 min read',
+    title:'Nav2 Stack Deep Dive: Autonomous Navigation from Scratch',
+    excerpt:'Set up the Nav2 navigation stack for a custom robot, configure costmaps, and send navigation goals programmatically.',
+    content:`
+<h2>What is Nav2?</h2>
+<p>Nav2 (Navigation2) is the standard navigation stack for ROS2. It provides a complete solution for autonomous robot navigation including path planning, obstacle avoidance, and behavior trees for high-level task orchestration.</p>
+
+<h2>Core Components</h2>
+<ul>
+<li><strong>Planner Server</strong>: Computes globally optimal paths (NavFn, Smac)</li>
+<li><strong>Controller Server</strong>: Executes local trajectory tracking (DWB, MPPI)</li>
+<li><strong>Costmap 2D</strong>: Represents free, occupied, and unknown space</li>
+<li><strong>BT Navigator</strong>: Orchestrates the navigation behavior tree</li>
+<li><strong>AMCL</strong>: Adaptive Monte Carlo Localization for position estimation</li>
+</ul>
+
+<h2>Minimal Nav2 Launch</h2>
+<pre><code>from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(
+            package='nav2_bringup',
+            executable='bringup_launch.py',
+            parameters=[nav2_params_path]
+        )
+    ])</code></pre>
+
+<h2>Sending a Navigation Goal</h2>
+<pre><code>from geometry_msgs.msg import PoseStamped
+from nav2_simple_commander.robot_navigator import BasicNavigator
+
+navigator = BasicNavigator()
+goal = PoseStamped()
+goal.header.frame_id = 'map'
+goal.pose.position.x = 2.0
+goal.pose.position.y = 1.5
+goal.pose.orientation.w = 1.0
+
+navigator.goToPose(goal)
+while not navigator.isNavComplete():
+    feedback = navigator.getFeedback()</code></pre>
+
+<h2>Costmap Configuration</h2>
+<p>The costmap is the robot's representation of the world. Key parameters:</p>
+<pre><code>global_costmap:
+  ros__parameters:
+    update_frequency: 1.0
+    publish_frequency: 1.0
+    global_frame: map
+    robot_base_frame: base_link
+    use_sim_time: false
+    robot_radius: 0.22
+    resolution: 0.05</code></pre>
+
+<h2>Tips from the Field</h2>
+<ul>
+<li>Always tune the inflation radius to slightly larger than your robot's footprint</li>
+<li>Use the Smac Planner for smoother, curvature-constrained paths</li>
+<li>MPPI controller handles dynamic environments better than DWB</li>
+<li>Set <code>transform_tolerance</code> generously (0.5s) during development</li>
+</ul>
+    `
+  },
+  {
+    id:'isaac-sim',
+    emoji:'🌐',
+    category:'Simulation',
+    date:'Jun 2025',
+    readTime:'11 min read',
+    title:'NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS2',
+    excerpt:'Set up Isaac Sim, import your URDF, and stream sensor data to ROS2 — achieving photorealistic simulation for sensor development and policy training.',
+    content:`
+<h2>Why Isaac Sim?</h2>
+<p>Gazebo has served robotics well, but NVIDIA Isaac Sim brings a new level of realism through photorealistic rendering, physics-accurate simulation, and ray-traced sensor models. LiDAR, cameras, and IMUs behave like their real-world counterparts.</p>
+
+<h2>Installation Requirements</h2>
+<ul>
+<li>NVIDIA GPU with ≥ 8GB VRAM (RTX 2070 minimum)</li>
+<li>Ubuntu 20.04/22.04</li>
+<li>NVIDIA Driver ≥ 525</li>
+<li>Isaac Sim 4.x via Omniverse Launcher</li>
+</ul>
+
+<h2>Importing Your Robot</h2>
+<p>Isaac Sim supports URDF import out of the box:</p>
+<pre><code># In Isaac Sim Python API
+from omni.importer.urdf import _urdf
+
+urdf_interface = _urdf.acquire_urdf_interface()
+config = _urdf.ImportConfig()
+config.merge_fixed_joints = False
+config.convex_decomp = False
+config.import_inertia_tensor = True
+
+result, prim_path = urdf_interface.import_robot(
+    "/path/to/robot.urdf", config
+)</code></pre>
+
+<h2>Connecting to ROS2</h2>
+<p>Enable the ROS2 Bridge in Isaac Sim's extension manager, then your robot's joints and sensors publish natively to ROS2 topics.</p>
+<pre><code># Launch ROS2 bridge
+ros2 launch isaac_ros_launch isaac_ros.launch.py
+
+# View camera in ROS2
+ros2 run rqt_image_view rqt_image_view /rgb</code></pre>
+
+<h2>Domain Randomization for Sim-to-Real</h2>
+<p>Isaac Sim's Replicator framework lets you randomize lighting, textures, and object positions to train more robust perception models that transfer to the real world.</p>
+
+<h2>Key Benefits Over Gazebo</h2>
+<ul>
+<li>Ray-traced LiDAR — point clouds match real sensors much more closely</li>
+<li>Physically based rendering for camera simulation</li>
+<li>RTX denoising enables real-time photorealistic frames</li>
+<li>Tight integration with NVIDIA's Isaac SDK and ML pipelines</li>
+</ul>
+    `
+  },
+  {
+    id:'slam-deep',
+    emoji:'🧭',
+    category:'SLAM',
+    date:'Jul 2025',
+    readTime:'16 min read',
+    title:'SLAM Demystified: From Theory to ROS2 Implementation',
+    excerpt:'Understanding Simultaneous Localization and Mapping — the math, the algorithms, and how to get ORB-SLAM3 and RTAB-Map running with Nav2.',
+    content:`
+<h2>What is SLAM?</h2>
+<p>Simultaneous Localization and Mapping (SLAM) solves a chicken-and-egg problem: to build a map you need to know where you are, but to know where you are you need a map. Modern SLAM algorithms solve both simultaneously.</p>
+
+<h2>The SLAM Pipeline</h2>
+<ul>
+<li><strong>Sensor Input</strong>: LiDAR, stereo camera, RGB-D, or IMU</li>
+<li><strong>Feature Extraction</strong>: Identifying landmarks in sensor data</li>
+<li><strong>Data Association</strong>: Matching current observations to known landmarks</li>
+<li><strong>State Estimation</strong>: Updating robot pose and map (EKF, particle filter, factor graph)</li>
+<li><strong>Loop Closure</strong>: Recognizing previously visited places to correct drift</li>
+</ul>
+
+<h2>LiDAR SLAM with RTAB-Map</h2>
+<pre><code>ros2 launch rtabmap_ros rtabmap.launch.py \
+  --ros-args \
+  -p use_sim_time:=false \
+  -p subscribe_scan:=true \
+  -p frame_id:=base_link \
+  -p odom_frame_id:=odom \
+  -p queue_size:=10</code></pre>
+
+<h2>Visual SLAM with ORB-SLAM3 + ROS2</h2>
+<pre><code>ros2 run orbslam3_ros stereo \
+  --ros-args \
+  -p vocabulary_path:=/path/to/ORBvoc.txt \
+  -p settings_path:=/path/to/stereo_params.yaml</code></pre>
+
+<h2>Integrating SLAM with Nav2</h2>
+<p>Once your SLAM system publishes a <code>/map</code> topic and maintains the <code>map→odom</code> transform, Nav2 picks it up automatically:</p>
+<pre><code># Verify transforms are being published
+ros2 run tf2_tools view_frames
+
+# Check map is available
+ros2 topic echo /map --once</code></pre>
+
+<h2>Common Pitfalls</h2>
+<ul>
+<li><strong>TF drift</strong>: Always ensure your odom source is reliable before adding SLAM</li>
+<li><strong>Loop closure frequency</strong>: Too aggressive causes jitter; tune the threshold carefully</li>
+<li><strong>Memory usage</strong>: RTAB-Map can grow large; configure max memory and working memory</li>
+<li><strong>Time sync</strong>: Ensure all sensor timestamps are synchronized (use <code>chrony</code> or hardware sync)</li>
+</ul>
+    `
+  },
+  {
+    id:'microros',
+    emoji:'🔌',
+    category:'Embedded',
+    date:'Aug 2025',
+    readTime:'13 min read',
+    title:'micro-ROS: Bringing ROS2 to Microcontrollers',
+    excerpt:'Deploy micro-ROS on STM32 and ESP32 to directly publish sensor data and subscribe to control commands within the ROS2 ecosystem.',
+    content:`
+<h2>What is micro-ROS?</h2>
+<p>micro-ROS extends the ROS2 ecosystem to resource-constrained microcontrollers. Instead of a full Linux-based node, you get a lightweight client that communicates with a ROS2 network through a <strong>micro-ROS Agent</strong> running on a host machine.</p>
+
+<h2>Supported Platforms</h2>
+<ul>
+<li>STM32 series (F4, H7, U5)</li>
+<li>ESP32 and ESP32-S3</li>
+<li>Arduino (limited)</li>
+<li>Raspberry Pi Pico (RP2040)</li>
+</ul>
+
+<h2>Architecture</h2>
+<p>micro-ROS uses a <strong>client–agent</strong> model:</p>
+<ul>
+<li><strong>MCU</strong>: Runs the micro-ROS client, publishers, subscribers, timers</li>
+<li><strong>Agent</strong>: Runs on the host PC, bridges micro-ROS to full ROS2 DDS</li>
+<li><strong>Transport</strong>: Serial, UDP, or USB</li>
+</ul>
+
+<h2>ESP32 Example: IMU Publisher</h2>
+<pre><code>#include &lt;micro_ros_arduino.h&gt;
+#include &lt;sensor_msgs/msg/imu.h&gt;
+
+rcl_publisher_t imu_pub;
+sensor_msgs__msg__Imu imu_msg;
+
+void setup() {
+  set_microros_transports();
+  rcl_node_t node;
+  rclc_node_init_default(&node, "imu_node", "", &support);
+
+  rclc_publisher_init_default(
+    &imu_pub, &node,
+    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
+    "imu/data"
+  );
+}
+
+void loop() {
+  imu_msg.linear_acceleration.x = readAccelX();
+  rcl_publish(&imu_pub, &imu_msg, NULL);
+  delay(10); // 100 Hz
+}</code></pre>
+
+<h2>Running the Agent</h2>
+<pre><code># Install micro-ROS agent
+pip install micro-ros-agent
+
+# Start agent over serial
+ros2 run micro_ros_agent micro_ros_agent serial \
+  --dev /dev/ttyUSB0 -b 115200</code></pre>
+
+<h2>FreeRTOS Integration</h2>
+<p>For time-critical systems, run the micro-ROS executor within a dedicated FreeRTOS task:</p>
+<pre><code>void microros_task(void *args) {
+  rclc_executor_t executor;
+  rclc_executor_init(&executor, &support.context, 4, &allocator);
+
+  while(1) {
+    rclc_executor_spin_some(&executor, RCL_MS_TO_NS(10));
+    vTaskDelay(pdMS_TO_TICKS(10));
+  }
+}</code></pre>
+
+<h2>Why micro-ROS?</h2>
+<p>Direct integration of low-level hardware into the ROS2 graph means no ROS-serial bridges, no custom protocol parsers — just native topics and services across your entire robot system from MCU to cloud.</p>
+    `
+  }
+];
+
+// ─── NAVIGATION ─────────────────────────────────────────
+function navigate(page, params){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+
+  if(page==='blogpost' && params){
+    renderBlogPost(params);
+    document.getElementById('page-blogpost').classList.add('active');
+  } else {
+    const el = document.getElementById('page-'+page);
+    if(el) el.classList.add('active');
+    const navA = document.getElementById('nav-'+page);
+    if(navA) navA.classList.add('active');
+  }
+  window.scrollTo({top:0,behavior:'instant'});
+  initReveal();
+  return false;
+}
+
+// ─── THEME ──────────────────────────────────────────────
+function toggleTheme(){
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme')==='dark';
+  html.setAttribute('data-theme', isDark?'light':'dark');
+  document.getElementById('themeBtn').textContent = isDark?'🌙':'☀️';
+  localStorage.setItem('vs-theme', isDark?'light':'dark');
+}
+(function initTheme(){
+  const saved = localStorage.getItem('vs-theme')||'dark';
+  document.documentElement.setAttribute('data-theme',saved);
+  document.getElementById('themeBtn').textContent = saved==='dark'?'☀️':'🌙';
+})();
+
+// ─── MOBILE NAV ─────────────────────────────────────────
+function toggleMobileNav(){
+  const nav = document.getElementById('mobileNav');
+  const btn = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMobileNav(){
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+// ─── MARQUEE ────────────────────────────────────────────
+function buildMarquee(){
+  const track = document.getElementById('marqueeTrack');
+  const all = [...SKILLS,...SKILLS];
+  track.innerHTML = all.map(s=>`
+    <span class="mq-item">
+      <span class="mq-dot"></span>${s}
+    </span>
+  `).join('');
+}
+
+// ─── HOME HORIZONTAL TIMELINE ───────────────────────────
+function buildHomeTimeline(){
+  const el = document.getElementById('homeTimeline');
+  if(!el) return;
+
+  const items = TIMELINE;
+  let html = '';
+
+  items.forEach((t, i) => {
+    const isEdu = t.type === 'edu';
+    const isEven = i % 2 === 0;
+
+    const card = `<div class="htl-card">
+        <div class="htl-company">${t.company}</div>
+        <div class="htl-role">${t.title}</div>
+        <div class="htl-date-badge">${t.date}</div>
+      </div>`;
+
+    const stemH = 36;
+
+    if(isEven){
+      html += `<div class="htl-node${isEdu?' edu':''}" title="${t.title} @ ${t.company}">
+        ${card}
+        <div class="htl-stem" style="height:${stemH}px;"></div>
+        <div class="htl-dot"></div>
+      </div>`;
+    } else {
+      html += `<div class="htl-node${isEdu?' edu':''}" title="${t.title} @ ${t.company}">
+        <div class="htl-dot"></div>
+        <div class="htl-stem" style="height:${stemH}px;"></div>
+        ${card}
+      </div>`;
+    }
+
+    if(i < items.length - 1){
+      html += `<div class="htl-connector"></div>`;
+    }
+  });
+
+  el.innerHTML = html;
+
+  // drag-to-scroll
+  const wrapper = document.getElementById('htlWrapper');
+  if(!wrapper) return;
+  let isDown = false, startX, scrollLeft;
+  wrapper.addEventListener('mousedown', e=>{
+    isDown=true; wrapper.classList.add('grabbing');
+    startX=e.pageX-wrapper.offsetLeft; scrollLeft=wrapper.scrollLeft;
+  });
+  wrapper.addEventListener('mouseleave', ()=>{ isDown=false; wrapper.classList.remove('grabbing'); });
+  wrapper.addEventListener('mouseup',   ()=>{ isDown=false; wrapper.classList.remove('grabbing'); });
+  wrapper.addEventListener('mousemove', e=>{
+    if(!isDown) return; e.preventDefault();
+    const x=e.pageX-wrapper.offsetLeft;
+    wrapper.scrollLeft = scrollLeft-(x-startX)*1.2;
+  });
+}
+
+// ─── HOME BLOG PREVIEW ──────────────────────────────────
+function buildHomeBlog(){
+  const el = document.getElementById('homeBlogGrid');
+  if(!el) return;
+  el.className = 'blog-grid';
+  el.innerHTML = BLOGS.slice(0,3).map(b=>`
+    <a class="home-blog-card reveal" href="#" onclick="navigate('blogpost','${b.id}');return false;">
+      <div class="home-blog-top">
+        <span class="home-blog-emoji">${b.emoji}</span>
+        <span class="home-blog-cat">${b.category}</span>
+      </div>
+      <div class="home-blog-title">${b.title}</div>
+      <div class="home-blog-excerpt">${b.excerpt}</div>
+      <div class="home-blog-meta">
+        <span>${b.date} · ${b.readTime}</span>
+        <span class="home-blog-read">Read →</span>
+      </div>
+    </a>
+  `).join('');
+  initReveal();
+}
+
+// ─── FULL TIMELINE ──────────────────────────────────────
+function buildTimeline(){
+  const el = document.getElementById('timelineEl');
+  if(!el) return;
+  el.innerHTML = TIMELINE.map(t=>`
+    <div class="timeline-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-meta">
+        <span class="tl-badge ${t.type==='work'?'badge-work':'badge-edu'}">
+          ${t.type==='work'?'Work':'Education'}
+        </span>
+        ${t.date} · ${t.location}
+      </div>
+      <div class="tl-title">${t.title}</div>
+      <div class="tl-company">${t.company}</div>
+      <div class="tl-desc">${t.desc}</div>
+    </div>
+  `).join('');
+  initReveal();
+}
+
+// ─── PROJECT CARDS ──────────────────────────────────────
+function projectCard(p){
+  const hasVideo = p.videoSrc && p.videoSrc!=='';
+  const mediaHtml = hasVideo
+    ? `<div class="project-media" style="position:relative;overflow:hidden;background:#0d1117;">
+        <video class="pcard-video" src="${p.videoSrc}" loop muted playsinline preload="metadata"
+          style="width:100%;height:100%;object-fit:cover;display:block;"
+          onerror="this.parentElement.innerHTML='<div class=\\"media-placeholder\\"><div class=\\"media-ph-icon\\">${p.icon}</div><div class=\\"media-ph-text\\">${p.category}</div></div>'">
+        </video>
+       </div>`
+    : `<div class="project-media">
+        <div class="media-placeholder">
+          <div class="media-ph-icon">${p.icon}</div>
+          <div class="media-ph-text">${p.category}</div>
+        </div>
+       </div>`;
+  return `
+    <div class="project-card reveal">
+      ${mediaHtml}
+      <div class="project-body">
+        <div class="project-cat">${p.category}</div>
+        <div class="project-title">${p.title}</div>
+        <div class="project-desc">${p.desc}</div>
+        <div class="project-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        ${p.link&&p.link!=='#'?`<a href="${p.link}" target="_blank" class="project-link">View Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg></a>`:''}
+      </div>
+    </div>
+  `;
+}
+
+function buildProjects(){
+  const featured = document.getElementById('featuredProjects');
+  const all = document.getElementById('allProjectsGrid');
+  const featured3 = PROJECTS.slice(0,3);
+  if(featured) featured.innerHTML = featured3.map(projectCard).join('');
+  if(all) all.innerHTML = PROJECTS.map(projectCard).join('');
+
+  // Autoplay videos when they scroll into view; pause when they leave
+  if('IntersectionObserver' in window){
+    const videoObs = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        const video = entry.target;
+        if(entry.isIntersecting){
+          video.play().catch(()=>{});
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.pcard-video').forEach(v => videoObs.observe(v));
+  } else {
+    // Fallback: just play all
+    document.querySelectorAll('.pcard-video').forEach(v => v.play().catch(()=>{}));
+  }
+
+  initReveal();
+}
+
+// ─── BLOG ───────────────────────────────────────────────
+function buildBlog(){
+  const grid = document.getElementById('blogGrid');
+  if(!grid) return;
+  grid.innerHTML = BLOGS.map(b=>`
+    <a class="blog-card reveal" href="#" onclick="navigate('blogpost','${b.id}');return false;">
+      <div class="blog-thumb">${b.emoji}</div>
+      <div class="blog-body">
+        <div class="blog-meta-row">
+          <span class="blog-cat">${b.category}</span>
+          <span class="blog-date">${b.date}</span>
+          <span class="blog-read">${b.readTime}</span>
+        </div>
+        <div class="blog-title">${b.title}</div>
+        <div class="blog-excerpt">${b.excerpt}</div>
+        <div class="blog-arrow">Read Article →</div>
+      </div>
+    </a>
+  `).join('');
+  initReveal();
+}
+
+function renderBlogPost(id){
+  const post = BLOGS.find(b=>b.id===id);
+  if(!post) return;
+  document.getElementById('blogPostContent').innerHTML = `
+    <div class="post-header">
+      <div class="post-cat">${post.category}</div>
+      <h1 class="post-title">${post.title}</h1>
+      <div class="post-meta">
+        <span>Viren Sompura</span>
+        <span>·</span>
+        <span>${post.date}</span>
+        <span>·</span>
+        <span>${post.readTime}</span>
+      </div>
+    </div>
+    <div class="post-body">${post.content}</div>
+    <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;gap:1rem;">
+      <button class="btn btn-outline btn-sm" onclick="navigate('blog')">← All Articles</button>
+    </div>
+  `;
+}
+
+// ─── FORM ───────────────────────────────────────────────
+function handleFormSubmit(btn){
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  setTimeout(()=>{
+    btn.textContent = 'Message Sent! ✓';
+    btn.style.background = 'var(--blue)';
+    setTimeout(()=>{
+      btn.textContent = 'Send Message ↗';
+      btn.disabled = false;
+      btn.style.background = '';
+    },3000);
+  },1200);
+}
+
+// ─── SCROLL REVEAL ──────────────────────────────────────
+function initReveal(){
+  const els = document.querySelectorAll('.reveal:not(.visible)');
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+      });
+    },{threshold:0.12});
+    els.forEach(el=>obs.observe(el));
+  } else {
+    els.forEach(el=>el.classList.add('visible'));
+  }
+}
+
+// ─── INIT ───────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function(){
+  buildMarquee();
+  buildTimeline();
+  buildProjects();
+  buildBlog();
+  buildHomeTimeline();
+  buildHomeBlog();
+  initReveal();
+  window.openPost = function(id){ navigate('blogpost', id); };
+});
+</script>
+</body>
 </html>

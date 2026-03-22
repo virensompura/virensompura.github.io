@@ -1122,17 +1122,51 @@ function renderBlogPost(id){
 
 // ─── FORM ───────────────────────────────────────────────
 function handleFormSubmit(btn){
+  const form    = btn.closest('.contact-form');
+  const inputs  = form.querySelectorAll('input');
+  const name    = inputs[0].value.trim();
+  const email   = inputs[1].value.trim();
+  const subject = inputs[2].value.trim();
+  const message = form.querySelector('textarea').value.trim();
+
+  if(!name || !email || !message){
+    alert('Please fill in Name, Email and Message.');
+    return;
+  }
+
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  setTimeout(()=>{
-    btn.textContent = 'Message Sent! ✓';
-    btn.style.background = 'var(--blue)';
+
+  fetch('https://formspree.io/f/xkoqaakq', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, subject, message })
+  })
+  .then(res => {
+    if(res.ok){
+      btn.textContent = 'Message Sent! ✓';
+      btn.style.background = 'var(--blue)';
+      // clear fields
+      inputs.forEach(i => i.value = '');
+      form.querySelector('textarea').value = '';
+      setTimeout(()=>{
+        btn.textContent = 'Send Message ↗';
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 3000);
+    } else {
+      throw new Error('Failed');
+    }
+  })
+  .catch(()=>{
+    btn.textContent = 'Failed. Try again.';
+    btn.style.background = '#ef4444';
+    btn.disabled = false;
     setTimeout(()=>{
       btn.textContent = 'Send Message ↗';
-      btn.disabled = false;
       btn.style.background = '';
-    },3000);
-  },1200);
+    }, 3000);
+  });
 }
 
 // ─── SCROLL REVEAL ──────────────────────────────────────

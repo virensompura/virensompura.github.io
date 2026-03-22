@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
+  <title>NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS2 | Viren Sompura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style/style.css"/>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="../index.html">Viren Sompura</a>
+      <nav class="site-nav">
+        <a class="btn btn-outline btn-sm" href="../index.html">Home</a>
+        <a class="btn btn-outline btn-sm" href="index.html">Blog Index</a>
+      </nav>
+    </header>
+
+    <main class="blog-article">
+      <section class="section" style="padding:2rem 0 0;">
+        <div class="blog-page-hero">
+          <div class="section-label">Simulation</div>
+          <div class="section-title">NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS2</div>
+          <p class="section-sub">By Viren Sompura · Jun 2025 · 11 min read</p>
+          <div class="blog-toc">
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+              <span style="font-size:1.4rem;">🌐</span>
+              <strong>Article</strong>
+            </div>
+            <div>Use the back links below to return to the full blog list or the home page.</div>
+          </div>
+        </div>
+
+        <article class="post-body">
+          
+<h2>Why Isaac Sim?</h2>
+<p>Gazebo has served robotics well, but NVIDIA Isaac Sim brings a new level of realism through photorealistic rendering, physics-accurate simulation, and ray-traced sensor models. LiDAR, cameras, and IMUs behave like their real-world counterparts.</p>
+
+<h2>Installation Requirements</h2>
+<ul>
+<li>NVIDIA GPU with ≥ 8GB VRAM (RTX 2070 minimum)</li>
+<li>Ubuntu 20.04/22.04</li>
+<li>NVIDIA Driver ≥ 525</li>
+<li>Isaac Sim 4.x via Omniverse Launcher</li>
+</ul>
+
+<h2>Importing Your Robot</h2>
+<p>Isaac Sim supports URDF import out of the box:</p>
+<pre><code># In Isaac Sim Python API
+from omni.importer.urdf import _urdf
+
+urdf_interface = _urdf.acquire_urdf_interface()
+config = _urdf.ImportConfig()
+config.merge_fixed_joints = False
+config.convex_decomp = False
+config.import_inertia_tensor = True
+
+result, prim_path = urdf_interface.import_robot(
+    "/path/to/robot.urdf", config
+)</code></pre>
+
+<h2>Connecting to ROS2</h2>
+<p>Enable the ROS2 Bridge in Isaac Sim's extension manager, then your robot's joints and sensors publish natively to ROS2 topics.</p>
+<pre><code># Launch ROS2 bridge
+ros2 launch isaac_ros_launch isaac_ros.launch.py
+
+# View camera in ROS2
+ros2 run rqt_image_view rqt_image_view /rgb</code></pre>
+
+<h2>Domain Randomization for Sim-to-Real</h2>
+<p>Isaac Sim's Replicator framework lets you randomize lighting, textures, and object positions to train more robust perception models that transfer to the real world.</p>
+
+<h2>Key Benefits Over Gazebo</h2>
+<ul>
+<li>Ray-traced LiDAR — point clouds match real sensors much more closely</li>
+<li>Physically based rendering for camera simulation</li>
+<li>RTX denoising enables real-time photorealistic frames</li>
+<li>Tight integration with NVIDIA's Isaac SDK and ML pipelines</li>
+</ul>
+    
+        </article>
+
+        <div class="blog-back-row">
+          <a class="btn btn-outline btn-sm" href="index.html">← All Articles</a>
+          <a class="btn btn-primary btn-sm" href="../index.html">Back to Home ↗</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

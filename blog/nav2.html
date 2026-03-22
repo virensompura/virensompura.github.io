@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
+  <title>Nav2 Stack Deep Dive: Autonomous Navigation from Scratch | Viren Sompura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style/style.css"/>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="../index.html">Viren Sompura</a>
+      <nav class="site-nav">
+        <a class="btn btn-outline btn-sm" href="../index.html">Home</a>
+        <a class="btn btn-outline btn-sm" href="index.html">Blog Index</a>
+      </nav>
+    </header>
+
+    <main class="blog-article">
+      <section class="section" style="padding:2rem 0 0;">
+        <div class="blog-page-hero">
+          <div class="section-label">Navigation</div>
+          <div class="section-title">Nav2 Stack Deep Dive: Autonomous Navigation from Scratch</div>
+          <p class="section-sub">By Viren Sompura · May 2025 · 14 min read</p>
+          <div class="blog-toc">
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+              <span style="font-size:1.4rem;">🗺️</span>
+              <strong>Article</strong>
+            </div>
+            <div>Use the back links below to return to the full blog list or the home page.</div>
+          </div>
+        </div>
+
+        <article class="post-body">
+          
+<h2>What is Nav2?</h2>
+<p>Nav2 (Navigation2) is the standard navigation stack for ROS2. It provides a complete solution for autonomous robot navigation including path planning, obstacle avoidance, and behavior trees for high-level task orchestration.</p>
+
+<h2>Core Components</h2>
+<ul>
+<li><strong>Planner Server</strong>: Computes globally optimal paths (NavFn, Smac)</li>
+<li><strong>Controller Server</strong>: Executes local trajectory tracking (DWB, MPPI)</li>
+<li><strong>Costmap 2D</strong>: Represents free, occupied, and unknown space</li>
+<li><strong>BT Navigator</strong>: Orchestrates the navigation behavior tree</li>
+<li><strong>AMCL</strong>: Adaptive Monte Carlo Localization for position estimation</li>
+</ul>
+
+<h2>Minimal Nav2 Launch</h2>
+<pre><code>from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(
+            package='nav2_bringup',
+            executable='bringup_launch.py',
+            parameters=[nav2_params_path]
+        )
+    ])</code></pre>
+
+<h2>Sending a Navigation Goal</h2>
+<pre><code>from geometry_msgs.msg import PoseStamped
+from nav2_simple_commander.robot_navigator import BasicNavigator
+
+navigator = BasicNavigator()
+goal = PoseStamped()
+goal.header.frame_id = 'map'
+goal.pose.position.x = 2.0
+goal.pose.position.y = 1.5
+goal.pose.orientation.w = 1.0
+
+navigator.goToPose(goal)
+while not navigator.isNavComplete():
+    feedback = navigator.getFeedback()</code></pre>
+
+<h2>Costmap Configuration</h2>
+<p>The costmap is the robot's representation of the world. Key parameters:</p>
+<pre><code>global_costmap:
+  ros__parameters:
+    update_frequency: 1.0
+    publish_frequency: 1.0
+    global_frame: map
+    robot_base_frame: base_link
+    use_sim_time: false
+    robot_radius: 0.22
+    resolution: 0.05</code></pre>
+
+<h2>Tips from the Field</h2>
+<ul>
+<li>Always tune the inflation radius to slightly larger than your robot's footprint</li>
+<li>Use the Smac Planner for smoother, curvature-constrained paths</li>
+<li>MPPI controller handles dynamic environments better than DWB</li>
+<li>Set <code>transform_tolerance</code> generously (0.5s) during development</li>
+</ul>
+    
+        </article>
+
+        <div class="blog-back-row">
+          <a class="btn btn-outline btn-sm" href="index.html">← All Articles</a>
+          <a class="btn btn-primary btn-sm" href="../index.html">Back to Home ↗</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

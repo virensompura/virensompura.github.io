@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
+  <title>ROS2 Architecture: Nodes, Topics, Services &amp; Actions Explained | Viren Sompura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style/style.css"/>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="../index.html">Viren Sompura</a>
+      <nav class="site-nav">
+        <a class="btn btn-outline btn-sm" href="../index.html">Home</a>
+        <a class="btn btn-outline btn-sm" href="index.html">Blog Index</a>
+      </nav>
+    </header>
+
+    <main class="blog-article">
+      <section class="section" style="padding:2rem 0 0;">
+        <div class="blog-page-hero">
+          <div class="section-label">ROS2</div>
+          <div class="section-title">ROS2 Architecture: Nodes, Topics, Services &amp; Actions Explained</div>
+          <p class="section-sub">By Viren Sompura · Apr 2025 · 12 min read</p>
+          <div class="blog-toc">
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+              <span style="font-size:1.4rem;">⚡</span>
+              <strong>Article</strong>
+            </div>
+            <div>Use the back links below to return to the full blog list or the home page.</div>
+          </div>
+        </div>
+
+        <article class="post-body">
+          
+<h2>The ROS2 Communication Model</h2>
+<p>Everything in ROS2 revolves around <strong>nodes</strong> — processes that perform computation — and several communication patterns they use to talk to each other. Choosing the right pattern is critical for system performance and reliability.</p>
+
+<h2>Nodes</h2>
+<p>A node is the smallest computational unit in ROS2. Each node typically handles one responsibility: reading a sensor, computing odometry, or planning a path.</p>
+<pre><code>import rclpy
+from rclpy.node import Node
+
+class MyRobot(Node):
+    def __init__(self):
+        super().__init__('my_robot_node')
+        self.get_logger().info('Robot node started!')
+
+def main():
+    rclpy.init()
+    node = MyRobot()
+    rclpy.spin(node)
+    rclpy.shutdown()</code></pre>
+
+<h2>Topics: Publish / Subscribe</h2>
+<p>Topics are the backbone of sensor data and state streaming. They're asynchronous and support many-to-many communication.</p>
+<pre><code># Publisher
+self.pub = self.create_publisher(LaserScan, '/scan', 10)
+
+# Subscriber
+self.sub = self.create_subscription(
+    LaserScan, '/scan', self.scan_callback, 10)</code></pre>
+<p><strong>Use topics for</strong>: sensor data (LiDAR, IMU, camera), velocity commands, robot state, and any continuous stream.</p>
+
+<h2>Services: Request / Response</h2>
+<p>Services are synchronous — the client blocks until the server responds. Use for discrete, short-duration tasks.</p>
+<pre><code># Service call
+from nav_msgs.srv import GetMap
+client = self.create_client(GetMap, '/map_server/map')
+req = GetMap.Request()
+future = client.call_async(req)</code></pre>
+<p><strong>Use services for</strong>: getting map data, triggering resets, querying robot configuration.</p>
+
+<h2>Actions: Long-running Tasks</h2>
+<p>Actions are ideal for navigation goals, arm movements, or any task that takes time and needs progress feedback.</p>
+<pre><code>from nav2_msgs.action import NavigateToPose
+from rclpy.action import ActionClient
+
+self._action_client = ActionClient(
+    self, NavigateToPose, 'navigate_to_pose')</code></pre>
+<p><strong>Use actions for</strong>: go-to-pose goals, manipulation sequences, docking procedures.</p>
+
+<h2>Choosing the Right Pattern</h2>
+<ul>
+<li><strong>Continuous stream</strong> → Topic (pub/sub)</li>
+<li><strong>Quick request/response</strong> → Service</li>
+<li><strong>Long task with feedback</strong> → Action</li>
+<li><strong>Shared global state</strong> → Parameter server</li>
+</ul>
+    
+        </article>
+
+        <div class="blog-back-row">
+          <a class="btn btn-outline btn-sm" href="index.html">← All Articles</a>
+          <a class="btn btn-primary btn-sm" href="../index.html">Back to Home ↗</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
+  <title>SLAM Demystified: From Theory to ROS2 Implementation | Viren Sompura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style/style.css"/>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="../index.html">Viren Sompura</a>
+      <nav class="site-nav">
+        <a class="btn btn-outline btn-sm" href="../index.html">Home</a>
+        <a class="btn btn-outline btn-sm" href="index.html">Blog Index</a>
+      </nav>
+    </header>
+
+    <main class="blog-article">
+      <section class="section" style="padding:2rem 0 0;">
+        <div class="blog-page-hero">
+          <div class="section-label">SLAM</div>
+          <div class="section-title">SLAM Demystified: From Theory to ROS2 Implementation</div>
+          <p class="section-sub">By Viren Sompura · Jul 2025 · 16 min read</p>
+          <div class="blog-toc">
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+              <span style="font-size:1.4rem;">🧭</span>
+              <strong>Article</strong>
+            </div>
+            <div>Use the back links below to return to the full blog list or the home page.</div>
+          </div>
+        </div>
+
+        <article class="post-body">
+          
+<h2>What is SLAM?</h2>
+<p>Simultaneous Localization and Mapping (SLAM) solves a chicken-and-egg problem: to build a map you need to know where you are, but to know where you are you need a map. Modern SLAM algorithms solve both simultaneously.</p>
+
+<h2>The SLAM Pipeline</h2>
+<ul>
+<li><strong>Sensor Input</strong>: LiDAR, stereo camera, RGB-D, or IMU</li>
+<li><strong>Feature Extraction</strong>: Identifying landmarks in sensor data</li>
+<li><strong>Data Association</strong>: Matching current observations to known landmarks</li>
+<li><strong>State Estimation</strong>: Updating robot pose and map (EKF, particle filter, factor graph)</li>
+<li><strong>Loop Closure</strong>: Recognizing previously visited places to correct drift</li>
+</ul>
+
+<h2>LiDAR SLAM with RTAB-Map</h2>
+<pre><code>ros2 launch rtabmap_ros rtabmap.launch.py \
+  --ros-args \
+  -p use_sim_time:=false \
+  -p subscribe_scan:=true \
+  -p frame_id:=base_link \
+  -p odom_frame_id:=odom \
+  -p queue_size:=10</code></pre>
+
+<h2>Visual SLAM with ORB-SLAM3 + ROS2</h2>
+<pre><code>ros2 run orbslam3_ros stereo \
+  --ros-args \
+  -p vocabulary_path:=/path/to/ORBvoc.txt \
+  -p settings_path:=/path/to/stereo_params.yaml</code></pre>
+
+<h2>Integrating SLAM with Nav2</h2>
+<p>Once your SLAM system publishes a <code>/map</code> topic and maintains the <code>map→odom</code> transform, Nav2 picks it up automatically:</p>
+<pre><code># Verify transforms are being published
+ros2 run tf2_tools view_frames
+
+# Check map is available
+ros2 topic echo /map --once</code></pre>
+
+<h2>Common Pitfalls</h2>
+<ul>
+<li><strong>TF drift</strong>: Always ensure your odom source is reliable before adding SLAM</li>
+<li><strong>Loop closure frequency</strong>: Too aggressive causes jitter; tune the threshold carefully</li>
+<li><strong>Memory usage</strong>: RTAB-Map can grow large; configure max memory and working memory</li>
+<li><strong>Time sync</strong>: Ensure all sensor timestamps are synchronized (use <code>chrony</code> or hardware sync)</li>
+</ul>
+    
+        </article>
+
+        <div class="blog-back-row">
+          <a class="btn btn-outline btn-sm" href="index.html">← All Articles</a>
+          <a class="btn btn-primary btn-sm" href="../index.html">Back to Home ↗</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

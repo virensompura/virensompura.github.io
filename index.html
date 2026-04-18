@@ -58,7 +58,7 @@
         <div><div class="stat-val">9.0</div><div class="stat-lab">M.Tech CGPA</div></div>
       </div>
       <div class="hero-actions">
-        <a href="tel:+919825885177" class="btn btn-primary">Hire Me ↗</a>
+        <a href="mailto:sompuraviren03@gmail.com" class="btn btn-primary">Hire Me ↗</a>
         <a href="#" onclick="navigate('projects')" class="btn btn-outline">View Projects</a>
         <a href="assets/Viren_Sompura_Resume_1.pdf" download class="btn btn-outline">Download CV ↓</a>
         <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer" class="btn btn-social" aria-label="LinkedIn">
@@ -166,8 +166,8 @@
           <div class="info-row"><span class="info-label">Name</span><span class="info-val">Viren Sompura</span></div>
           <div class="info-row"><span class="info-label">DOB</span><span class="info-val">January 28, 1999</span></div>
           <div class="info-row"><span class="info-label">Location</span><span class="info-val">Ahmedabad, Gujarat</span></div>
-          <div class="info-row"><span class="info-label">Email</span><span class="info-val" style="word-break:break-all;"><a href="mailto:sompuraviren03@gmail.com"><span class="__cf_email__" data-cfemail="7e0d11130e0b0c1f08170c1b104e4d3e19131f1712501d1113">[email&#160;protected]</span></a></span></div>
-          <div class="info-row"><span class="info-label">Phone</span><span class="info-val">+91-9825885177</span></div>
+          <div class="info-row"><span class="info-label">Email</span><span class="info-val" style="word-break:break-all;"><a href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a></span></div>
+          <div class="info-row"><span class="info-label">Phone</span><span class="info-val">Available on request</span></div>
         </div>
       </div>
       <div class="about-content reveal" style="transition-delay:.1s;">
@@ -255,15 +255,15 @@
             <div class="ci-icon">📍</div>
             <div><div class="ci-label">Location</div><div class="ci-val">Ahmedabad, Gujarat, India</div></div>
           </div>
-          <a href="tel:+919825885177" class="contact-item">
+          <div class="contact-item">
             <div class="ci-icon">📞</div>
-            <div><div class="ci-label">Phone</div><div class="ci-val">+91-9825885177</div></div>
-          </a>
+            <div><div class="ci-label">Phone</div><div class="ci-val">Available on request</div></div>
+          </div>
           <a href="mailto:sompuraviren03@gmail.com" class="contact-item">
             <div class="ci-icon">✉️</div>
             <div>
               <div class="ci-label">Email</div>
-              <div class="ci-val"><span class="__cf_email__" data-cfemail="7704181a07020516011e051219474437101a161e1b5914181a">[email&#160;protected]</span></div>
+              <div class="ci-val">sompuraviren03@gmail.com</div>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" class="contact-item">
@@ -332,8 +332,8 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul class="footer-links">
-        <li><a href="mailto:sompuraviren03@gmail.com">Email Me</a></li>
-        <li><a href="tel:+919825885177">+91-9825885177</a></li>
+        <li><a href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a></li>
+        <li>Phone: Available on request</li>
         <li><a href="assets/Viren_Sompura_Resume_1.pdf" download>Download CV</a></li>
       </ul>
     </div>
@@ -1022,8 +1022,7 @@ function projectCard(p){
   const mediaHtml = hasVideo
     ? `<div class="project-media" style="position:relative;overflow:hidden;background:#0d1117;">
         <video class="pcard-video" src="${p.videoSrc}" loop muted playsinline preload="metadata"
-          style="width:100%;height:100%;object-fit:cover;display:block;"
-          onerror="this.parentElement.innerHTML='<div class=\\"media-placeholder\\"><div class=\\"media-ph-icon\\">${p.icon}</div><div class=\\"media-ph-text\\">${p.category}</div></div>'">
+          style="width:100%;height:100%;object-fit:cover;display:block;">
         </video>
        </div>`
     : `<div class="project-media">
@@ -1052,6 +1051,14 @@ function buildProjects(){
   const featured3 = PROJECTS.slice(0,3);
   if(featured) featured.innerHTML = featured3.map(projectCard).join('');
   if(all) all.innerHTML = PROJECTS.map(projectCard).join('');
+
+  // Handle video errors - replace with placeholder
+  document.querySelectorAll('.pcard-video').forEach((video, idx) => {
+    const project = PROJECTS[idx % PROJECTS.length];
+    video.onerror = function() {
+      this.parentElement.innerHTML = `<div class="media-placeholder"><div class="media-ph-icon">${project.icon}</div><div class="media-ph-text">${project.category}</div></div>`;
+    };
+  });
 
   // Autoplay videos when they scroll into view; pause when they leave
   if('IntersectionObserver' in window){
@@ -1137,10 +1144,18 @@ function handleFormSubmit(btn){
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  fetch('https://formspree.io/f/xkoqaakq', {
+  // Using Web3Forms - free form backend service
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, subject, message })
+    body: JSON.stringify({
+      access_key: '84e28f1a-b396-4280-8df7-ad8e169b9cb7', // Get your free key at https://web3forms.com
+      name: name,
+      email: email,
+      subject: subject || 'New Contact Form Submission',
+      message: message,
+      from_name: 'Portfolio Contact Form'
+    })
   })
   .then(res => {
     if(res.ok){

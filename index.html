@@ -344,6 +344,25 @@
   </div>
 </footer>
 
+<!-- PROJECT MODAL -->
+<div class="project-modal" id="projectModal">
+  <div class="modal-backdrop" onclick="closeProjectModal()"></div>
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">✕</button>
+    <div class="modal-media" id="modalMedia"></div>
+    <div class="modal-body">
+      <div class="modal-cat" id="modalCat"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-tags" id="modalTags"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-actions">
+        <a href="#" id="modalLink" target="_blank" class="btn btn-primary">View Full Project ↗</a>
+        <button class="btn btn-outline" onclick="closeProjectModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ─── DATA ───────────────────────────────────────────────
 const SKILLS = [
@@ -411,8 +430,21 @@ const PROJECTS = [
     title:'Curio: Museum Guidance Robot',
     category:'Mobile Robot',
     desc:'Full-stack guidance robot for Kolkata Museum using Jetson Nano with ROS2-based autonomous navigation, SLAM, and natural language Q&A for museum exhibits.',
+    fullDesc:`
+      <p>Curio is an autonomous museum guidance robot developed for the Kolkata Museum. It provides interactive tours, answers visitor questions about exhibits using natural language processing, and navigates autonomously through the museum halls.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Autonomous Navigation:</strong> Uses ROS2 Nav2 stack with SLAM for real-time mapping and path planning</li>
+        <li><strong>Natural Language Q&A:</strong> Integrated speech recognition and synthesis for interactive conversations</li>
+        <li><strong>Custom Hardware:</strong> Built on Jetson Nano with Atmega2560 for low-level motor control</li>
+        <li><strong>PCB Design:</strong> Custom motor driver and sensor interface boards</li>
+      </ul>
+      <h3>Technical Stack</h3>
+      <p>ROS2 Humble, Nav2, SLAM Toolbox, Python, C++, Jetson Nano, Atmega2560, RPLiDAR A1M8</p>
+    `,
     tags:['ROS2','Nav2','SLAM','Jetson Nano','Atmega2560','PCB Design'],
     videoSrc:'assets/videos/curio_robot.mp4',
+    images:[],
     link:'https://drive.google.com/file/d/1SGBgsC9yg2MlOd70hP9E2P-MdjG-vpHD/view?usp=sharing',
     icon:'🤖'
   },
@@ -421,8 +453,21 @@ const PROJECTS = [
     title:'Humanoid Greeter Robot',
     category:'Humanoid Robot',
     desc:'Companion humanoid robot that greets and interacts with museum visitors using motion sensors, speech synthesis, and crowd-aware behavior logic.',
+    fullDesc:`
+      <p>A companion humanoid robot designed to work alongside Curio, providing a friendly face to greet and interact with museum visitors at the entrance and key exhibit areas.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Motion Detection:</strong> PIR and ultrasonic sensors detect approaching visitors</li>
+        <li><strong>Speech Synthesis:</strong> Pre-recorded and dynamic speech for greetings and information</li>
+        <li><strong>Gesture Control:</strong> Servo-driven arms and head for natural gestures</li>
+        <li><strong>Crowd-Aware:</strong> Adjusts behavior based on crowd density</li>
+      </ul>
+      <h3>Technical Stack</h3>
+      <p>Arduino Mega, Servo Motors, PIR Sensors, Ultrasonic Sensors, MP3 Module, Custom 3D Printed Parts</p>
+    `,
     tags:['Humanoid','Sensors','Speech','Interaction'],
     videoSrc:'assets/videos/humanoid-robot-landscape.mp4',
+    images:[],
     link:'https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=sharing',
     icon:'🦾'
   },
@@ -431,8 +476,21 @@ const PROJECTS = [
     title:'AMR with LiDAR & A* Algorithm',
     category:'Autonomous Mobile Robot',
     desc:'Prototype AMR using Raspberry Pi 4 for ROS integration and Arduino Mega for low-level control. Real-time obstacle mapping with RPLiDAR A1M8 and A* path planning.',
+    fullDesc:`
+      <p>An Autonomous Mobile Robot (AMR) prototype demonstrating real-time obstacle avoidance and path planning using LiDAR sensing and the A* algorithm.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>LiDAR Mapping:</strong> RPLiDAR A1M8 for 360° environmental scanning</li>
+        <li><strong>A* Path Planning:</strong> Optimal path calculation with dynamic obstacle avoidance</li>
+        <li><strong>Dual Processor:</strong> Raspberry Pi 4 for ROS2 and Arduino Mega for motor control</li>
+        <li><strong>Real-time Visualization:</strong> RViz integration for debugging and monitoring</li>
+      </ul>
+      <h3>Technical Stack</h3>
+      <p>ROS2, Raspberry Pi 4, Arduino Mega, RPLiDAR A1M8, Python, C++, Nav2</p>
+    `,
     tags:['ROS2','LiDAR','A*','Raspberry Pi 4','Arduino Mega'],
     videoSrc:'assets/videos/amr-lidar.mp4',
+    images:[],
     link:'https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=drive_link',
     icon:'🚗'
   },
@@ -441,8 +499,23 @@ const PROJECTS = [
     title:'ROS2 Advanced Development Suite',
     category:'Software Stack',
     desc:'Comprehensive ROS2 development including ORB-SLAM3 integration, RTAB-Map 3D mapping, autonomous docking, web control interface, RS-485 motor driver, micro-ROS MCU deployment, and FreeRTOS optimization.',
+    fullDesc:`
+      <p>A comprehensive suite of ROS2 tools and integrations developed for advanced robotics applications, covering everything from visual SLAM to embedded microcontroller communication.</p>
+      <h3>Key Components</h3>
+      <ul>
+        <li><strong>ORB-SLAM3 Integration:</strong> Visual SLAM with monocular and stereo camera support</li>
+        <li><strong>RTAB-Map 3D Mapping:</strong> Real-time appearance-based mapping for navigation</li>
+        <li><strong>Autonomous Docking:</strong> Precision docking for charging stations</li>
+        <li><strong>Web Control Interface:</strong> Browser-based robot control and monitoring</li>
+        <li><strong>RS-485 Motor Driver:</strong> Industrial communication for motor control</li>
+        <li><strong>micro-ROS Deployment:</strong> ROS2 on ESP32 and STM32 microcontrollers</li>
+      </ul>
+      <h3>Technical Stack</h3>
+      <p>ROS2 Humble, ORB-SLAM3, RTAB-Map, micro-ROS, FreeRTOS, Flask, RS-485, ESP32</p>
+    `,
     tags:['ORB-SLAM3','RTAB-Map','micro-ROS','FreeRTOS','RS-485','Nav2'],
     videoSrc:'assets/videos/rs-com.mp4',
+    images:[],
     link:'https://drive.google.com/drive/folders/1UoL6GgpReF8u6i3Q7rhB1vBSPKt9ppLa?usp=sharing',
     icon:'⚙️'
   },
@@ -451,8 +524,21 @@ const PROJECTS = [
     title:'ROS2 Sensor Integration & Driver Development',
     category:'Sensor Fusion',
     desc:'Custom ROS2 drivers for Qwiic ICM20948 IMU and VL53L0X ToF sensor. Engineered robust sensor fusion algorithm significantly enhancing localization accuracy and obstacle detection reliability.',
+    fullDesc:`
+      <p>Development of custom ROS2 drivers and sensor fusion algorithms for precise robot localization and obstacle detection using IMU and Time-of-Flight sensors.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>ICM20948 IMU Driver:</strong> 9-DOF IMU integration with calibration routines</li>
+        <li><strong>VL53L0X ToF Driver:</strong> Time-of-Flight distance sensing for obstacle detection</li>
+        <li><strong>Sensor Fusion:</strong> Extended Kalman Filter combining IMU and odometry data</li>
+        <li><strong>ROS2 Packages:</strong> Clean, documented, reusable ROS2 packages</li>
+      </ul>
+      <h3>Technical Stack</h3>
+      <p>ROS2 Humble, Python, C++, I2C Communication, Qwiic Ecosystem, Extended Kalman Filter</p>
+    `,
     tags:['ROS2','IMU','ToF Sensor','Sensor Fusion','Custom Drivers'],
     videoSrc:'assets/videos/IMU-Integration-ROS2.mp4',
+    images:[],
     link:'https://drive.google.com/drive/folders/1-N_lamHz9trtk43rRTvo55dQXPBXFD0H?usp=sharing',
     icon:'📡'
   },
@@ -461,8 +547,21 @@ const PROJECTS = [
     title:'Automatic Cocoon Sorting Machine',
     category:'Industrial Automation',
     desc:'Low-cost prototype for automated sorting of male and female cocoons by weight. Achieved 600 cocoons/hour sorting rate, improving efficiency in silk production.',
+    fullDesc:`
+      <p>An industrial automation project designed to improve efficiency in silk production by automatically sorting cocoons based on weight, distinguishing between male and female cocoons.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Weight-Based Sorting:</strong> Precision load cells for accurate weight measurement</li>
+        <li><strong>High Throughput:</strong> 600 cocoons per hour sorting rate</li>
+        <li><strong>Low Cost:</strong> Designed for affordability in rural silk production</li>
+        <li><strong>Mechanical Design:</strong> Custom conveyor and sorting mechanism</li>
+      </ul>
+      <h3>Technical Stack</h3>
+      <p>Arduino Uno, Load Cells, HX711 Amplifier, Servo Motors, SOLIDWORKS, 3D Printing</p>
+    `,
     tags:['Arduino','Weight Sensors','Automation','Mechanical Design'],
     videoSrc:'assets/videos/cocoon.mp4',
+    images:[],
     link:'https://drive.google.com/drive/folders/1Y7df3zIDsXdp7yoCfvPIMWGKgUo8jSRw?usp=sharing',
     icon:'🏭'
   }
@@ -1024,6 +1123,7 @@ function projectCard(p){
         <video class="pcard-video" src="${p.videoSrc}" loop muted playsinline preload="metadata"
           style="width:100%;height:100%;object-fit:cover;display:block;">
         </video>
+        <div class="play-overlay"><div class="play-circle">▶</div></div>
        </div>`
     : `<div class="project-media">
         <div class="media-placeholder">
@@ -1032,14 +1132,14 @@ function projectCard(p){
         </div>
        </div>`;
   return `
-    <div class="project-card reveal">
+    <div class="project-card reveal" onclick="openProjectModal('${p.id}')" style="cursor:pointer;">
       ${mediaHtml}
       <div class="project-body">
         <div class="project-cat">${p.category}</div>
         <div class="project-title">${p.title}</div>
         <div class="project-desc">${p.desc}</div>
         <div class="project-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-        ${p.link&&p.link!=='#'?`<a href="${p.link}" target="_blank" class="project-link">View Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg></a>`:''}
+        <span class="project-link">View Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg></span>
       </div>
     </div>
   `;
@@ -1183,6 +1283,69 @@ function handleFormSubmit(btn){
     }, 3000);
   });
 }
+
+// ─── PROJECT MODAL ──────────────────────────────────────
+function openProjectModal(projectId){
+  const project = PROJECTS.find(p => p.id === projectId);
+  if(!project) return;
+  
+  const modal = document.getElementById('projectModal');
+  const mediaEl = document.getElementById('modalMedia');
+  const catEl = document.getElementById('modalCat');
+  const titleEl = document.getElementById('modalTitle');
+  const tagsEl = document.getElementById('modalTags');
+  const descEl = document.getElementById('modalDesc');
+  const linkEl = document.getElementById('modalLink');
+  
+  // Set media (video or placeholder)
+  if(project.videoSrc && project.videoSrc !== ''){
+    mediaEl.innerHTML = `
+      <video src="${project.videoSrc}" controls autoplay loop muted playsinline 
+        style="width:100%;height:100%;object-fit:contain;background:#000;">
+      </video>
+    `;
+  } else {
+    mediaEl.innerHTML = `
+      <div class="media-placeholder" style="height:100%;min-height:300px;">
+        <div class="media-ph-icon">${project.icon}</div>
+        <div class="media-ph-text">${project.category}</div>
+      </div>
+    `;
+  }
+  
+  // Set content
+  catEl.textContent = project.category;
+  titleEl.textContent = project.title;
+  tagsEl.innerHTML = project.tags.map(t => `<span class="tag">${t}</span>`).join('');
+  descEl.innerHTML = project.fullDesc || `<p>${project.desc}</p>`;
+  
+  // Set link
+  if(project.link && project.link !== '#'){
+    linkEl.href = project.link;
+    linkEl.style.display = 'inline-flex';
+  } else {
+    linkEl.style.display = 'none';
+  }
+  
+  // Show modal
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal(){
+  const modal = document.getElementById('projectModal');
+  const video = modal.querySelector('video');
+  if(video) video.pause();
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    closeProjectModal();
+  }
+});
 
 // ─── SCROLL REVEAL ──────────────────────────────────────
 function initReveal(){

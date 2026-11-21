@@ -7,6 +7,7 @@ export const site = {
   url: 'https://virensompura.github.io',
   name: 'Viren Sompura',
   role: 'Robotics Engineer',
+  homeTitle: 'Viren Sompura — Robotics Engineer | ROS 2 & Autonomous Systems',
   tagline: 'Engineering autonomous systems, from hardware to intelligence.',
   intro: 'I design, integrate, and develop robotic systems by bringing together embedded electronics, control systems, ROS 2, perception, simulation, and autonomous navigation.',
   description: 'Viren Sompura is a Robotics Engineer working across ROS 2, autonomous navigation, SLAM, embedded systems, and robot hardware-software integration.',
@@ -15,6 +16,10 @@ export const site = {
   resume: 'assets/Viren_Sompura_Resume_1.pdf',
   ogImage: 'assets/img/og-image.jpg',
   portrait: { src: 'assets/img/viren-sompura.webp', w: 330, h: 432, alt: 'Portrait of Viren Sompura' },
+  hero: {
+    image: { src: 'assets/img/hero-curio.webp', w: 576, h: 720, alt: 'Curio museum guidance robot with glowing blue eyes in a museum gallery' },
+    video: 'assets/videos/previews/hero-curio.mp4',
+  },
   links: {
     linkedin: 'https://www.linkedin.com/in/viren-sompura/',
     github: 'https://github.com/virensompura',
@@ -46,7 +51,7 @@ export const projects = [
     context: 'Vama Communications Pvt. Ltd. — R&D',
     role: 'Led the development of the robot’s hardware and software in the R&D department.',
     tech: ['ROS 2', 'Nav2', 'SLAM', 'Jetson Nano', 'Atmega2560', 'PCB design'],
-    cover: img('curio-museum.webp', 960, 720, 'Curio guidance robot standing in a gallery at the Kolkata Museum', '50% 30%'),
+    cover: img('curio-fleet.webp', 960, 720, 'A row of Curio guidance robots with glowing eyes and touchscreens', '50% 50%'),
     video: { src: 'assets/videos/curio_robot.mp4', poster: 'assets/img/posters/curio.webp', w: 1280, h: 720 },
     overview: 'Curio is a wheeled guidance robot built for the Kolkata Museum. Visitors can interact with the robot, ask science and technology questions, and hear explanations of the museum’s exhibits.',
     objective: 'Give museum visitors an interactive guide that can move through the galleries and explain every exhibit.',
@@ -75,6 +80,7 @@ export const projects = [
       'System latency reduced by 25% through new software modules (as stated in CV).',
     ],
     gallery: [
+      img('curio-fleet.webp', 960, 720, 'A row of Curio guidance robots'),
       img('curio-museum.webp', 960, 720, 'Curio in a museum gallery'),
       img('curio-corridor.webp', 1200, 676, 'Curio beside an exhibit hall at the museum'),
     ],
@@ -144,7 +150,7 @@ export const projects = [
     context: null,
     role: null, // TODO(owner)
     tech: ['ROS', 'RPLiDAR A1M8', 'A* search', 'Raspberry Pi 4', 'Arduino Mega'],
-    cover: img('amr-1.webp', 720, 1282, 'Autonomous mobile robot prototype with a LiDAR sensor', '50% 55%'),
+    cover: img('amr-lab.webp', 640, 480, 'LiDAR-equipped mobile robot driving across a lab floor while its operator monitors it from a laptop', '50% 50%'),
     video: { src: 'assets/videos/amr-lidar.mp4', poster: 'assets/img/posters/amr-lidar.webp', w: 1280, h: 720 },
     overview: 'A prototype autonomous mobile robot that maps obstacles in real time with a 2D LiDAR and plans collision-free paths with the A* search algorithm.',
     objective: 'Demonstrate real-time obstacle mapping and path planning on low-cost compute.',
@@ -168,6 +174,7 @@ export const projects = [
     challenges: [],
     results: [],
     gallery: [
+      img('amr-lab.webp', 640, 480, 'AMR prototype during a test run in the lab'),
       img('amr-1.webp', 720, 1282, 'AMR prototype'),
       img('amr-2.webp', 720, 1282, 'AMR prototype during a navigation run'),
     ],

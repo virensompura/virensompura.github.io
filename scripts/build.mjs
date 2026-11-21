@@ -27,6 +27,8 @@ const icons = {
   arrow: '<svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   external: '<svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   download: '<svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 2v8M4.5 6.5L8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  moon: '<svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  sun: '<svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
 };
 
 // Per-page path context: relative prefix so the site works at the domain root and from a local server.
@@ -55,12 +57,15 @@ function header(c, active) {
   return `<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="${c.u('')}" aria-label="Viren Sompura — home"><span class="brand-mark">VS.</span><span class="brand-name">Viren Sompura</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <a class="brand" href="${c.u('')}" aria-label="Viren Sompura — home"><span class="brand-mark" aria-hidden="true">VS</span><span class="brand-text" aria-hidden="true"><span class="brand-name">Viren Sompura</span><span class="brand-role">${esc(site.role)}</span></span></a>
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul>${items}<li><a href="${c.u(site.resume)}" target="_blank" rel="noopener">Resume</a></li></ul>
       <a class="btn btn-primary btn-sm nav-cta" href="${c.u('contact/')}"${active === 'contact' ? ' aria-current="page"' : ''}>Get in touch</a>
     </nav>
+    <div class="header-tools">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">${icons.moon}${icons.sun}</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    </div>
   </div>
 </header>`;
 }
@@ -88,11 +93,15 @@ function footer(c) {
 </footer>`;
 }
 
-function layout({ out, title, description, active, body, absolute = false, jsonLd = null, ogImage = site.ogImage, type = 'website', noindex = false }) {
+const DEFAULT_IMAGE = { src: site.ogImage, w: 1200, h: 630, alt: `${site.name} — ${site.role}` };
+
+function layout({ out, title, description, active, body, absolute = false, jsonLd = null, image = DEFAULT_IMAGE, type = 'website', published = null, noindex = false }) {
   const c = ctx(out, absolute);
   const urlPath = out.replace(/index\.html$/, '');
   const canonical = `${site.url}/${urlPath}`;
-  const fullTitle = title === site.name ? `${site.name} — ${site.role}` : `${title} · ${site.name}`;
+  const suffixed = `${title} · ${site.name}`;
+  const fullTitle = title === site.name ? site.homeTitle : suffixed.length > 65 ? title : suffixed;
+  const ld = jsonLd && (Array.isArray(jsonLd) ? { '@context': 'https://schema.org', '@graph': jsonLd } : { '@context': 'https://schema.org', ...jsonLd });
   const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -102,22 +111,33 @@ function layout({ out, title, description, active, body, absolute = false, jsonL
 <meta name="description" content="${esc(description)}">
 ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">`}
 <meta name="author" content="${site.name}">
+<meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#F5F6F3">
+<script>(function(d){d.classList.add('js');var t;try{t=localStorage.getItem('theme')}catch(e){}d.setAttribute('data-theme',t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))})(document.documentElement)</script>
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="${site.name}">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="${esc(fullTitle)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${site.url}/${ogImage}">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="${site.url}/${image.src}">
+<meta property="og:image:width" content="${image.w}">
+<meta property="og:image:height" content="${image.h}">
+<meta property="og:image:alt" content="${esc(image.alt)}">
+${published ? `<meta property="article:published_time" content="${published}">\n<meta property="article:author" content="${site.url}/about/">\n` : ''}<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@${site.links.x.split('/').pop()}">
+<meta name="twitter:title" content="${esc(fullTitle)}">
+<meta name="twitter:description" content="${esc(description)}">
+<meta name="twitter:image" content="${site.url}/${image.src}">
+<meta name="twitter:image:alt" content="${esc(image.alt)}">
 <link rel="icon" href="${c.u('assets/img/favicon.svg')}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${c.u('assets/img/apple-touch-icon.png')}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="${c.u('style/style.css')}">
-<script>document.documentElement.classList.add('js')</script>
 <script src="${c.u('js/site.js')}" defer></script>
-${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : ''}
+${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 </head>
 <body>
 ${header(c, active)}
@@ -149,15 +169,18 @@ function pageHead({ eyebrow, title, lead, crumbs = null, c }) {
 const status = (s) => `<span class="status status-${s.toLowerCase().replace(/\s+/g, '-')}">${esc(s)}</span>`;
 const arrowLink = (c, href, label, cls = 'link-arrow') => `<a class="${cls}" href="${c.u(href)}"${linkAttrs(href)}>${esc(label)} ${ext(href) ? icons.external : icons.arrow}</a>`;
 
-function media(c, image, { sizes = '(min-width: 900px) 50vw, 100vw', eager = false, cls = 'card-media', label = '' } = {}) {
+function media(c, image, { sizes = '(min-width: 900px) 50vw, 100vw', eager = false, cls = 'card-media', label = '', video = null } = {}) {
   if (!image) return `<div class="${cls} media-placeholder" aria-hidden="true"><span>${esc(label)}</span></div>`;
-  return `<div class="${cls}"><img src="${c.u(image.src)}" width="${image.w}" height="${image.h}" alt="${esc(image.alt)}"${image.pos ? ` style="object-position:${image.pos}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" sizes="${sizes}"></div>`;
+  const clip = video ? `<video class="media-video" data-autoplay muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"${image.pos ? ` style="object-position:${image.pos}"` : ''}><source src="${c.u(video)}" type="video/mp4"></video>` : '';
+  return `<div class="${cls}"><img src="${c.u(image.src)}" width="${image.w}" height="${image.h}" alt="${esc(image.alt)}"${image.pos ? ` style="object-position:${image.pos}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" sizes="${sizes}">${clip}</div>`;
 }
+
+const previewOf = (p) => (p.video ? `assets/videos/previews/${p.id}.mp4` : null);
 
 function projectCard(c, p, { level = 3 } = {}) {
   const initials = p.title.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).slice(0, 2).map((w) => w[0]).join('');
   return `<article class="project-card reveal" data-filter-item data-categories="${p.categories.join(' ')}">
-  ${media(c, p.cover, { label: initials })}
+  ${media(c, p.cover, { label: initials, video: previewOf(p) })}
   <div class="card-body">
     <p class="card-meta"><span>${esc(p.domain)}</span>${status(p.status)}</p>
     <h${level} class="card-title"><a class="stretched" href="${c.u(`work/${p.id}.html`)}">${esc(p.title)}</a></h${level}>
@@ -252,8 +275,8 @@ const notesSorted = [...C.notes].sort((a, b) => b.date.localeCompare(a.date));
 
 // ─── HOME ────────────────────────────────────────────────
 const personLd = {
-  '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${site.url}/#person`,
   name: site.name,
   jobTitle: site.role,
   url: `${site.url}/`,
@@ -264,21 +287,26 @@ const personLd = {
   alumniOf: C.education.map((e) => ({ '@type': 'CollegeOrUniversity', name: e.org })),
   knowsAbout: ['Robotics', 'ROS 2', 'Autonomous navigation', 'SLAM', 'Embedded systems', 'Sensor fusion'],
 };
+const websiteLd = { '@type': 'WebSite', '@id': `${site.url}/#website`, url: `${site.url}/`, name: site.name, description: site.description, inLanguage: 'en', publisher: { '@id': `${site.url}/#person` } };
+const crumbsLd = (items) => ({
+  '@type': 'BreadcrumbList',
+  itemListElement: [['Home', ''], ...items].map(([name, path], i) => ({ '@type': 'ListItem', position: i + 1, name, item: `${site.url}/${path}` })),
+});
 
 layout({
   out: 'index.html',
   title: site.name,
   description: site.description,
   active: 'home',
-  jsonLd: personLd,
+  jsonLd: [personLd, websiteLd],
   body: (c) => {
-    const curio = projectById.curio;
+    const [lead, rest] = site.tagline.split(/,\s*/);
     return `
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">${esc(site.role)}</p>
-      <h1 class="hero-title">${esc(site.tagline)}</h1>
+      <h1 class="hero-title">${esc(lead)}, <span class="text-gradient">${esc(rest)}</span></h1>
       <p class="hero-lead">${esc(site.intro)}</p>
       <div class="actions">
         <a class="btn btn-primary" href="${c.u('work/')}">Explore my work</a>
@@ -287,8 +315,12 @@ layout({
       </div>
     </div>
     <figure class="hero-media">
-      ${media(c, curio.cover, { eager: true, cls: 'hero-image', sizes: '(min-width: 900px) 45vw, 100vw' })}
-      <figcaption><a href="${c.u('work/curio.html')}">Curio</a> — museum guidance robot at the Kolkata Museum. Frame from project video.</figcaption>
+      <div class="hero-visual">
+        ${media(c, site.hero.image, { eager: true, cls: 'hero-image', sizes: '(min-width: 900px) 480px, 100vw', video: site.hero.video })}
+        <span class="hero-chip hero-chip-1" aria-hidden="true"><span class="live-dot"></span>ROS 2 · Nav2 · SLAM</span>
+        <span class="hero-chip hero-chip-2" aria-hidden="true">Jetson Nano · Custom PCB</span>
+      </div>
+      <figcaption><a href="${c.u('work/curio.html')}">Curio</a> — museum guidance robot at the Kolkata Museum. Footage from the project video.</figcaption>
     </figure>
   </div>
 </section>
@@ -345,7 +377,7 @@ ${contactCta(c)}`;
 // ─── WORK ────────────────────────────────────────────────
 layout({
   out: 'work/index.html',
-  title: 'Work',
+  title: 'Robotics Projects & Case Studies',
   description: 'Robotics projects by Viren Sompura: autonomous mobile robots, ROS 2 navigation, SLAM, embedded firmware, and robot hardware.',
   active: 'work',
   body: (c) => `
@@ -383,7 +415,7 @@ C.projects.forEach((p, idx) => {
 
   const meta = [['Status', status(p.status)], ['Domain', esc(p.domain)], p.context && ['Context', esc(p.context)], p.role && ['Role', esc(p.role)]].filter(Boolean);
   const hero = p.video
-    ? `<figure class="case-media"><video controls preload="none" playsinline poster="../${p.video.poster}" width="${p.video.w}" height="${p.video.h}"><source src="../${p.video.src}" type="video/mp4">Your browser does not support embedded video. <a href="../${p.video.src}">Download the project video</a>.</video><figcaption>Project video</figcaption></figure>`
+    ? `<figure class="case-media"><video controls data-autoplay preload="none" playsinline poster="../${p.video.poster}" width="${p.video.w}" height="${p.video.h}"><source src="../${p.video.src}" type="video/mp4">Your browser does not support embedded video. <a href="../${p.video.src}">Download the project video</a>.</video><figcaption>Project video — plays muted while in view. Use the controls for sound.</figcaption></figure>`
     : p.cover ? `<figure class="case-media">${media({ u: (x) => `../${x}` }, p.cover, { eager: true, cls: 'case-image' })}</figure>` : '';
 
   layout({
@@ -392,7 +424,11 @@ C.projects.forEach((p, idx) => {
     description: p.short,
     active: 'work',
     type: 'article',
-    ogImage: p.cover ? p.cover.src : site.ogImage,
+    image: p.cover ? { src: p.cover.src, w: p.cover.w, h: p.cover.h, alt: p.cover.alt } : DEFAULT_IMAGE,
+    jsonLd: [
+      crumbsLd([['Work', 'work/'], [p.title, `work/${p.id}.html`]]),
+      { '@type': 'CreativeWork', name: p.title, description: p.short, url: `${site.url}/work/${p.id}.html`, ...(p.cover ? { image: `${site.url}/${p.cover.src}` } : {}), keywords: p.tech.join(', '), creator: { '@type': 'Person', name: site.name, url: `${site.url}/` } },
+    ],
     body: (c) => `
 <article class="case">
   <header class="case-head"><div class="container">
@@ -422,7 +458,7 @@ ${contactCta(c)}`,
 // ─── EXPERIENCE ──────────────────────────────────────────
 layout({
   out: 'experience/index.html',
-  title: 'Experience',
+  title: 'Experience & Education',
   description: 'Professional experience and education of Viren Sompura, Robotics Engineer — Kion Group, Vama Communications, F.A.R., and Raicam Automotive.',
   active: 'experience',
   body: (c) => `
@@ -522,7 +558,7 @@ ${contactCta(c)}`,
 const usedCats = Object.entries(C.noteCategories).filter(([k]) => C.notes.some((n) => n.category === k));
 layout({
   out: 'blog/index.html',
-  title: 'Notes',
+  title: 'ROS 2 & Robotics Notes',
   description: 'Technical notes by Viren Sompura on ROS 2, Nav2, SLAM, Isaac Sim, and micro-ROS.',
   active: 'notes',
   body: (c) => `
@@ -544,7 +580,11 @@ notesSorted.forEach((n) => {
     description: n.summary,
     active: 'notes',
     type: 'article',
-    jsonLd: { '@context': 'https://schema.org', '@type': 'TechArticle', headline: n.title, description: n.summary, datePublished: n.date, author: { '@type': 'Person', name: site.name, url: `${site.url}/` } },
+    published: n.date,
+    jsonLd: [
+      crumbsLd([['Notes', 'blog/'], [n.title, `blog/${n.slug}.html`]]),
+      { '@type': 'TechArticle', headline: n.title, description: n.summary, datePublished: n.date, image: `${site.url}/${site.ogImage}`, mainEntityOfPage: `${site.url}/blog/${n.slug}.html`, author: { '@type': 'Person', name: site.name, url: `${site.url}/` } },
+    ],
     body: (c) => `
 <article class="article">
   <header class="article-head"><div class="container container-narrow">

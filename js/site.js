@@ -3,6 +3,28 @@
   const doc = document.documentElement;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Light / dark theme. The initial theme is set by an inline script in <head> to avoid a flash.
+  const themeBtn = document.querySelector('[data-theme-toggle]');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const applyTheme = (theme) => {
+    doc.setAttribute('data-theme', theme);
+    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0B1217' : '#F5F6F3');
+    if (themeBtn) themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  };
+  applyTheme(doc.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const next = doc.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem('theme', next); } catch { /* storage unavailable */ }
+    });
+  }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch { /* storage unavailable */ }
+    if (!saved) applyTheme(e.matches ? 'dark' : 'light');
+  });
+
   // Mobile navigation
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('site-nav');
@@ -10,6 +32,7 @@
     const setOpen = (open) => {
       toggle.setAttribute('aria-expanded', String(open));
       doc.classList.toggle('nav-open', open);
+      if (open) { const first = nav.querySelector('a'); if (first) first.focus(); }
     };
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
     nav.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
@@ -29,6 +52,37 @@
 
   // Current year
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+  // Muted autoplay for project previews and case-study videos while they are on screen.
+  // Skipped for reduced-motion and data-saver users; the poster image stays visible instead.
+  const saveData = navigator.connection && navigator.connection.saveData;
+  const autoVideos = document.querySelectorAll('video[data-autoplay]');
+  if (autoVideos.length && !reduceMotion && !saveData && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach(({ target: v, isIntersecting }) => {
+        if (isIntersecting) {
+          if (v.dataset.userControlled) return;
+          v.muted = true;
+          v.loop = true;
+          const p = v.play();
+          if (p && p.catch) p.catch(() => {});
+        } else if (v.muted && !v.paused) {
+          v.dataset.autoPaused = '1';
+          v.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    autoVideos.forEach((v) => {
+      v.addEventListener('playing', () => v.classList.add('is-playing'));
+      // Once someone unmutes or pauses via the controls, stop managing that video automatically.
+      v.addEventListener('volumechange', () => { if (!v.muted) v.dataset.userControlled = '1'; });
+      v.addEventListener('pause', () => {
+        if (v.dataset.autoPaused) delete v.dataset.autoPaused;
+        else if (v.controls) v.dataset.userControlled = '1';
+      });
+      vio.observe(v);
+    });
+  }
 
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');

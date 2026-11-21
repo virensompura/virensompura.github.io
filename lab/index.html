@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering Lab · Viren Sompura</title>
+<meta name="description" content="Engineering experiments and work in progress by Viren Sompura: ROS 2 simulation, micro-ROS, Isaac Sim, and sensor bring-up.">
+<link rel="canonical" href="https://virensompura.github.io/lab/">
+<meta name="author" content="Viren Sompura">
+<meta name="theme-color" content="#F5F6F3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Viren Sompura">
+<meta property="og:title" content="Engineering Lab · Viren Sompura">
+<meta property="og:description" content="Engineering experiments and work in progress by Viren Sompura: ROS 2 simulation, micro-ROS, Isaac Sim, and sensor bring-up.">
+<meta property="og:url" content="https://virensompura.github.io/lab/">
+<meta property="og:image" content="https://virensompura.github.io/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../js/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Viren Sompura — home"><span class="brand-mark">VS.</span><span class="brand-name">Viren Sompura</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/" aria-current="page">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume</a></li></ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="../contact/">Get in touch</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head"><div class="container"><p class="eyebrow">Engineering Lab</p><h1 class="page-title">Experiments, prototypes, and explorations</h1><p class="page-lead">This is where I try new tools and ideas before they become projects. Entries are marked by status and are not presented as finished products.</p></div></section>
+<section class="section section-tight">
+  <div class="container">
+    <ul class="status-legend" aria-label="Status legend">
+      <li><span class="status status-exploring">Exploring</span> Learning and evaluating</li>
+      <li><span class="status status-in-progress">In Progress</span> Actively being built</li>
+      <li><span class="status status-completed">Completed</span> Finished experiment</li>
+    </ul>
+    <div class="lab-list"><article class="lab-item reveal">
+  <div class="lab-aside"><p class="lab-period">Jun 2025</p><span class="status status-exploring">Exploring</span></div>
+  <div class="lab-main">
+    <h2 class="lab-title">NVIDIA Isaac Sim with ROS 2</h2>
+    <p>Evaluating Isaac Sim for robot simulation: URDF import, the ROS 2 bridge, and simulated sensors as a complement to Gazebo.</p>
+    <ul class="tech-list" aria-label="Technologies"><li>Isaac Sim</li><li>ROS 2</li><li>URDF</li></ul>
+    <div class="lab-links"><a class="link-arrow" href="../blog/isaac-sim.html">Related note: NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS 2 <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</article><article class="lab-item reveal">
+  <div class="lab-aside"><p class="lab-period">Feb 2025</p><span class="status status-exploring">Exploring</span></div>
+  <div class="lab-main">
+    <h2 class="lab-title">Butler Robot — restaurant delivery in simulation</h2>
+    <p>ROS 2 Humble robot that navigates a simulated restaurant, picks up orders from the kitchen, and delivers them to tables using Nav2, AMCL localization, and pre-mapped locations in Gazebo.</p>
+    <ul class="tech-list" aria-label="Technologies"><li>ROS 2 Humble</li><li>Nav2</li><li>AMCL</li><li>Gazebo</li></ul>
+    <div class="lab-links"><a class="link-arrow" href="https://github.com/virensompura/butler_robot" target="_blank" rel="noopener noreferrer">Repository <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</article><article class="lab-item reveal">
+  <div class="lab-aside"><p class="lab-period">2025</p><span class="status status-exploring">Exploring</span></div>
+  <div class="lab-main">
+    <h2 class="lab-title">micro-ROS on microcontrollers</h2>
+    <p>Bringing microcontrollers into the ROS 2 graph with micro-ROS, building on the encoder, power-sensing, and stepper firmware from the ROS 2 robot development work.</p>
+    <ul class="tech-list" aria-label="Technologies"><li>micro-ROS</li><li>ESP32</li><li>FreeRTOS</li></ul>
+    <div class="lab-links"><a class="link-arrow" href="../blog/microros.html">Related note: micro-ROS: Bringing ROS 2 to Microcontrollers <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="link-arrow" href="../work/ros2-robot-development.html">Related project: ROS 2 Robot Development &amp; Testing <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</article><article class="lab-item reveal">
+  <div class="lab-aside"><p class="lab-period">Dec 2024</p><span class="status status-exploring">Exploring</span></div>
+  <div class="lab-main">
+    <h2 class="lab-title">HP60C depth camera ROS 2 workspace</h2>
+    <p>ROS 2 workspace for bringing up the HP60C depth camera.</p>
+    <ul class="tech-list" aria-label="Technologies"><li>ROS 2</li><li>Depth camera</li></ul>
+    <div class="lab-links"><a class="link-arrow" href="https://github.com/virensompura/ascam_ros2_ws" target="_blank" rel="noopener noreferrer">Repository <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</article></div>
+  </div>
+</section>
+<section class="section cta-section"><div class="container cta reveal">
+  <div>
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Have an interesting robotics challenge?</h2>
+    <p class="section-lead">Let’s connect and build something meaningful.</p>
+  </div>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a>
+    <div class="cta-links">
+      <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Viren Sompura</p>
+        <p class="footer-role">Robotics Engineer</p>
+        <p class="footer-tagline">Engineering autonomous systems, from hardware to intelligence.</p>
+      </div>
+      <nav aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul class="footer-list"><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../contact/">Contact</a></li></ul></nav>
+      <div><h2 class="footer-heading">Connect</h2><ul class="footer-list">
+        <li><a href="mailto:sompuraviren03@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> Viren Sompura</p><p>Designed and engineered in-house · Hosted on GitHub Pages</p></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<h2>Why Isaac Sim?</h2>
+<p>Gazebo has served robotics well, but NVIDIA Isaac Sim brings a new level of realism through photorealistic rendering, physics-accurate simulation, and ray-traced sensor models. LiDAR, cameras, and IMUs behave like their real-world counterparts.</p>
+
+<h2>Installation Requirements</h2>
+<ul>
+<li>NVIDIA GPU with ≥ 8GB VRAM (RTX 2070 minimum)</li>
+<li>Ubuntu 20.04/22.04</li>
+<li>NVIDIA Driver ≥ 525</li>
+<li>Isaac Sim 4.x via Omniverse Launcher</li>
+</ul>
+
+<h2>Importing Your Robot</h2>
+<p>Isaac Sim supports URDF import out of the box:</p>
+<pre><code># In Isaac Sim Python API
+from omni.importer.urdf import _urdf
+
+urdf_interface = _urdf.acquire_urdf_interface()
+config = _urdf.ImportConfig()
+config.merge_fixed_joints = False
+config.convex_decomp = False
+config.import_inertia_tensor = True
+
+result, prim_path = urdf_interface.import_robot(
+    "/path/to/robot.urdf", config
+)</code></pre>
+
+<h2>Connecting to ROS2</h2>
+<p>Enable the ROS2 Bridge in Isaac Sim's extension manager, then your robot's joints and sensors publish natively to ROS2 topics.</p>
+<pre><code># Launch ROS2 bridge
+ros2 launch isaac_ros_launch isaac_ros.launch.py
+
+# View camera in ROS2
+ros2 run rqt_image_view rqt_image_view /rgb</code></pre>
+
+<h2>Domain Randomization for Sim-to-Real</h2>
+<p>Isaac Sim's Replicator framework lets you randomize lighting, textures, and object positions to train more robust perception models that transfer to the real world.</p>
+
+<h2>Key Benefits Over Gazebo</h2>
+<ul>
+<li>Ray-traced LiDAR — point clouds match real sensors much more closely</li>
+<li>Physically based rendering for camera simulation</li>
+<li>RTX denoising enables real-time photorealistic frames</li>
+<li>Tight integration with NVIDIA's Isaac SDK and ML pipelines</li>
+</ul>

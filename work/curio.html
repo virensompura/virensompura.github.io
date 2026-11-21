@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curio — Museum Guidance Robot · Viren Sompura</title>
+<meta name="description" content="Guidance robot for the Kolkata Museum that navigates the exhibit halls and answers visitor questions about science and technology exhibits.">
+<link rel="canonical" href="https://virensompura.github.io/work/curio.html">
+<meta name="author" content="Viren Sompura">
+<meta name="theme-color" content="#F5F6F3">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Viren Sompura">
+<meta property="og:title" content="Curio — Museum Guidance Robot · Viren Sompura">
+<meta property="og:description" content="Guidance robot for the Kolkata Museum that navigates the exhibit halls and answers visitor questions about science and technology exhibits.">
+<meta property="og:url" content="https://virensompura.github.io/work/curio.html">
+<meta property="og:image" content="https://virensompura.github.io/assets/img/projects/curio-museum.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../js/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Viren Sompura — home"><span class="brand-mark">VS.</span><span class="brand-name">Viren Sompura</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul><li><a href="../work/" aria-current="page">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume</a></li></ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="../contact/">Get in touch</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<article class="case">
+  <header class="case-head"><div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../work/">Work</a></li><li aria-current="page">Curio — Museum Guidance Robot</li></ol></nav>
+    <p class="eyebrow">Autonomous Robotics</p>
+    <h1 class="page-title">Curio — Museum Guidance Robot</h1>
+    <p class="page-lead">Guidance robot for the Kolkata Museum that navigates the exhibit halls and answers visitor questions about science and technology exhibits.</p>
+    <dl class="case-meta"><div><dt>Status</dt><dd><span class="status status-completed">Completed</span></dd></div><div><dt>Domain</dt><dd>Autonomous Robotics</dd></div><div><dt>Context</dt><dd>Vama Communications Pvt. Ltd. — R&amp;D</dd></div><div><dt>Role</dt><dd>Led the development of the robot’s hardware and software in the R&amp;D department.</dd></div></dl>
+    <ul class="tech-list" aria-label="Key technologies"><li>ROS 2</li><li>Nav2</li><li>SLAM</li><li>Jetson Nano</li><li>Atmega2560</li><li>PCB design</li></ul>
+  </div></header>
+  <div class="container"><figure class="case-media"><video controls preload="none" playsinline poster="../assets/img/posters/curio.webp" width="1280" height="720"><source src="../assets/videos/curio_robot.mp4" type="video/mp4">Your browser does not support embedded video. <a href="../assets/videos/curio_robot.mp4">Download the project video</a>.</video><figcaption>Project video</figcaption></figure></div>
+  <div class="container case-layout">
+    <nav class="case-toc" aria-label="On this page"><p class="case-toc-title">On this page</p><ol><li><a href="#overview"><span>01</span>Project overview</a></li><li><a href="#architecture"><span>02</span>System architecture</a></li><li><a href="#hardware"><span>03</span>Hardware architecture</a></li><li><a href="#software"><span>04</span>Software architecture</a></li><li><a href="#results"><span>05</span>Validation and results</a></li><li><a href="#gallery"><span>06</span>Gallery</a></li><li><a href="#resources"><span>07</span>Resources</a></li></ol></nav>
+    <div class="case-content">
+      <section class="case-section" id="overview" aria-labelledby="overview-title"><h2 id="overview-title"><span class="case-num">01</span>Project overview</h2>
+    <p class="lead-text">Curio is a wheeled guidance robot built for the Kolkata Museum. Visitors can interact with the robot, ask science and technology questions, and hear explanations of the museum’s exhibits.</p>
+    <h3>Objective</h3><p>Give museum visitors an interactive guide that can move through the galleries and explain every exhibit.</p>
+    <h3>My contribution</h3><ul class="bullets"><li>Led development of Curio’s hardware and software within the R&amp;D department.</li><li>Designed and implemented custom PCB solutions for the robot.</li><li>Implemented ROS 2-based navigation and SLAM on a Jetson Nano.</li><li>Developed software modules to reduce overall system latency.</li></ul></section><section class="case-section" id="architecture" aria-labelledby="architecture-title"><h2 id="architecture-title"><span class="case-num">02</span>System architecture</h2><figure class="arch">
+  <ol class="arch-layers"><li class="arch-layer"><span class="arch-label">Interaction</span><ul class="arch-items"><li>Visitor question &amp; answer about science and technology exhibits</li></ul></li><li class="arch-layer"><span class="arch-label">Autonomy &amp; compute</span><ul class="arch-items"><li>Jetson Nano</li><li>ROS 2 navigation (Nav2)</li><li>SLAM</li></ul></li><li class="arch-layer"><span class="arch-label">Embedded electronics</span><ul class="arch-items"><li>Atmega2560 microcontroller</li><li>Custom PCBs</li></ul></li></ol>
+  <figcaption>Layered overview built only from documented components. Communication interfaces are shown where they are documented.</figcaption>
+</figure></section><section class="case-section" id="hardware" aria-labelledby="hardware-title"><h2 id="hardware-title"><span class="case-num">03</span>Hardware architecture</h2><dl class="spec-list"><div><dt>Main compute</dt><dd>NVIDIA Jetson Nano</dd></div><div><dt>Microcontroller</dt><dd>Atmega2560</dd></div><div><dt>Electronics</dt><dd>Custom-designed PCBs</dd></div></dl></section><section class="case-section" id="software" aria-labelledby="software-title"><h2 id="software-title"><span class="case-num">04</span>Software architecture</h2><ul class="tech-list tech-list-lg"><li>ROS 2</li><li>Nav2</li><li>SLAM</li></ul></section><section class="case-section" id="results" aria-labelledby="results-title"><h2 id="results-title"><span class="case-num">05</span>Validation and results</h2><ul class="bullets"><li>Robot autonomy improved by 40% after implementing ROS 2 navigation and SLAM (as stated in CV).</li><li>System latency reduced by 25% through new software modules (as stated in CV).</li></ul></section><section class="case-section" id="gallery" aria-labelledby="gallery-title"><h2 id="gallery-title"><span class="case-num">06</span>Gallery</h2><div class="gallery"><figure><a href="../assets/img/projects/curio-museum.webp" aria-label="Open full image: Curio in a museum gallery"><img src="../assets/img/projects/curio-museum.webp" width="960" height="720" alt="Curio in a museum gallery" loading="lazy" decoding="async"></a><figcaption>Curio in a museum gallery</figcaption></figure><figure><a href="../assets/img/projects/curio-corridor.webp" aria-label="Open full image: Curio beside an exhibit hall at the museum"><img src="../assets/img/projects/curio-corridor.webp" width="1200" height="676" alt="Curio beside an exhibit hall at the museum" loading="lazy" decoding="async"></a><figcaption>Curio beside an exhibit hall at the museum</figcaption></figure></div></section><section class="case-section" id="resources" aria-labelledby="resources-title"><h2 id="resources-title"><span class="case-num">07</span>Resources</h2><ul class="resource-list"><li><a href="https://drive.google.com/file/d/1SGBgsC9yg2MlOd70hP9E2P-MdjG-vpHD/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Project video</span><span class="resource-note">Google Drive <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li></ul></section>
+    </div>
+  </div>
+  <nav class="container pager" aria-label="More projects">
+    <a href="../work/smart-jacket.html" rel="prev"><span>Previous project</span>Smart Jacket for Visually Impaired People</a>
+    <a href="../work/ros2-robot-development.html" rel="next"><span>Next project</span>ROS 2 Robot Development &amp; Testing</a>
+  </nav>
+</article>
+<section class="section cta-section"><div class="container cta reveal">
+  <div>
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Have an interesting robotics challenge?</h2>
+    <p class="section-lead">Let’s connect and build something meaningful.</p>
+  </div>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a>
+    <div class="cta-links">
+      <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Viren Sompura</p>
+        <p class="footer-role">Robotics Engineer</p>
+        <p class="footer-tagline">Engineering autonomous systems, from hardware to intelligence.</p>
+      </div>
+      <nav aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul class="footer-list"><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../contact/">Contact</a></li></ul></nav>
+      <div><h2 class="footer-heading">Connect</h2><ul class="footer-list">
+        <li><a href="mailto:sompuraviren03@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> Viren Sompura</p><p>Designed and engineered in-house · Hosted on GitHub Pages</p></div>
+  </div>
+</footer>
+</body>
+</html>

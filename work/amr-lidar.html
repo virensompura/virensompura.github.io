@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomous Mobile Robot with LiDAR &amp; A* Planning · Viren Sompura</title>
+<meta name="description" content="AMR prototype with a Raspberry Pi 4 for ROS and an Arduino Mega for low-level control, mapping obstacles with an RPLiDAR A1M8 and planning paths with A* search.">
+<link rel="canonical" href="https://virensompura.github.io/work/amr-lidar.html">
+<meta name="author" content="Viren Sompura">
+<meta name="theme-color" content="#F5F6F3">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Viren Sompura">
+<meta property="og:title" content="Autonomous Mobile Robot with LiDAR &amp; A* Planning · Viren Sompura">
+<meta property="og:description" content="AMR prototype with a Raspberry Pi 4 for ROS and an Arduino Mega for low-level control, mapping obstacles with an RPLiDAR A1M8 and planning paths with A* search.">
+<meta property="og:url" content="https://virensompura.github.io/work/amr-lidar.html">
+<meta property="og:image" content="https://virensompura.github.io/assets/img/projects/amr-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../js/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Viren Sompura — home"><span class="brand-mark">VS.</span><span class="brand-name">Viren Sompura</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul><li><a href="../work/" aria-current="page">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume</a></li></ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="../contact/">Get in touch</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<article class="case">
+  <header class="case-head"><div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../work/">Work</a></li><li aria-current="page">Autonomous Mobile Robot with LiDAR &amp; A* Planning</li></ol></nav>
+    <p class="eyebrow">Autonomous Robotics</p>
+    <h1 class="page-title">Autonomous Mobile Robot with LiDAR &amp; A* Planning</h1>
+    <p class="page-lead">AMR prototype with a Raspberry Pi 4 for ROS and an Arduino Mega for low-level control, mapping obstacles with an RPLiDAR A1M8 and planning paths with A* search.</p>
+    <dl class="case-meta"><div><dt>Status</dt><dd><span class="status status-completed">Completed</span></dd></div><div><dt>Domain</dt><dd>Autonomous Robotics</dd></div></dl>
+    <ul class="tech-list" aria-label="Key technologies"><li>ROS</li><li>RPLiDAR A1M8</li><li>A* search</li><li>Raspberry Pi 4</li><li>Arduino Mega</li></ul>
+  </div></header>
+  <div class="container"><figure class="case-media"><video controls preload="none" playsinline poster="../assets/img/posters/amr-lidar.webp" width="1280" height="720"><source src="../assets/videos/amr-lidar.mp4" type="video/mp4">Your browser does not support embedded video. <a href="../assets/videos/amr-lidar.mp4">Download the project video</a>.</video><figcaption>Project video</figcaption></figure></div>
+  <div class="container case-layout">
+    <nav class="case-toc" aria-label="On this page"><p class="case-toc-title">On this page</p><ol><li><a href="#overview"><span>01</span>Project overview</a></li><li><a href="#architecture"><span>02</span>System architecture</a></li><li><a href="#hardware"><span>03</span>Hardware architecture</a></li><li><a href="#software"><span>04</span>Software architecture</a></li><li><a href="#gallery"><span>05</span>Gallery</a></li><li><a href="#resources"><span>06</span>Resources</a></li></ol></nav>
+    <div class="case-content">
+      <section class="case-section" id="overview" aria-labelledby="overview-title"><h2 id="overview-title"><span class="case-num">01</span>Project overview</h2>
+    <p class="lead-text">A prototype autonomous mobile robot that maps obstacles in real time with a 2D LiDAR and plans collision-free paths with the A* search algorithm.</p>
+    <h3>Objective</h3><p>Demonstrate real-time obstacle mapping and path planning on low-cost compute.</p>
+    <h3>My contribution</h3><ul class="bullets"><li>Built the AMR prototype with a Raspberry Pi 4 for ROS integration and an Arduino Mega for low-level hardware control.</li><li>Implemented real-time obstacle mapping with an RPLiDAR A1M8.</li><li>Implemented navigation using the A* search algorithm.</li></ul></section><section class="case-section" id="architecture" aria-labelledby="architecture-title"><h2 id="architecture-title"><span class="case-num">02</span>System architecture</h2><figure class="arch">
+  <ol class="arch-layers"><li class="arch-layer"><span class="arch-label">Sensing</span><ul class="arch-items"><li>RPLiDAR A1M8 (2D LiDAR)</li></ul></li><li class="arch-layer"><span class="arch-label">High-level compute</span><ul class="arch-items"><li>Raspberry Pi 4</li><li>ROS integration</li><li>Real-time obstacle mapping</li><li>A* path planning</li></ul></li><li class="arch-layer"><span class="arch-label">Low-level control</span><ul class="arch-items"><li>Arduino Mega (hardware control)</li></ul></li></ol>
+  <figcaption>Layered overview built only from documented components. Communication interfaces are shown where they are documented.</figcaption>
+</figure></section><section class="case-section" id="hardware" aria-labelledby="hardware-title"><h2 id="hardware-title"><span class="case-num">03</span>Hardware architecture</h2><dl class="spec-list"><div><dt>Main compute</dt><dd>Raspberry Pi 4</dd></div><div><dt>Microcontroller</dt><dd>Arduino Mega</dd></div><div><dt>Sensors</dt><dd>RPLiDAR A1M8</dd></div></dl></section><section class="case-section" id="software" aria-labelledby="software-title"><h2 id="software-title"><span class="case-num">04</span>Software architecture</h2><ul class="tech-list tech-list-lg"><li>ROS</li><li>A* search</li><li>Real-time obstacle mapping</li></ul></section><section class="case-section" id="gallery" aria-labelledby="gallery-title"><h2 id="gallery-title"><span class="case-num">05</span>Gallery</h2><div class="gallery"><figure><a href="../assets/img/projects/amr-1.webp" aria-label="Open full image: AMR prototype"><img src="../assets/img/projects/amr-1.webp" width="720" height="1282" alt="AMR prototype" loading="lazy" decoding="async"></a><figcaption>AMR prototype</figcaption></figure><figure><a href="../assets/img/projects/amr-2.webp" aria-label="Open full image: AMR prototype during a navigation run"><img src="../assets/img/projects/amr-2.webp" width="720" height="1282" alt="AMR prototype during a navigation run" loading="lazy" decoding="async"></a><figcaption>AMR prototype during a navigation run</figcaption></figure></div></section><section class="case-section" id="resources" aria-labelledby="resources-title"><h2 id="resources-title"><span class="case-num">06</span>Resources</h2><ul class="resource-list"><li><a href="https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=drive_link" target="_blank" rel="noopener noreferrer"><span>Project files</span><span class="resource-note">Google Drive <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li></ul></section>
+    </div>
+  </div>
+  <nav class="container pager" aria-label="More projects">
+    <a href="../work/ros2-robot-development.html" rel="prev"><span>Previous project</span>ROS 2 Robot Development &amp; Testing</a>
+    <a href="../work/ros2-sensor-drivers.html" rel="next"><span>Next project</span>ROS 2 Sensor Drivers &amp; Fusion</a>
+  </nav>
+</article>
+<section class="section cta-section"><div class="container cta reveal">
+  <div>
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Have an interesting robotics challenge?</h2>
+    <p class="section-lead">Let’s connect and build something meaningful.</p>
+  </div>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a>
+    <div class="cta-links">
+      <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Viren Sompura</p>
+        <p class="footer-role">Robotics Engineer</p>
+        <p class="footer-tagline">Engineering autonomous systems, from hardware to intelligence.</p>
+      </div>
+      <nav aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul class="footer-list"><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../contact/">Contact</a></li></ul></nav>
+      <div><h2 class="footer-heading">Connect</h2><ul class="footer-list">
+        <li><a href="mailto:sompuraviren03@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> Viren Sompura</p><p>Designed and engineered in-house · Hosted on GitHub Pages</p></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,116 +1,114 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
-  <title>Blog | Viren Sompura</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style/style.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes · Viren Sompura</title>
+<meta name="description" content="Technical notes by Viren Sompura on ROS 2, Nav2, SLAM, Isaac Sim, and micro-ROS.">
+<link rel="canonical" href="https://virensompura.github.io/blog/">
+<meta name="author" content="Viren Sompura">
+<meta name="theme-color" content="#F5F6F3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Viren Sompura">
+<meta property="og:title" content="Notes · Viren Sompura">
+<meta property="og:description" content="Technical notes by Viren Sompura on ROS 2, Nav2, SLAM, Isaac Sim, and micro-ROS.">
+<meta property="og:url" content="https://virensompura.github.io/blog/">
+<meta property="og:image" content="https://virensompura.github.io/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../js/site.js" defer></script>
+
 </head>
 <body>
-  <div class="site-shell">
-    <header class="site-topbar">
-      <a class="site-brand" href="../index.html">Viren Sompura</a>
-      <nav class="site-nav">
-        <a class="btn btn-outline btn-sm" href="../index.html">Home</a>
-      </nav>
-    </header>
-
-    <section class="section" style="padding:2rem 0 0;">
-      <div class="blog-page-hero">
-        <div class="section-label">Knowledge Base</div>
-        <div class="section-title">Blog & Tutorials</div>
-        <p class="section-sub">Deep dives into ROS2, robotics systems, simulation, and the craft of building autonomous machines.</p>
-      </div>
-
-      <div class="blog-index-grid">
-        
-    <a class="blog-card reveal" href="ros2-install.html">
-      <div class="blog-thumb">🤖</div>
-      <div class="blog-body">
-        <div class="blog-meta-row">
-          <span class="blog-cat">ROS2</span>
-          <span class="blog-date">Mar 2025</span>
-          <span class="blog-read">10 min read</span>
-        </div>
-        <div class="blog-title">Getting Started with ROS2: Complete Installation &amp; Workspace Setup</div>
-        <div class="blog-excerpt">A step-by-step guide to installing ROS2 Humble on Ubuntu 22.04, configuring your environment, and building your first workspace.</div>
-        <div class="blog-arrow">Read Article →</div>
-      </div>
-    </a>
-    <a class="blog-card reveal" href="nodes-topics.html">
-      <div class="blog-thumb">⚡</div>
-      <div class="blog-body">
-        <div class="blog-meta-row">
-          <span class="blog-cat">ROS2</span>
-          <span class="blog-date">Apr 2025</span>
-          <span class="blog-read">12 min read</span>
-        </div>
-        <div class="blog-title">ROS2 Architecture: Nodes, Topics, Services &amp; Actions Explained</div>
-        <div class="blog-excerpt">Understand the core communication primitives of ROS2 and how they map to real robot behaviors — with practical examples.</div>
-        <div class="blog-arrow">Read Article →</div>
-      </div>
-    </a>
-    <a class="blog-card reveal" href="nav2.html">
-      <div class="blog-thumb">🗺️</div>
-      <div class="blog-body">
-        <div class="blog-meta-row">
-          <span class="blog-cat">Navigation</span>
-          <span class="blog-date">May 2025</span>
-          <span class="blog-read">14 min read</span>
-        </div>
-        <div class="blog-title">Nav2 Stack Deep Dive: Autonomous Navigation from Scratch</div>
-        <div class="blog-excerpt">Set up the Nav2 navigation stack for a custom robot, configure costmaps, and send navigation goals programmatically.</div>
-        <div class="blog-arrow">Read Article →</div>
-      </div>
-    </a>
-    <a class="blog-card reveal" href="isaac-sim.html">
-      <div class="blog-thumb">🌐</div>
-      <div class="blog-body">
-        <div class="blog-meta-row">
-          <span class="blog-cat">Simulation</span>
-          <span class="blog-date">Jun 2025</span>
-          <span class="blog-read">11 min read</span>
-        </div>
-        <div class="blog-title">NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS2</div>
-        <div class="blog-excerpt">Set up Isaac Sim, import your URDF, and stream sensor data to ROS2 — achieving photorealistic simulation for sensor development and policy training.</div>
-        <div class="blog-arrow">Read Article →</div>
-      </div>
-    </a>
-    <a class="blog-card reveal" href="slam-deep.html">
-      <div class="blog-thumb">🧭</div>
-      <div class="blog-body">
-        <div class="blog-meta-row">
-          <span class="blog-cat">SLAM</span>
-          <span class="blog-date">Jul 2025</span>
-          <span class="blog-read">16 min read</span>
-        </div>
-        <div class="blog-title">SLAM Demystified: From Theory to ROS2 Implementation</div>
-        <div class="blog-excerpt">Understanding Simultaneous Localization and Mapping — the math, the algorithms, and how to get ORB-SLAM3 and RTAB-Map running with Nav2.</div>
-        <div class="blog-arrow">Read Article →</div>
-      </div>
-    </a>
-    <a class="blog-card reveal" href="microros.html">
-      <div class="blog-thumb">🔌</div>
-      <div class="blog-body">
-        <div class="blog-meta-row">
-          <span class="blog-cat">Embedded</span>
-          <span class="blog-date">Aug 2025</span>
-          <span class="blog-read">13 min read</span>
-        </div>
-        <div class="blog-title">micro-ROS: Bringing ROS2 to Microcontrollers</div>
-        <div class="blog-excerpt">Deploy micro-ROS on STM32 and ESP32 to directly publish sensor data and subscribe to control commands within the ROS2 ecosystem.</div>
-        <div class="blog-arrow">Read Article →</div>
-      </div>
-    </a>
-      </div>
-
-      <div class="blog-back-row">
-        <a class="btn btn-primary btn-sm" href="../index.html">Back to Home ↗</a>
-      </div>
-    </section>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Viren Sompura — home"><span class="brand-mark">VS.</span><span class="brand-name">Viren Sompura</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/" aria-current="page">Notes</a></li><li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume</a></li></ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="../contact/">Get in touch</a>
+    </nav>
   </div>
+</header>
+<main id="main">
+
+<section class="page-head"><div class="container"><p class="eyebrow">Notes</p><h1 class="page-title">Technical notes and tutorials</h1><p class="page-lead">Practical writing on robot software, navigation, simulation, and embedded systems.</p></div></section>
+<section class="section section-tight">
+  <div class="container">
+    <div class="filters" data-filter-group="notes" role="group" aria-label="Filter by category" hidden><button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button><button type="button" class="filter-btn" data-filter="ros2" aria-pressed="false">ROS 2</button><button type="button" class="filter-btn" data-filter="navigation" aria-pressed="false">Autonomous Navigation</button><button type="button" class="filter-btn" data-filter="slam" aria-pressed="false">SLAM</button><button type="button" class="filter-btn" data-filter="simulation" aria-pressed="false">Simulation</button><button type="button" class="filter-btn" data-filter="embedded" aria-pressed="false">Embedded Systems</button></div><p class="sr-only" aria-live="polite" data-filter-status></p>
+    <div class="note-grid" data-filter-target="notes"><article class="note-card reveal" data-filter-item data-categories="embedded">
+  <p class="card-meta"><span>Embedded Systems</span><span>Aug 2025 · 1 min read</span></p>
+  <h2 class="card-title"><a class="stretched" href="../blog/microros.html">micro-ROS: Bringing ROS 2 to Microcontrollers</a></h2>
+  <p class="card-text">Deploy micro-ROS on STM32 and ESP32 to publish sensor data and subscribe to control commands directly within the ROS 2 ecosystem.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="slam">
+  <p class="card-meta"><span>SLAM</span><span>Jul 2025 · 1 min read</span></p>
+  <h2 class="card-title"><a class="stretched" href="../blog/slam-deep.html">SLAM Demystified: From Theory to ROS 2 Implementation</a></h2>
+  <p class="card-text">The math and algorithms behind Simultaneous Localization and Mapping, and how to run ORB-SLAM3 and RTAB-Map with Nav2.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="simulation">
+  <p class="card-meta"><span>Simulation</span><span>Jun 2025 · 1 min read</span></p>
+  <h2 class="card-title"><a class="stretched" href="../blog/isaac-sim.html">NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS 2</a></h2>
+  <p class="card-text">Set up Isaac Sim, import a URDF, and stream sensor data to ROS 2 for sensor development and policy training.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="navigation">
+  <p class="card-meta"><span>Autonomous Navigation</span><span>May 2025 · 1 min read</span></p>
+  <h2 class="card-title"><a class="stretched" href="../blog/nav2.html">Nav2 Stack Deep Dive: Autonomous Navigation from Scratch</a></h2>
+  <p class="card-text">Set up Nav2 for a custom robot, configure costmaps, and send navigation goals programmatically.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="ros2">
+  <p class="card-meta"><span>ROS 2</span><span>Apr 2025 · 1 min read</span></p>
+  <h2 class="card-title"><a class="stretched" href="../blog/nodes-topics.html">ROS 2 Architecture: Nodes, Topics, Services &amp; Actions Explained</a></h2>
+  <p class="card-text">The core communication primitives of ROS 2 and how they map to real robot behaviours, with practical examples.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="ros2">
+  <p class="card-meta"><span>ROS 2</span><span>Mar 2025 · 1 min read</span></p>
+  <h2 class="card-title"><a class="stretched" href="../blog/ros2-install.html">Getting Started with ROS 2: Installation &amp; Workspace Setup</a></h2>
+  <p class="card-text">Install ROS 2 Humble on Ubuntu 22.04, configure your environment, and build your first workspace.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article></div>
+  </div>
+</section>
+<section class="section cta-section"><div class="container cta reveal">
+  <div>
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Have an interesting robotics challenge?</h2>
+    <p class="section-lead">Let’s connect and build something meaningful.</p>
+  </div>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a>
+    <div class="cta-links">
+      <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Viren Sompura</p>
+        <p class="footer-role">Robotics Engineer</p>
+        <p class="footer-tagline">Engineering autonomous systems, from hardware to intelligence.</p>
+      </div>
+      <nav aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul class="footer-list"><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../contact/">Contact</a></li></ul></nav>
+      <div><h2 class="footer-heading">Connect</h2><ul class="footer-list">
+        <li><a href="mailto:sompuraviren03@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> Viren Sompura</p><p>Designed and engineered in-house · Hosted on GitHub Pages</p></div>
+  </div>
+</footer>
 </body>
 </html>

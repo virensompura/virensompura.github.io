@@ -1,1378 +1,254 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
-<title>Viren Sompura | Robotics Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style/style.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viren Sompura — Robotics Engineer</title>
+<meta name="description" content="Viren Sompura is a Robotics Engineer working across ROS 2, autonomous navigation, SLAM, embedded systems, and robot hardware-software integration.">
+<link rel="canonical" href="https://virensompura.github.io/">
+<meta name="author" content="Viren Sompura">
+<meta name="theme-color" content="#F5F6F3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Viren Sompura">
+<meta property="og:title" content="Viren Sompura — Robotics Engineer">
+<meta property="og:description" content="Viren Sompura is a Robotics Engineer working across ROS 2, autonomous navigation, SLAM, embedded systems, and robot hardware-software integration.">
+<meta property="og:url" content="https://virensompura.github.io/">
+<meta property="og:image" content="https://virensompura.github.io/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="style/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="js/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Viren Sompura","jobTitle":"Robotics Engineer","url":"https://virensompura.github.io/","email":"mailto:sompuraviren03@gmail.com","image":"https://virensompura.github.io/assets/img/viren-sompura.webp","sameAs":["https://www.linkedin.com/in/viren-sompura/","https://github.com/virensompura","https://x.com/VirenSompura01"],"worksFor":{"@type":"Organization","name":"Kion Group"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"M.S. Ramaiah University of Applied Sciences"},{"@type":"CollegeOrUniversity","name":"Sal College of Engineering"}],"knowsAbout":["Robotics","ROS 2","Autonomous navigation","SLAM","Embedded systems","Sensor fusion"]}</script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-logo">V<span>.</span></div>
-  <ul class="nav-links">
-    <li><a href="#" onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
-    <li><a href="#" onclick="navigate('about')">About</a></li>
-    <li><a href="#" onclick="navigate('experience')">Experience</a></li>
-    <li><a href="#" onclick="navigate('projects')">Projects</a></li>
-    <li><a href="#" onclick="navigate('blog')">Blog</a></li>
-    <li><a href="#" onclick="navigate('contact')">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme" id="themeBtn">☀️</button>
-    <button class="hamburger" onclick="toggleMobileNav()" id="hamburger">
-      <span></span><span></span><span></span>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./" aria-label="Viren Sompura — home"><span class="brand-mark">VS.</span><span class="brand-name">Viren Sompura</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul><li><a href="work/">Work</a></li><li><a href="experience/">Experience</a></li><li><a href="about/">About</a></li><li><a href="lab/">Engineering Lab</a></li><li><a href="blog/">Notes</a></li><li><a href="assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume</a></li></ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="contact/">Get in touch</a>
+    </nav>
   </div>
-</nav>
+</header>
+<main id="main">
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav">
-  <a href="#" onclick="navigate('home');closeMobileNav()">Home</a>
-  <a href="#" onclick="navigate('about');closeMobileNav()">About</a>
-  <a href="#" onclick="navigate('experience');closeMobileNav()">Experience</a>
-  <a href="#" onclick="navigate('projects');closeMobileNav()">Projects</a>
-  <a href="#" onclick="navigate('blog');closeMobileNav()">Blog</a>
-  <a href="#" onclick="navigate('contact');closeMobileNav()">Contact</a>
-</div>
-
-<!-- ══════ PAGE: HOME ══════ -->
-<div class="page active" id="page-home">
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-left">
-      <div class="hero-eyebrow">Available for opportunities</div>
-      <h1 class="hero-name"><span class="name-first">Viren</span><span class="name-last">Sompura</span></h1>
-      <div class="hero-role">Robotics Engineer</div>
-      <p class="hero-desc">Designing intelligent machines that perceive, decide, and act. Specializing in ROS2, autonomous navigation, SLAM, and sensor-fused systems from hardware to software.</p>
-      <div class="hero-stats">
-        <div><div class="stat-val">2+</div><div class="stat-lab">Years Exp.</div></div>
-        <div><div class="stat-val">8+</div><div class="stat-lab">Projects</div></div>
-        <div><div class="stat-val">9.0</div><div class="stat-lab">M.Tech CGPA</div></div>
-      </div>
-      <div class="hero-actions">
-        <a href="mailto:sompuraviren03@gmail.com" class="btn btn-primary">Hire Me ↗</a>
-        <a href="#" onclick="navigate('projects')" class="btn btn-outline">View Projects</a>
-        <a href="assets/Viren_Sompura_Resume_1.pdf" download class="btn btn-outline">Download CV ↓</a>
-        <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer" class="btn btn-social" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer" class="btn btn-social" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Robotics Engineer</p>
+      <h1 class="hero-title">Engineering autonomous systems, from hardware to intelligence.</h1>
+      <p class="hero-lead">I design, integrate, and develop robotic systems by bringing together embedded electronics, control systems, ROS 2, perception, simulation, and autonomous navigation.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="work/">Explore my work</a>
+        <a class="btn btn-secondary" href="assets/Viren_Sompura_Resume_1.pdf" download><svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 2v8M4.5 6.5L8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Download resume</a>
+        <a class="link-arrow" href="contact/">Get in touch <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-ring">
-        <div class="ring ring-1"><div class="ring-dot"></div></div>
-        <div class="ring ring-2"><div class="ring-dot" style="top:50%;left:100%;margin-top:-4px;margin-left:-4px;background:var(--blue);box-shadow:0 0 12px var(--glow-blue);"></div></div>
-        <div class="ring ring-3"><div class="ring-dot" style="top:100%;left:50%;margin-top:-4px;margin-left:-4px;"></div></div>
-        <div class="ring-core">
-          <div class="ring-core-icon">⚙️</div>
-          <div class="ring-core-text">Robotics</div>
-        </div>
-        <div class="orbit-label" style="top:6%;left:70%;">ROS2</div>
-        <div class="orbit-label" style="top:4%;right:65%;">Isaac-Sim</div>
-        <div class="orbit-label" style="top:25%;left:25%;">V-SLAM</div>
-        <div class="orbit-label" style="top:30%;right:20%;">Linux</div>
-        <div class="orbit-label" style="top:40%;right:-12px;">SLAM</div>
-        <div class="orbit-label" style="top:60%;left:80%;">Docker</div>
-        <div class="orbit-label" style="bottom:8%;left:45%;">Nav2</div>
-        <div class="orbit-label" style="bottom:10%;left:75%;">Micro-ROS</div>
-        <div class="orbit-label" style="top:70%;right:75%;">Microcontrollers</div>
-        <div class="orbit-label" style="top:40%;left:-5px;">LiDAR</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS MARQUEE -->
-  <div class="skills-marquee">
-    <div class="marquee-track" id="marqueeTrack"></div>
+    <figure class="hero-media">
+      <div class="hero-image"><img src="assets/img/projects/curio-museum.webp" width="960" height="720" alt="Curio guidance robot standing in a gallery at the Kolkata Museum" style="object-position:50% 30%" fetchpriority="high" decoding="async" sizes="(min-width: 900px) 45vw, 100vw"></div>
+      <figcaption><a href="work/curio.html">Curio</a> — museum guidance robot at the Kolkata Museum. Frame from project video.</figcaption>
+    </figure>
   </div>
+</section>
 
-  <!-- ABOUT PREVIEW -->
-  <section class="section" style="padding-top:0;">
-    <div class="section-label">Who I am</div>
-    <div class="section-title">Building robots that<br/>change the world</div>
-    <p class="section-sub">From embedded microcontrollers to high-level navigation stacks — I bridge the gap between hardware and software to create autonomous systems that actually work.</p>
-    <div class="hero-actions">
-      <a href="#" onclick="navigate('about')" class="btn btn-outline">Learn More About Me →</a>
-    </div>
-  </section>
-
-  <!-- FEATURED PROJECTS PREVIEW -->
-  <section class="section" style="padding-top:0;">
-    <div class="section-label">Recent Work</div>
-    <div class="section-title">Featured Projects</div>
-    <p class="section-sub">A selection of robotics systems I've designed, built, and deployed.</p>
-    <div class="projects-grid" id="featuredProjects"></div>
-    <div style="margin-top:2rem;">
-      <a href="#" onclick="navigate('projects')" class="btn btn-outline">View All Projects →</a>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE PREVIEW - HORIZONTAL TIMELINE -->
-  <section class="section" style="padding-top:0;overflow:visible;">
-    <div class="section-label">Career Path</div>
-    <div class="section-title">Experience &amp; Education</div>
-    <p class="section-sub">A journey from mechatronics foundations to cutting-edge autonomous robotics.</p>
-    <div class="htl-wrapper" id="htlWrapper">
-      <div class="htl-track" id="homeTimeline"></div>
-    </div>
-    <div style="margin-top:2.5rem;text-align:center;">
-      <a href="#" onclick="navigate('experience')" class="btn btn-outline">View Full Timeline →</a>
-    </div>
-  </section>
-
-  <!-- BLOG PREVIEW -->
-  <section class="section" style="padding-top:0;">
-    <div class="section-label">Latest Writing</div>
-    <div class="section-title">From the Blog</div>
-    <p class="section-sub">Deep dives into ROS2, navigation, SLAM, and the craft of building autonomous machines.</p>
-    <div class="blog-grid" id="homeBlogGrid"></div>
-    <div style="margin-top:2rem;">
-      <a href="#" onclick="navigate('blog')" class="btn btn-outline">Read All Articles →</a>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-strip">
-    <h2>Ready to build something <span class="text-accent">remarkable</span>?</h2>
-    <p>I'm open to full-time roles, contracts, and collaborative research in robotics, autonomous systems, and embedded intelligence.</p>
-    <a href="#" onclick="navigate('contact')" class="btn btn-primary">Get in Touch ↗</a>
+<section class="snapshot" aria-label="Professional snapshot">
+  <div class="container">
+    <dl class="stats">
+      <div class="stat"><dt>Robotics engineering</dt><dd>Since 2023</dd><p>Full-time roles at Vama Communications and Kion Group</p></div>
+      <div class="stat"><dt>Documented projects</dt><dd>7</dd><p>From museum robots to embedded drivers</p></div>
+      <div class="stat"><dt>Education</dt><dd>M.Tech</dd><p>Robotics Engineering · CGPA 9.0</p></div>
+      <div class="stat"><dt>Core domains</dt><dd>4</dd><p>Autonomy · Embedded · Simulation · Hardware</p></div>
+    </dl>
   </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+  <div><p class="eyebrow">Selected work</p><h2 class="section-title">Engineering complete robotic systems</h2><p class="section-lead">A selection of robots and subsystems I have designed, integrated, and tested.</p></div><a class="link-arrow" href="work/">All projects <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
+    <div class="project-grid"><article class="project-card reveal" data-filter-item data-categories="autonomy ros2 hardware">
+  <div class="card-media"><img src="assets/img/projects/curio-museum.webp" width="960" height="720" alt="Curio guidance robot standing in a gallery at the Kolkata Museum" style="object-position:50% 30%" loading="lazy" decoding="async" sizes="(min-width: 900px) 50vw, 100vw"></div>
+  <div class="card-body">
+    <p class="card-meta"><span>Autonomous Robotics</span><span class="status status-completed">Completed</span></p>
+    <h3 class="card-title"><a class="stretched" href="work/curio.html">Curio — Museum Guidance Robot</a></h3>
+    <p class="card-text">Guidance robot for the Kolkata Museum that navigates the exhibit halls and answers visitor questions about science and technology exhibits.</p>
+    <p class="card-tech">ROS 2<span aria-hidden="true"> · </span>Nav2<span aria-hidden="true"> · </span>SLAM<span aria-hidden="true"> · </span>Jetson Nano</p>
+    <span class="link-arrow" aria-hidden="true">View project <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</article><article class="project-card reveal" data-filter-item data-categories="ros2 embedded autonomy hardware">
+  <div class="card-media"><img src="assets/img/projects/ros2-dev-1.webp" width="720" height="1280" alt="Mobile robot platform used for ROS 2 development and testing" style="object-position:50% 45%" loading="lazy" decoding="async" sizes="(min-width: 900px) 50vw, 100vw"></div>
+  <div class="card-body">
+    <p class="card-meta"><span>ROS 2 &amp; Embedded Systems</span><span class="status status-completed">Completed</span></p>
+    <h3 class="card-title"><a class="stretched" href="work/ros2-robot-development.html">ROS 2 Robot Development &amp; Testing</a></h3>
+    <p class="card-text">Visual SLAM, 3D mapping, autonomous docking, an RS-485 motor driver, and micro-ROS firmware on FreeRTOS, integrated on a ROS 2 mobile robot.</p>
+    <p class="card-tech">ROS 2<span aria-hidden="true"> · </span>Nav2<span aria-hidden="true"> · </span>ORB-SLAM3<span aria-hidden="true"> · </span>RTAB-Map</p>
+    <span class="link-arrow" aria-hidden="true">View project <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</article><article class="project-card reveal" data-filter-item data-categories="autonomy ros2 hardware">
+  <div class="card-media"><img src="assets/img/projects/amr-1.webp" width="720" height="1282" alt="Autonomous mobile robot prototype with a LiDAR sensor" style="object-position:50% 55%" loading="lazy" decoding="async" sizes="(min-width: 900px) 50vw, 100vw"></div>
+  <div class="card-body">
+    <p class="card-meta"><span>Autonomous Robotics</span><span class="status status-completed">Completed</span></p>
+    <h3 class="card-title"><a class="stretched" href="work/amr-lidar.html">Autonomous Mobile Robot with LiDAR &amp; A* Planning</a></h3>
+    <p class="card-text">AMR prototype with a Raspberry Pi 4 for ROS and an Arduino Mega for low-level control, mapping obstacles with an RPLiDAR A1M8 and planning paths with A* search.</p>
+    <p class="card-tech">ROS<span aria-hidden="true"> · </span>RPLiDAR A1M8<span aria-hidden="true"> · </span>A* search<span aria-hidden="true"> · </span>Raspberry Pi 4</p>
+    <span class="link-arrow" aria-hidden="true">View project <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</article><article class="project-card reveal" data-filter-item data-categories="ros2 embedded">
+  <div class="card-media"><img src="assets/img/projects/sensor-1.webp" width="848" height="480" alt="IMU data visualized during ROS 2 sensor integration" style="object-position:50% 50%" loading="lazy" decoding="async" sizes="(min-width: 900px) 50vw, 100vw"></div>
+  <div class="card-body">
+    <p class="card-meta"><span>ROS 2 &amp; Embedded Systems</span><span class="status status-completed">Completed</span></p>
+    <h3 class="card-title"><a class="stretched" href="work/ros2-sensor-drivers.html">ROS 2 Sensor Drivers &amp; Fusion</a></h3>
+    <p class="card-text">Custom ROS 2 drivers for a Qwiic ICM-20948 IMU and a VL53L0X time-of-flight sensor, with a sensor-fusion algorithm for localization and obstacle detection.</p>
+    <p class="card-tech">ROS 2<span aria-hidden="true"> · </span>ICM-20948 IMU<span aria-hidden="true"> · </span>VL53L0X ToF<span aria-hidden="true"> · </span>I²C</p>
+    <span class="link-arrow" aria-hidden="true">View project <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</article></div>
+  </div>
+</section>
 
-<!-- ══════ PAGE: ABOUT ══════ -->
-<div class="page" id="page-about">
-  <section class="section" style="padding-top:8rem;">
-    <div class="section-label">About me</div>
-    <div class="section-title">The engineer behind<br/>the machine</div>
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="about-img-placeholder">
-          <img src="assets/bg_11.png" alt="Viren Sompura" class="about-img" />
-          <div class="about-tag">Robotics Engineer</div>
-        </div>
-        <div class="about-info">
-          <div class="info-row"><span class="info-label">Name</span><span class="info-val">Viren Sompura</span></div>
-          <div class="info-row"><span class="info-label">DOB</span><span class="info-val">January 28, 1999</span></div>
-          <div class="info-row"><span class="info-label">Location</span><span class="info-val">Ahmedabad, Gujarat</span></div>
-          <div class="info-row"><span class="info-label">Email</span><span class="info-val" style="word-break:break-all;"><a href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a></span></div>
-          <div class="info-row"><span class="info-label">Phone</span><span class="info-val">Available on request</span></div>
-        </div>
-      </div>
-      <div class="about-content reveal" style="transition-delay:.1s;">
-        <h2>I build machines that think, move, and adapt.</h2>
-        <p>I'm a Robotics Engineer with a Master's in Robotics Engineering (CGPA 9.0) and hands-on experience across the full robotics stack — from designing custom PCBs and writing embedded firmware to implementing SLAM, navigation, and sensor fusion at the system level.</p>
-        <p>Currently at <strong>Kion Group</strong> as a Robotics Engineer, and previously drove R&D at Vama Communications where I spearheaded the development of Curio, a museum guidance robot running ROS2 on Jetson Nano with full autonomous navigation.</p>
-        <p>I thrive at the intersection of hardware and software — whether that's deploying micro-ROS on ESP32 microcontrollers, tuning FreeRTOS schedulers for deterministic control loops, or integrating ORB-SLAM3 with Nav2 for visual SLAM.</p>
-        <div class="about-skills-mini">
-          <span class="skill-chip">ROS/ROS2</span>
-          <span class="skill-chip">SLAM</span>
-          <span class="skill-chip">Nav2</span>
-          <span class="skill-chip">Python</span>
-          <span class="skill-chip">C/C++</span>
-          <span class="skill-chip">Jetson Nano</span>
-          <span class="skill-chip">Raspberry Pi 4</span>
-          <span class="skill-chip">micro-ROS</span>
-          <span class="skill-chip">FreeRTOS</span>
-          <span class="skill-chip">ORB-SLAM3</span>
-          <span class="skill-chip">RTAB-Map</span>
-          <span class="skill-chip">Gazebo</span>
-          <span class="skill-chip">Linux</span>
-          <span class="skill-chip">Docker</span>
-          <span class="skill-chip">Git</span>
-          <span class="skill-chip">RS-485</span>
-          <span class="skill-chip">PCB Design</span>
-          <span class="skill-chip">SOLIDWORKS</span>
-        </div>
-        <div style="margin-top:2rem;">
-          <a href="assets/Viren_Sompura_Resume_1.pdf" download class="btn btn-primary">Download Full CV ↓</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head reveal">
+  <div><p class="eyebrow">Approach</p><h2 class="section-title">Understanding the complete robotic system.</h2><p class="section-lead">A robot only works when hardware, embedded control, perception, decision-making, and physical execution work together. I approach every system as one connected loop.</p></div>
 </div>
+    <ol class="system reveal"><li class="system-step"><span class="system-index">01</span><h3 class="system-name">Sense</h3><p>Choosing and integrating the sensors a robot depends on, and getting clean, timed data out of them.</p><p class="system-examples">LiDAR, IMU, time-of-flight, wheel encoders, power sensing</p></li><li class="system-step"><span class="system-index">02</span><h3 class="system-name">Perceive</h3><p>Turning raw measurements into an understanding of where the robot is and what surrounds it.</p><p class="system-examples">ORB-SLAM3, RTAB-Map, localization, sensor fusion</p></li><li class="system-step"><span class="system-index">03</span><h3 class="system-name">Decide</h3><p>Planning paths and behaviours that are safe, efficient, and appropriate for the environment.</p><p class="system-examples">Nav2, A* search, docking with NavigateToPose</p></li><li class="system-step"><span class="system-index">04</span><h3 class="system-name">Act</h3><p>Executing decisions through deterministic embedded control and reliable motor communication.</p><p class="system-examples">micro-ROS, FreeRTOS, RS-485 motor drivers, custom PCBs</p></li></ol>
+  </div>
+</section>
 
-<!-- ══════ PAGE: EXPERIENCE ══════ -->
-<div class="page" id="page-experience">
-  <section class="section" style="padding-top:8rem;">
-    <div class="section-label">Career</div>
-    <div class="section-title">Experience &<br/>Education</div>
-    <p class="section-sub">A journey from mechatronics student to robotics engineer across research labs, startups, and industry.</p>
-    <div class="timeline reveal" id="timelineEl"></div>
-  </section>
+<section class="section">
+  <div class="container split">
+    <div class="section-head reveal">
+  <div><p class="eyebrow">Experience</p><h2 class="section-title">Professional journey</h2><p class="section-lead">Robotics roles across R&amp;D, warehouse automation, and industrial systems.</p></div><a class="link-arrow" href="experience/">View professional journey <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
+    <ol class="timeline timeline-compact"><li class="timeline-item reveal">
+  <p class="timeline-period">Sept 2025 — Present</p>
+  <div class="timeline-body">
+    <h3 class="timeline-role">Robotics Engineer</h3>
+    <p class="timeline-org">Kion Group <span>· Pune, Maharashtra</span></p>
+    
+  </div>
+</li><li class="timeline-item reveal">
+  <p class="timeline-period">Sept 2023 — Sept 2025</p>
+  <div class="timeline-body">
+    <h3 class="timeline-role">Robotic Engineer</h3>
+    <p class="timeline-org">Vama Communications Pvt. Ltd. <span>· Ahmedabad, Gujarat</span></p>
+    
+  </div>
+</li><li class="timeline-item reveal">
+  <p class="timeline-period">Apr 2023 — Jul 2023</p>
+  <div class="timeline-body">
+    <h3 class="timeline-role">Intern</h3>
+    <p class="timeline-org">Fenwick and Ravi (F.A.R.) <span>· Bangalore, Karnataka</span></p>
+    
+  </div>
+</li><li class="timeline-item reveal">
+  <p class="timeline-period">Sept 2020 — Mar 2021</p>
+  <div class="timeline-body">
+    <h3 class="timeline-role">Trainee Engineer</h3>
+    <p class="timeline-org">Raicam Automotive Private Limited <span>· Sanand, Ahmedabad</span></p>
+    
+  </div>
+</li></ol>
+  </div>
+</section>
 
-<!-- ══════ PAGE: PROJECTS ══════ -->
-<div class="page" id="page-projects">
-  <section class="section" style="padding-top:8rem;">
-    <div class="section-label">Portfolio</div>
-    <div class="section-title">All Projects</div>
-    <p class="section-sub">Autonomous systems, sensor integration, and robot software — built, tested, and deployed in real environments.</p>
-    <div class="projects-grid" id="allProjectsGrid"></div>
-  </section>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+  <div><p class="eyebrow">Engineering Lab</p><h2 class="section-title">Currently exploring</h2><p class="section-lead">Experiments and work in progress — separate from completed projects.</p></div><a class="link-arrow" href="lab/">Visit the lab <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
+    <div class="lab-list"><article class="lab-item reveal">
+  <div class="lab-aside"><p class="lab-period">Jun 2025</p><span class="status status-exploring">Exploring</span></div>
+  <div class="lab-main">
+    <h3 class="lab-title">NVIDIA Isaac Sim with ROS 2</h3>
+    <p>Evaluating Isaac Sim for robot simulation: URDF import, the ROS 2 bridge, and simulated sensors as a complement to Gazebo.</p>
+    <ul class="tech-list" aria-label="Technologies"><li>Isaac Sim</li><li>ROS 2</li><li>URDF</li></ul>
+    <div class="lab-links"><a class="link-arrow" href="blog/isaac-sim.html">Related note: NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS 2 <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</article><article class="lab-item reveal">
+  <div class="lab-aside"><p class="lab-period">Feb 2025</p><span class="status status-exploring">Exploring</span></div>
+  <div class="lab-main">
+    <h3 class="lab-title">Butler Robot — restaurant delivery in simulation</h3>
+    <p>ROS 2 Humble robot that navigates a simulated restaurant, picks up orders from the kitchen, and delivers them to tables using Nav2, AMCL localization, and pre-mapped locations in Gazebo.</p>
+    <ul class="tech-list" aria-label="Technologies"><li>ROS 2 Humble</li><li>Nav2</li><li>AMCL</li><li>Gazebo</li></ul>
+    <div class="lab-links"><a class="link-arrow" href="https://github.com/virensompura/butler_robot" target="_blank" rel="noopener noreferrer">Repository <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</article><article class="lab-item reveal">
+  <div class="lab-aside"><p class="lab-period">2025</p><span class="status status-exploring">Exploring</span></div>
+  <div class="lab-main">
+    <h3 class="lab-title">micro-ROS on microcontrollers</h3>
+    <p>Bringing microcontrollers into the ROS 2 graph with micro-ROS, building on the encoder, power-sensing, and stepper firmware from the ROS 2 robot development work.</p>
+    <ul class="tech-list" aria-label="Technologies"><li>micro-ROS</li><li>ESP32</li><li>FreeRTOS</li></ul>
+    <div class="lab-links"><a class="link-arrow" href="blog/microros.html">Related note: micro-ROS: Bringing ROS 2 to Microcontrollers <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="link-arrow" href="work/ros2-robot-development.html">Related project: ROS 2 Robot Development &amp; Testing <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</article></div>
+  </div>
+</section>
 
-<!-- ══════ PAGE: BLOG ══════ -->
-<div class="page" id="page-blog">
-  <section class="section" style="padding-top:8rem;">
-    <div class="section-label">Knowledge Base</div>
-    <div class="section-title">Blog & Tutorials</div>
-    <p class="section-sub">Deep dives into ROS2, robotics systems, simulation, and the craft of building autonomous machines.</p>
-    <div class="blog-grid" id="blogGrid"></div>
-  </section>
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+  <div><p class="eyebrow">Notes</p><h2 class="section-title">Technical writing</h2><p class="section-lead">Practical notes on ROS 2, navigation, SLAM, simulation, and embedded robotics.</p></div><a class="link-arrow" href="blog/">All notes <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
-
-<!-- ══════ PAGE: BLOG POST ══════ -->
-<div class="page" id="page-blogpost">
-  <section class="section" style="padding-top:8rem;max-width:860px;margin:0 auto;">
-    <button class="back-btn" onclick="navigate('blog')">← Back to Blog</button>
-    <div id="blogPostContent"></div>
-  </section>
-</div>
-
-<!-- ══════ PAGE: CONTACT ══════ -->
-<div class="page" id="page-contact">
-  <section class="section" style="padding-top:8rem;">
-    <div class="section-label">Let's connect</div>
-    <div class="section-title">Get in Touch</div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <h3>Let's build something extraordinary together.</h3>
-        <p>I'm open to full-time roles in robotics engineering, ROS/ROS2 development, and autonomous systems. I also take on select freelance projects and research collaborations.</p>
-        <div class="contact-items">
-          <div class="contact-item">
-            <div class="ci-icon">📍</div>
-            <div><div class="ci-label">Location</div><div class="ci-val">Ahmedabad, Gujarat, India</div></div>
-          </div>
-          <div class="contact-item">
-            <div class="ci-icon">📞</div>
-            <div><div class="ci-label">Phone</div><div class="ci-val">Available on request</div></div>
-          </div>
-          <a href="mailto:sompuraviren03@gmail.com" class="contact-item">
-            <div class="ci-icon">✉️</div>
-            <div>
-              <div class="ci-label">Email</div>
-              <div class="ci-val">sompuraviren03@gmail.com</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" class="contact-item">
-            <div class="ci-icon">💼</div>
-            <div><div class="ci-label">LinkedIn</div><div class="ci-val">linkedin.com/in/viren-sompura</div></div>
-          </a>
-          <a href="https://github.com/virensompura" target="_blank" class="contact-item">
-            <div class="ci-icon">🐙</div>
-            <div><div class="ci-label">GitHub</div><div class="ci-val">github.com/virensompura</div></div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-form reveal" style="transition-delay:.15s;">
-        <div class="section-label" style="margin-bottom:1.5rem;">Send a message</div>
-        <div class="form-row">
-          <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"/></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="your-email@email.com"/></div>
-        </div>
-        <div class="form-group"><label>Subject</label><input type="text" placeholder="What's this about?"/></div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Tell me about your project, role, or idea..."></textarea></div>
-        <button class="btn btn-primary" style="width:100%;" onclick="handleFormSubmit(this)">Send Message ↗</button>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- FOOTER (shared) -->
-<footer class="footer" id="siteFooter">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand">V<span>.</span></div>
-      <p class="footer-desc">Robotics Engineer specializing in autonomous systems, ROS2, and the intersection of hardware and intelligent software.</p>
-      <div class="social-row" style="margin-top:1.5rem;">
-        <a href="https://github.com/virensompura" target="_blank" class="social-btn" title="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" class="social-btn" title="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://x.com/VirenSompura01" target="_blank" class="social-btn" title="Twitter/X">𝕏</a>
-        <a href="mailto:sompuraviren03@gmail.com" class="social-btn" title="Email">✉</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <ul class="footer-links">
-        <li><a href="#" onclick="navigate('home')">Home</a></li>
-        <li><a href="#" onclick="navigate('about')">About</a></li>
-        <li><a href="#" onclick="navigate('experience')">Experience</a></li>
-        <li><a href="#" onclick="navigate('projects')">Projects</a></li>
-        <li><a href="#" onclick="navigate('blog')">Blog</a></li>
-        <li><a href="#" onclick="navigate('contact')">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Expertise</h4>
-      <ul class="footer-links">
-        <li><a href="#">ROS / ROS2</a></li>
-        <li><a href="#">SLAM & Navigation</a></li>
-        <li><a href="#">Sensor Integration</a></li>
-        <li><a href="#">Embedded Systems</a></li>
-        <li><a href="#">Robot Hardware</a></li>
-        <li><a href="#">Simulation (Gazebo)</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul class="footer-links">
-        <li><a href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a></li>
-        <li>Phone: Available on request</li>
-        <li><a href="assets/Viren_Sompura_Resume_1.pdf" download>Download CV</a></li>
-      </ul>
+    <div class="note-grid"><article class="note-card reveal" data-filter-item data-categories="embedded">
+  <p class="card-meta"><span>Embedded Systems</span><span>Aug 2025 · 1 min read</span></p>
+  <h3 class="card-title"><a class="stretched" href="blog/microros.html">micro-ROS: Bringing ROS 2 to Microcontrollers</a></h3>
+  <p class="card-text">Deploy micro-ROS on STM32 and ESP32 to publish sensor data and subscribe to control commands directly within the ROS 2 ecosystem.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="slam">
+  <p class="card-meta"><span>SLAM</span><span>Jul 2025 · 1 min read</span></p>
+  <h3 class="card-title"><a class="stretched" href="blog/slam-deep.html">SLAM Demystified: From Theory to ROS 2 Implementation</a></h3>
+  <p class="card-text">The math and algorithms behind Simultaneous Localization and Mapping, and how to run ORB-SLAM3 and RTAB-Map with Nav2.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="simulation">
+  <p class="card-meta"><span>Simulation</span><span>Jun 2025 · 1 min read</span></p>
+  <h3 class="card-title"><a class="stretched" href="blog/isaac-sim.html">NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS 2</a></h3>
+  <p class="card-text">Set up Isaac Sim, import a URDF, and stream sensor data to ROS 2 for sensor development and policy training.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article></div>
+  </div>
+</section>
+<section class="section cta-section"><div class="container cta reveal">
+  <div>
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Have an interesting robotics challenge?</h2>
+    <p class="section-lead">Let’s connect and build something meaningful.</p>
+  </div>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="mailto:sompuraviren03@gmail.com">sompuraviren03@gmail.com</a>
+    <div class="cta-links">
+      <a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2025 Viren Sompura — All rights reserved</span>
-    <span>Built with ❤️ for Robotics</span>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Viren Sompura</p>
+        <p class="footer-role">Robotics Engineer</p>
+        <p class="footer-tagline">Engineering autonomous systems, from hardware to intelligence.</p>
+      </div>
+      <nav aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul class="footer-list"><li><a href="work/">Work</a></li><li><a href="experience/">Experience</a></li><li><a href="about/">About</a></li><li><a href="lab/">Engineering Lab</a></li><li><a href="blog/">Notes</a></li><li><a href="contact/">Contact</a></li></ul></nav>
+      <div><h2 class="footer-heading">Connect</h2><ul class="footer-list">
+        <li><a href="mailto:sompuraviren03@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> Viren Sompura</p><p>Designed and engineered in-house · Hosted on GitHub Pages</p></div>
   </div>
 </footer>
-
-<!-- PROJECT MODAL -->
-<div class="project-modal" id="projectModal">
-  <div class="modal-backdrop" onclick="closeProjectModal()"></div>
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">✕</button>
-    <div class="modal-media" id="modalMedia"></div>
-    <div class="modal-body">
-      <div class="modal-cat" id="modalCat"></div>
-      <h2 class="modal-title" id="modalTitle"></h2>
-      <div class="modal-tags" id="modalTags"></div>
-      <div class="modal-desc" id="modalDesc"></div>
-      <div class="modal-actions">
-        <a href="#" id="modalLink" target="_blank" class="btn btn-primary">View Full Project ↗</a>
-        <button class="btn btn-outline" onclick="closeProjectModal()">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ─── DATA ───────────────────────────────────────────────
-const SKILLS = [
-  'ROS2 Framework','Autonomous Navigation','SLAM','Sensor Fusion','Jetson Nano',
-  'Raspberry Pi 4','Python','C++','micro-ROS','FreeRTOS','ORB-SLAM3','RTAB-Map',
-  'Nav2 Stack','LiDAR Integration','RS-485','PCB Design','Gazebo','RViz',
-  'Linux Systems','Docker','Git','Arduino','ESP32','SOLIDWORKS','Flask',
-  'Machine Learning Basics','Computer Vision'
-];
-
-const TIMELINE = [
-  {
-    type:'work',
-    title:'Robotics Engineer',
-    company:'Kion Group',
-    date:'Sept 2025 — Present',
-    location:'Pune, Maharashtra',
-    desc:'Leading advanced robotics development for industrial automation systems. Implementing ROS2-based solutions for autonomous material handling and intelligent warehouse robotics.'
-  },
-  {
-    type:'work',
-    title:'Robotic Engineer',
-    company:'Vama Communications Pvt. Ltd.',
-    date:'Sept 2023 — Sept 2025',
-    location:'Ahmedabad, Gujarat',
-    desc:'Spearheaded development of Curio Robot\'s hardware and software in the R&D department. Designed custom PCB solutions, implemented ROS2-based navigation and SLAM on Jetson Nano improving robot autonomy by 40%, and developed software modules reducing system latency by 25%.'
-  },
-  {
-    type:'work',
-    title:'Intern',
-    company:'Fenwick and Ravi (F.A.R.)',
-    date:'April 2023 — July 2023',
-    location:'Bangalore, Karnataka',
-    desc:'Developed software for a radio-shuttle AS/RS system improving warehouse automation efficiency by 30%. Created an Autonomous Mobile Robot using ROS2 framework with custom navigation algorithms.'
-  },
-  {
-    type:'edu',
-    title:'M.Tech. in Robotics Engineering',
-    company:'M.S. Ramaiah University of Applied Science',
-    date:'2021 — 2023',
-    location:'Bangalore, Karnataka',
-    desc:'CGPA: 9.0 / 10. Advanced coursework in autonomous systems, robot kinematics, SLAM, computer vision, and embedded robotics.'
-  },
-  {
-    type:'work',
-    title:'Trainee Engineer',
-    company:'Raicam Automotive Private Limited',
-    date:'Sept 2020 — March 2021',
-    location:'Sanand, Ahmedabad',
-    desc:'Contributed to production of Clutch Actuation systems (Clutch Master Cylinder & Concentric Slave Cylinder). Implemented process improvements that increased production efficiency by 15%.'
-  },
-  {
-    type:'edu',
-    title:'B.Tech. in Mechatronics Engineering',
-    company:'Sal College of Engineering',
-    date:'2016 — 2020',
-    location:'Ahmedabad, Gujarat',
-    desc:'CGPA: 8.02 / 10. Foundation in mechanical engineering, electronics, control systems, and embedded programming.'
-  }
-];
-
-const PROJECTS = [
-  {
-    id:'curio',
-    title:'Curio: Museum Guidance Robot',
-    category:'Mobile Robot',
-    desc:'Full-stack guidance robot for Kolkata Museum using Jetson Nano with ROS2-based autonomous navigation, SLAM, and natural language Q&A for museum exhibits.',
-    fullDesc:`
-      <p>Curio is an autonomous museum guidance robot developed for the Kolkata Museum. It provides interactive tours, answers visitor questions about exhibits using natural language processing, and navigates autonomously through the museum halls.</p>
-      <h3>Key Features</h3>
-      <ul>
-        <li><strong>Autonomous Navigation:</strong> Uses ROS2 Nav2 stack with SLAM for real-time mapping and path planning</li>
-        <li><strong>Natural Language Q&A:</strong> Integrated speech recognition and synthesis for interactive conversations</li>
-        <li><strong>Custom Hardware:</strong> Built on Jetson Nano with Atmega2560 for low-level motor control</li>
-        <li><strong>PCB Design:</strong> Custom motor driver and sensor interface boards</li>
-      </ul>
-      <h3>Technical Stack</h3>
-      <p>ROS2 Humble, Nav2, SLAM Toolbox, Python, C++, Jetson Nano, Atmega2560, RPLiDAR A1M8</p>
-    `,
-    tags:['ROS2','Nav2','SLAM','Jetson Nano','Atmega2560','PCB Design'],
-    videoSrc:'assets/videos/curio_robot.mp4',
-    images:[],
-    link:'https://drive.google.com/file/d/1SGBgsC9yg2MlOd70hP9E2P-MdjG-vpHD/view?usp=sharing',
-    icon:'🤖'
-  },
-  {
-    id:'humanoid',
-    title:'Humanoid Greeter Robot',
-    category:'Humanoid Robot',
-    desc:'Companion humanoid robot that greets and interacts with museum visitors using motion sensors, speech synthesis, and crowd-aware behavior logic.',
-    fullDesc:`
-      <p>A companion humanoid robot designed to work alongside Curio, providing a friendly face to greet and interact with museum visitors at the entrance and key exhibit areas.</p>
-      <h3>Key Features</h3>
-      <ul>
-        <li><strong>Motion Detection:</strong> PIR and ultrasonic sensors detect approaching visitors</li>
-        <li><strong>Speech Synthesis:</strong> Pre-recorded and dynamic speech for greetings and information</li>
-        <li><strong>Gesture Control:</strong> Servo-driven arms and head for natural gestures</li>
-        <li><strong>Crowd-Aware:</strong> Adjusts behavior based on crowd density</li>
-      </ul>
-      <h3>Technical Stack</h3>
-      <p>Arduino Mega, Servo Motors, PIR Sensors, Ultrasonic Sensors, MP3 Module, Custom 3D Printed Parts</p>
-    `,
-    tags:['Humanoid','Sensors','Speech','Interaction'],
-    videoSrc:'assets/videos/humanoid-robot-landscape.mp4',
-    images:[],
-    link:'https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=sharing',
-    icon:'🦾'
-  },
-  {
-    id:'amr',
-    title:'AMR with LiDAR & A* Algorithm',
-    category:'Autonomous Mobile Robot',
-    desc:'Prototype AMR using Raspberry Pi 4 for ROS integration and Arduino Mega for low-level control. Real-time obstacle mapping with RPLiDAR A1M8 and A* path planning.',
-    fullDesc:`
-      <p>An Autonomous Mobile Robot (AMR) prototype demonstrating real-time obstacle avoidance and path planning using LiDAR sensing and the A* algorithm.</p>
-      <h3>Key Features</h3>
-      <ul>
-        <li><strong>LiDAR Mapping:</strong> RPLiDAR A1M8 for 360° environmental scanning</li>
-        <li><strong>A* Path Planning:</strong> Optimal path calculation with dynamic obstacle avoidance</li>
-        <li><strong>Dual Processor:</strong> Raspberry Pi 4 for ROS2 and Arduino Mega for motor control</li>
-        <li><strong>Real-time Visualization:</strong> RViz integration for debugging and monitoring</li>
-      </ul>
-      <h3>Technical Stack</h3>
-      <p>ROS2, Raspberry Pi 4, Arduino Mega, RPLiDAR A1M8, Python, C++, Nav2</p>
-    `,
-    tags:['ROS2','LiDAR','A*','Raspberry Pi 4','Arduino Mega'],
-    videoSrc:'assets/videos/amr-lidar.mp4',
-    images:[],
-    link:'https://drive.google.com/drive/folders/1bC7ev7NMXQ1dkGp74KphR3cCT3R6wxd7?usp=drive_link',
-    icon:'🚗'
-  },
-  {
-    id:'ros2dev',
-    title:'ROS2 Advanced Development Suite',
-    category:'Software Stack',
-    desc:'Comprehensive ROS2 development including ORB-SLAM3 integration, RTAB-Map 3D mapping, autonomous docking, web control interface, RS-485 motor driver, micro-ROS MCU deployment, and FreeRTOS optimization.',
-    fullDesc:`
-      <p>A comprehensive suite of ROS2 tools and integrations developed for advanced robotics applications, covering everything from visual SLAM to embedded microcontroller communication.</p>
-      <h3>Key Components</h3>
-      <ul>
-        <li><strong>ORB-SLAM3 Integration:</strong> Visual SLAM with monocular and stereo camera support</li>
-        <li><strong>RTAB-Map 3D Mapping:</strong> Real-time appearance-based mapping for navigation</li>
-        <li><strong>Autonomous Docking:</strong> Precision docking for charging stations</li>
-        <li><strong>Web Control Interface:</strong> Browser-based robot control and monitoring</li>
-        <li><strong>RS-485 Motor Driver:</strong> Industrial communication for motor control</li>
-        <li><strong>micro-ROS Deployment:</strong> ROS2 on ESP32 and STM32 microcontrollers</li>
-      </ul>
-      <h3>Technical Stack</h3>
-      <p>ROS2 Humble, ORB-SLAM3, RTAB-Map, micro-ROS, FreeRTOS, Flask, RS-485, ESP32</p>
-    `,
-    tags:['ORB-SLAM3','RTAB-Map','micro-ROS','FreeRTOS','RS-485','Nav2'],
-    videoSrc:'assets/videos/rs-com.mp4',
-    images:[],
-    link:'https://drive.google.com/drive/folders/1UoL6GgpReF8u6i3Q7rhB1vBSPKt9ppLa?usp=sharing',
-    icon:'⚙️'
-  },
-  {
-    id:'sensor',
-    title:'ROS2 Sensor Integration & Driver Development',
-    category:'Sensor Fusion',
-    desc:'Custom ROS2 drivers for Qwiic ICM20948 IMU and VL53L0X ToF sensor. Engineered robust sensor fusion algorithm significantly enhancing localization accuracy and obstacle detection reliability.',
-    fullDesc:`
-      <p>Development of custom ROS2 drivers and sensor fusion algorithms for precise robot localization and obstacle detection using IMU and Time-of-Flight sensors.</p>
-      <h3>Key Features</h3>
-      <ul>
-        <li><strong>ICM20948 IMU Driver:</strong> 9-DOF IMU integration with calibration routines</li>
-        <li><strong>VL53L0X ToF Driver:</strong> Time-of-Flight distance sensing for obstacle detection</li>
-        <li><strong>Sensor Fusion:</strong> Extended Kalman Filter combining IMU and odometry data</li>
-        <li><strong>ROS2 Packages:</strong> Clean, documented, reusable ROS2 packages</li>
-      </ul>
-      <h3>Technical Stack</h3>
-      <p>ROS2 Humble, Python, C++, I2C Communication, Qwiic Ecosystem, Extended Kalman Filter</p>
-    `,
-    tags:['ROS2','IMU','ToF Sensor','Sensor Fusion','Custom Drivers'],
-    videoSrc:'assets/videos/IMU-Integration-ROS2.mp4',
-    images:[],
-    link:'https://drive.google.com/drive/folders/1-N_lamHz9trtk43rRTvo55dQXPBXFD0H?usp=sharing',
-    icon:'📡'
-  },
-  {
-    id:'cocoon',
-    title:'Automatic Cocoon Sorting Machine',
-    category:'Industrial Automation',
-    desc:'Low-cost prototype for automated sorting of male and female cocoons by weight. Achieved 600 cocoons/hour sorting rate, improving efficiency in silk production.',
-    fullDesc:`
-      <p>An industrial automation project designed to improve efficiency in silk production by automatically sorting cocoons based on weight, distinguishing between male and female cocoons.</p>
-      <h3>Key Features</h3>
-      <ul>
-        <li><strong>Weight-Based Sorting:</strong> Precision load cells for accurate weight measurement</li>
-        <li><strong>High Throughput:</strong> 600 cocoons per hour sorting rate</li>
-        <li><strong>Low Cost:</strong> Designed for affordability in rural silk production</li>
-        <li><strong>Mechanical Design:</strong> Custom conveyor and sorting mechanism</li>
-      </ul>
-      <h3>Technical Stack</h3>
-      <p>Arduino Uno, Load Cells, HX711 Amplifier, Servo Motors, SOLIDWORKS, 3D Printing</p>
-    `,
-    tags:['Arduino','Weight Sensors','Automation','Mechanical Design'],
-    videoSrc:'assets/videos/cocoon.mp4',
-    images:[],
-    link:'https://drive.google.com/drive/folders/1Y7df3zIDsXdp7yoCfvPIMWGKgUo8jSRw?usp=sharing',
-    icon:'🏭'
-  }
-];
-
-const BLOGS = [
-  {
-    id:'ros2-install',
-    emoji:'🤖',
-    category:'ROS2',
-    date:'Mar 2025',
-    readTime:'10 min read',
-    title:'Getting Started with ROS2: Complete Installation & Workspace Setup',
-    excerpt:'A step-by-step guide to installing ROS2 Humble on Ubuntu 22.04, configuring your environment, and building your first workspace.',
-    content:`
-<h2>Introduction</h2>
-<p>ROS2 (Robot Operating System 2) is the industry-standard middleware for building robotic systems. Unlike ROS1, it's built on DDS (Data Distribution Service), offers real-time capability, and supports multiple platforms including Linux, Windows, and macOS.</p>
-<p>In this guide, we'll install <strong>ROS2 Humble</strong> on Ubuntu 22.04 LTS — the most stable and widely-used combination for production robotics work.</p>
-
-<h2>1. Set Up Locale</h2>
-<pre><code>locale  # check for UTF-8
-
-sudo apt update && sudo apt install locales
-sudo locale-gen en_US en_US.UTF-8
-sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-export LANG=en_US.UTF-8</code></pre>
-
-<h2>2. Add the ROS2 Repository</h2>
-<pre><code>sudo apt install software-properties-common
-sudo add-apt-repository universe
-
-sudo apt update && sudo apt install curl -y
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
-  -o /usr/share/keyrings/ros-archive-keyring.gpg
-
-echo "deb [arch=$(dpkg --print-architecture) \
-  signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
-  http://packages.ros.org/ros2/ubuntu \
-  $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
-  | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null</code></pre>
-
-<h2>3. Install ROS2 Humble</h2>
-<pre><code>sudo apt update && sudo apt upgrade -y
-sudo apt install ros-humble-desktop</code></pre>
-
-<h2>4. Configure Your Environment</h2>
-<p>Add this to your <code>~/.bashrc</code> so ROS2 is available in every terminal:</p>
-<pre><code>echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-source ~/.bashrc</code></pre>
-
-<h2>5. Create Your First Workspace</h2>
-<pre><code>mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws
-colcon build
-source install/setup.bash</code></pre>
-
-<h2>6. Test Your Installation</h2>
-<p>Open two terminals and run the classic talker-listener demo:</p>
-<pre><code># Terminal 1
-ros2 run demo_nodes_cpp talker
-
-# Terminal 2
-ros2 run demo_nodes_py listener</code></pre>
-
-<h2>Key Concepts to Know</h2>
-<ul>
-<li><strong>Workspace</strong>: A directory where you build and store ROS2 packages</li>
-<li><strong>Package</strong>: The fundamental unit of ROS2 software organization</li>
-<li><strong>colcon</strong>: The build tool used in ROS2 (replaces catkin_make)</li>
-<li><strong>ament</strong>: The build system used by ROS2 packages</li>
-</ul>
-<p>Next up: understanding how nodes, topics, and services work together to create a distributed robot system.</p>
-    `
-  },
-  {
-    id:'nodes-topics',
-    emoji:'⚡',
-    category:'ROS2',
-    date:'Apr 2025',
-    readTime:'12 min read',
-    title:'ROS2 Architecture: Nodes, Topics, Services & Actions Explained',
-    excerpt:'Understand the core communication primitives of ROS2 and how they map to real robot behaviors — with practical examples.',
-    content:`
-<h2>The ROS2 Communication Model</h2>
-<p>Everything in ROS2 revolves around <strong>nodes</strong> — processes that perform computation — and several communication patterns they use to talk to each other. Choosing the right pattern is critical for system performance and reliability.</p>
-
-<h2>Nodes</h2>
-<p>A node is the smallest computational unit in ROS2. Each node typically handles one responsibility: reading a sensor, computing odometry, or planning a path.</p>
-<pre><code>import rclpy
-from rclpy.node import Node
-
-class MyRobot(Node):
-    def __init__(self):
-        super().__init__('my_robot_node')
-        self.get_logger().info('Robot node started!')
-
-def main():
-    rclpy.init()
-    node = MyRobot()
-    rclpy.spin(node)
-    rclpy.shutdown()</code></pre>
-
-<h2>Topics: Publish / Subscribe</h2>
-<p>Topics are the backbone of sensor data and state streaming. They're asynchronous and support many-to-many communication.</p>
-<pre><code># Publisher
-self.pub = self.create_publisher(LaserScan, '/scan', 10)
-
-# Subscriber
-self.sub = self.create_subscription(
-    LaserScan, '/scan', self.scan_callback, 10)</code></pre>
-<p><strong>Use topics for</strong>: sensor data (LiDAR, IMU, camera), velocity commands, robot state, and any continuous stream.</p>
-
-<h2>Services: Request / Response</h2>
-<p>Services are synchronous — the client blocks until the server responds. Use for discrete, short-duration tasks.</p>
-<pre><code># Service call
-from nav_msgs.srv import GetMap
-client = self.create_client(GetMap, '/map_server/map')
-req = GetMap.Request()
-future = client.call_async(req)</code></pre>
-<p><strong>Use services for</strong>: getting map data, triggering resets, querying robot configuration.</p>
-
-<h2>Actions: Long-running Tasks</h2>
-<p>Actions are ideal for navigation goals, arm movements, or any task that takes time and needs progress feedback.</p>
-<pre><code>from nav2_msgs.action import NavigateToPose
-from rclpy.action import ActionClient
-
-self._action_client = ActionClient(
-    self, NavigateToPose, 'navigate_to_pose')</code></pre>
-<p><strong>Use actions for</strong>: go-to-pose goals, manipulation sequences, docking procedures.</p>
-
-<h2>Choosing the Right Pattern</h2>
-<ul>
-<li><strong>Continuous stream</strong> → Topic (pub/sub)</li>
-<li><strong>Quick request/response</strong> → Service</li>
-<li><strong>Long task with feedback</strong> → Action</li>
-<li><strong>Shared global state</strong> → Parameter server</li>
-</ul>
-    `
-  },
-  {
-    id:'nav2',
-    emoji:'🗺️',
-    category:'Navigation',
-    date:'May 2025',
-    readTime:'14 min read',
-    title:'Nav2 Stack Deep Dive: Autonomous Navigation from Scratch',
-    excerpt:'Set up the Nav2 navigation stack for a custom robot, configure costmaps, and send navigation goals programmatically.',
-    content:`
-<h2>What is Nav2?</h2>
-<p>Nav2 (Navigation2) is the standard navigation stack for ROS2. It provides a complete solution for autonomous robot navigation including path planning, obstacle avoidance, and behavior trees for high-level task orchestration.</p>
-
-<h2>Core Components</h2>
-<ul>
-<li><strong>Planner Server</strong>: Computes globally optimal paths (NavFn, Smac)</li>
-<li><strong>Controller Server</strong>: Executes local trajectory tracking (DWB, MPPI)</li>
-<li><strong>Costmap 2D</strong>: Represents free, occupied, and unknown space</li>
-<li><strong>BT Navigator</strong>: Orchestrates the navigation behavior tree</li>
-<li><strong>AMCL</strong>: Adaptive Monte Carlo Localization for position estimation</li>
-</ul>
-
-<h2>Minimal Nav2 Launch</h2>
-<pre><code>from launch import LaunchDescription
-from launch_ros.actions import Node
-
-def generate_launch_description():
-    return LaunchDescription([
-        Node(
-            package='nav2_bringup',
-            executable='bringup_launch.py',
-            parameters=[nav2_params_path]
-        )
-    ])</code></pre>
-
-<h2>Sending a Navigation Goal</h2>
-<pre><code>from geometry_msgs.msg import PoseStamped
-from nav2_simple_commander.robot_navigator import BasicNavigator
-
-navigator = BasicNavigator()
-goal = PoseStamped()
-goal.header.frame_id = 'map'
-goal.pose.position.x = 2.0
-goal.pose.position.y = 1.5
-goal.pose.orientation.w = 1.0
-
-navigator.goToPose(goal)
-while not navigator.isNavComplete():
-    feedback = navigator.getFeedback()</code></pre>
-
-<h2>Costmap Configuration</h2>
-<p>The costmap is the robot's representation of the world. Key parameters:</p>
-<pre><code>global_costmap:
-  ros__parameters:
-    update_frequency: 1.0
-    publish_frequency: 1.0
-    global_frame: map
-    robot_base_frame: base_link
-    use_sim_time: false
-    robot_radius: 0.22
-    resolution: 0.05</code></pre>
-
-<h2>Tips from the Field</h2>
-<ul>
-<li>Always tune the inflation radius to slightly larger than your robot's footprint</li>
-<li>Use the Smac Planner for smoother, curvature-constrained paths</li>
-<li>MPPI controller handles dynamic environments better than DWB</li>
-<li>Set <code>transform_tolerance</code> generously (0.5s) during development</li>
-</ul>
-    `
-  },
-  {
-    id:'isaac-sim',
-    emoji:'🌐',
-    category:'Simulation',
-    date:'Jun 2025',
-    readTime:'11 min read',
-    title:'NVIDIA Isaac Sim: Photorealistic Robot Simulation with ROS2',
-    excerpt:'Set up Isaac Sim, import your URDF, and stream sensor data to ROS2 — achieving photorealistic simulation for sensor development and policy training.',
-    content:`
-<h2>Why Isaac Sim?</h2>
-<p>Gazebo has served robotics well, but NVIDIA Isaac Sim brings a new level of realism through photorealistic rendering, physics-accurate simulation, and ray-traced sensor models. LiDAR, cameras, and IMUs behave like their real-world counterparts.</p>
-
-<h2>Installation Requirements</h2>
-<ul>
-<li>NVIDIA GPU with ≥ 8GB VRAM (RTX 2070 minimum)</li>
-<li>Ubuntu 20.04/22.04</li>
-<li>NVIDIA Driver ≥ 525</li>
-<li>Isaac Sim 4.x via Omniverse Launcher</li>
-</ul>
-
-<h2>Importing Your Robot</h2>
-<p>Isaac Sim supports URDF import out of the box:</p>
-<pre><code># In Isaac Sim Python API
-from omni.importer.urdf import _urdf
-
-urdf_interface = _urdf.acquire_urdf_interface()
-config = _urdf.ImportConfig()
-config.merge_fixed_joints = False
-config.convex_decomp = False
-config.import_inertia_tensor = True
-
-result, prim_path = urdf_interface.import_robot(
-    "/path/to/robot.urdf", config
-)</code></pre>
-
-<h2>Connecting to ROS2</h2>
-<p>Enable the ROS2 Bridge in Isaac Sim's extension manager, then your robot's joints and sensors publish natively to ROS2 topics.</p>
-<pre><code># Launch ROS2 bridge
-ros2 launch isaac_ros_launch isaac_ros.launch.py
-
-# View camera in ROS2
-ros2 run rqt_image_view rqt_image_view /rgb</code></pre>
-
-<h2>Domain Randomization for Sim-to-Real</h2>
-<p>Isaac Sim's Replicator framework lets you randomize lighting, textures, and object positions to train more robust perception models that transfer to the real world.</p>
-
-<h2>Key Benefits Over Gazebo</h2>
-<ul>
-<li>Ray-traced LiDAR — point clouds match real sensors much more closely</li>
-<li>Physically based rendering for camera simulation</li>
-<li>RTX denoising enables real-time photorealistic frames</li>
-<li>Tight integration with NVIDIA's Isaac SDK and ML pipelines</li>
-</ul>
-    `
-  },
-  {
-    id:'slam-deep',
-    emoji:'🧭',
-    category:'SLAM',
-    date:'Jul 2025',
-    readTime:'16 min read',
-    title:'SLAM Demystified: From Theory to ROS2 Implementation',
-    excerpt:'Understanding Simultaneous Localization and Mapping — the math, the algorithms, and how to get ORB-SLAM3 and RTAB-Map running with Nav2.',
-    content:`
-<h2>What is SLAM?</h2>
-<p>Simultaneous Localization and Mapping (SLAM) solves a chicken-and-egg problem: to build a map you need to know where you are, but to know where you are you need a map. Modern SLAM algorithms solve both simultaneously.</p>
-
-<h2>The SLAM Pipeline</h2>
-<ul>
-<li><strong>Sensor Input</strong>: LiDAR, stereo camera, RGB-D, or IMU</li>
-<li><strong>Feature Extraction</strong>: Identifying landmarks in sensor data</li>
-<li><strong>Data Association</strong>: Matching current observations to known landmarks</li>
-<li><strong>State Estimation</strong>: Updating robot pose and map (EKF, particle filter, factor graph)</li>
-<li><strong>Loop Closure</strong>: Recognizing previously visited places to correct drift</li>
-</ul>
-
-<h2>LiDAR SLAM with RTAB-Map</h2>
-<pre><code>ros2 launch rtabmap_ros rtabmap.launch.py \
-  --ros-args \
-  -p use_sim_time:=false \
-  -p subscribe_scan:=true \
-  -p frame_id:=base_link \
-  -p odom_frame_id:=odom \
-  -p queue_size:=10</code></pre>
-
-<h2>Visual SLAM with ORB-SLAM3 + ROS2</h2>
-<pre><code>ros2 run orbslam3_ros stereo \
-  --ros-args \
-  -p vocabulary_path:=/path/to/ORBvoc.txt \
-  -p settings_path:=/path/to/stereo_params.yaml</code></pre>
-
-<h2>Integrating SLAM with Nav2</h2>
-<p>Once your SLAM system publishes a <code>/map</code> topic and maintains the <code>map→odom</code> transform, Nav2 picks it up automatically:</p>
-<pre><code># Verify transforms are being published
-ros2 run tf2_tools view_frames
-
-# Check map is available
-ros2 topic echo /map --once</code></pre>
-
-<h2>Common Pitfalls</h2>
-<ul>
-<li><strong>TF drift</strong>: Always ensure your odom source is reliable before adding SLAM</li>
-<li><strong>Loop closure frequency</strong>: Too aggressive causes jitter; tune the threshold carefully</li>
-<li><strong>Memory usage</strong>: RTAB-Map can grow large; configure max memory and working memory</li>
-<li><strong>Time sync</strong>: Ensure all sensor timestamps are synchronized (use <code>chrony</code> or hardware sync)</li>
-</ul>
-    `
-  },
-  {
-    id:'microros',
-    emoji:'🔌',
-    category:'Embedded',
-    date:'Aug 2025',
-    readTime:'13 min read',
-    title:'micro-ROS: Bringing ROS2 to Microcontrollers',
-    excerpt:'Deploy micro-ROS on STM32 and ESP32 to directly publish sensor data and subscribe to control commands within the ROS2 ecosystem.',
-    content:`
-<h2>What is micro-ROS?</h2>
-<p>micro-ROS extends the ROS2 ecosystem to resource-constrained microcontrollers. Instead of a full Linux-based node, you get a lightweight client that communicates with a ROS2 network through a <strong>micro-ROS Agent</strong> running on a host machine.</p>
-
-<h2>Supported Platforms</h2>
-<ul>
-<li>STM32 series (F4, H7, U5)</li>
-<li>ESP32 and ESP32-S3</li>
-<li>Arduino (limited)</li>
-<li>Raspberry Pi Pico (RP2040)</li>
-</ul>
-
-<h2>Architecture</h2>
-<p>micro-ROS uses a <strong>client–agent</strong> model:</p>
-<ul>
-<li><strong>MCU</strong>: Runs the micro-ROS client, publishers, subscribers, timers</li>
-<li><strong>Agent</strong>: Runs on the host PC, bridges micro-ROS to full ROS2 DDS</li>
-<li><strong>Transport</strong>: Serial, UDP, or USB</li>
-</ul>
-
-<h2>ESP32 Example: IMU Publisher</h2>
-<pre><code>#include &lt;micro_ros_arduino.h&gt;
-#include &lt;sensor_msgs/msg/imu.h&gt;
-
-rcl_publisher_t imu_pub;
-sensor_msgs__msg__Imu imu_msg;
-
-void setup() {
-  set_microros_transports();
-  rcl_node_t node;
-  rclc_node_init_default(&node, "imu_node", "", &support);
-
-  rclc_publisher_init_default(
-    &imu_pub, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
-    "imu/data"
-  );
-}
-
-void loop() {
-  imu_msg.linear_acceleration.x = readAccelX();
-  rcl_publish(&imu_pub, &imu_msg, NULL);
-  delay(10); // 100 Hz
-}</code></pre>
-
-<h2>Running the Agent</h2>
-<pre><code># Install micro-ROS agent
-pip install micro-ros-agent
-
-# Start agent over serial
-ros2 run micro_ros_agent micro_ros_agent serial \
-  --dev /dev/ttyUSB0 -b 115200</code></pre>
-
-<h2>FreeRTOS Integration</h2>
-<p>For time-critical systems, run the micro-ROS executor within a dedicated FreeRTOS task:</p>
-<pre><code>void microros_task(void *args) {
-  rclc_executor_t executor;
-  rclc_executor_init(&executor, &support.context, 4, &allocator);
-
-  while(1) {
-    rclc_executor_spin_some(&executor, RCL_MS_TO_NS(10));
-    vTaskDelay(pdMS_TO_TICKS(10));
-  }
-}</code></pre>
-
-<h2>Why micro-ROS?</h2>
-<p>Direct integration of low-level hardware into the ROS2 graph means no ROS-serial bridges, no custom protocol parsers — just native topics and services across your entire robot system from MCU to cloud.</p>
-    `
-  }
-];
-
-// ─── NAVIGATION ─────────────────────────────────────────
-function navigate(page, params){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-
-  if(page==='blogpost' && params){
-    renderBlogPost(params);
-    document.getElementById('page-blogpost').classList.add('active');
-  } else {
-    const el = document.getElementById('page-'+page);
-    if(el) el.classList.add('active');
-    const navA = document.getElementById('nav-'+page);
-    if(navA) navA.classList.add('active');
-  }
-  window.scrollTo({top:0,behavior:'instant'});
-  initReveal();
-  return false;
-}
-
-// ─── THEME ──────────────────────────────────────────────
-function toggleTheme(){
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme', isDark?'light':'dark');
-  document.getElementById('themeBtn').textContent = isDark?'🌙':'☀️';
-  localStorage.setItem('vs-theme', isDark?'light':'dark');
-}
-(function initTheme(){
-  const saved = localStorage.getItem('vs-theme')||'dark';
-  document.documentElement.setAttribute('data-theme',saved);
-  document.getElementById('themeBtn').textContent = saved==='dark'?'☀️':'🌙';
-})();
-
-// ─── MOBILE NAV ─────────────────────────────────────────
-function toggleMobileNav(){
-  const nav = document.getElementById('mobileNav');
-  const btn = document.getElementById('hamburger');
-  nav.classList.toggle('open');
-  btn.classList.toggle('open');
-}
-function closeMobileNav(){
-  document.getElementById('mobileNav').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-
-// ─── MARQUEE ────────────────────────────────────────────
-function buildMarquee(){
-  const track = document.getElementById('marqueeTrack');
-  const all = [...SKILLS,...SKILLS];
-  track.innerHTML = all.map(s=>`
-    <span class="mq-item">
-      <span class="mq-dot"></span>${s}
-    </span>
-  `).join('');
-}
-
-// ─── HOME HORIZONTAL TIMELINE ───────────────────────────
-function buildHomeTimeline(){
-  const el = document.getElementById('homeTimeline');
-  if(!el) return;
-
-  const items = TIMELINE;
-  let html = '';
-
-  items.forEach((t, i) => {
-    const isEdu = t.type === 'edu';
-    const isEven = i % 2 === 0;
-
-    const card = `<div class="htl-card">
-        <div class="htl-company">${t.company}</div>
-        <div class="htl-role">${t.title}</div>
-        <div class="htl-date-badge">${t.date}</div>
-      </div>`;
-
-    const stemH = 36;
-
-    if(isEven){
-      html += `<div class="htl-node${isEdu?' edu':''}" title="${t.title} @ ${t.company}">
-        ${card}
-        <div class="htl-stem" style="height:${stemH}px;"></div>
-        <div class="htl-dot"></div>
-      </div>`;
-    } else {
-      html += `<div class="htl-node${isEdu?' edu':''}" title="${t.title} @ ${t.company}">
-        <div class="htl-dot"></div>
-        <div class="htl-stem" style="height:${stemH}px;"></div>
-        ${card}
-      </div>`;
-    }
-
-    if(i < items.length - 1){
-      html += `<div class="htl-connector"></div>`;
-    }
-  });
-
-  el.innerHTML = html;
-
-  // drag-to-scroll
-  const wrapper = document.getElementById('htlWrapper');
-  if(!wrapper) return;
-  let isDown = false, startX, scrollLeft;
-  wrapper.addEventListener('mousedown', e=>{
-    isDown=true; wrapper.classList.add('grabbing');
-    startX=e.pageX-wrapper.offsetLeft; scrollLeft=wrapper.scrollLeft;
-  });
-  wrapper.addEventListener('mouseleave', ()=>{ isDown=false; wrapper.classList.remove('grabbing'); });
-  wrapper.addEventListener('mouseup',   ()=>{ isDown=false; wrapper.classList.remove('grabbing'); });
-  wrapper.addEventListener('mousemove', e=>{
-    if(!isDown) return; e.preventDefault();
-    const x=e.pageX-wrapper.offsetLeft;
-    wrapper.scrollLeft = scrollLeft-(x-startX)*1.2;
-  });
-}
-
-// ─── HOME BLOG PREVIEW ──────────────────────────────────
-function buildHomeBlog(){
-  const el = document.getElementById('homeBlogGrid');
-  if(!el) return;
-  el.className = 'blog-grid';
-  el.innerHTML = BLOGS.slice(0,3).map(b=>`
-    <a class="home-blog-card reveal" href="#" onclick="navigate('blogpost','${b.id}');return false;">
-      <div class="home-blog-top">
-        <span class="home-blog-emoji">${b.emoji}</span>
-        <span class="home-blog-cat">${b.category}</span>
-      </div>
-      <div class="home-blog-title">${b.title}</div>
-      <div class="home-blog-excerpt">${b.excerpt}</div>
-      <div class="home-blog-meta">
-        <span>${b.date} · ${b.readTime}</span>
-        <span class="home-blog-read">Read →</span>
-      </div>
-    </a>
-  `).join('');
-  initReveal();
-}
-
-// ─── FULL TIMELINE ──────────────────────────────────────
-function buildTimeline(){
-  const el = document.getElementById('timelineEl');
-  if(!el) return;
-  el.innerHTML = TIMELINE.map(t=>`
-    <div class="timeline-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-meta">
-        <span class="tl-badge ${t.type==='work'?'badge-work':'badge-edu'}">
-          ${t.type==='work'?'Work':'Education'}
-        </span>
-        ${t.date} · ${t.location}
-      </div>
-      <div class="tl-title">${t.title}</div>
-      <div class="tl-company">${t.company}</div>
-      <div class="tl-desc">${t.desc}</div>
-    </div>
-  `).join('');
-  initReveal();
-}
-
-// ─── PROJECT CARDS ──────────────────────────────────────
-function projectCard(p){
-  const hasVideo = p.videoSrc && p.videoSrc!=='';
-  const mediaHtml = hasVideo
-    ? `<div class="project-media" style="position:relative;overflow:hidden;background:#0d1117;">
-        <video class="pcard-video" src="${p.videoSrc}" loop muted playsinline preload="metadata"
-          style="width:100%;height:100%;object-fit:cover;display:block;">
-        </video>
-        <div class="play-overlay"><div class="play-circle">▶</div></div>
-       </div>`
-    : `<div class="project-media">
-        <div class="media-placeholder">
-          <div class="media-ph-icon">${p.icon}</div>
-          <div class="media-ph-text">${p.category}</div>
-        </div>
-       </div>`;
-  return `
-    <div class="project-card reveal" onclick="openProjectModal('${p.id}')" style="cursor:pointer;">
-      ${mediaHtml}
-      <div class="project-body">
-        <div class="project-cat">${p.category}</div>
-        <div class="project-title">${p.title}</div>
-        <div class="project-desc">${p.desc}</div>
-        <div class="project-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-        <span class="project-link">View Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg></span>
-      </div>
-    </div>
-  `;
-}
-
-function buildProjects(){
-  const featured = document.getElementById('featuredProjects');
-  const all = document.getElementById('allProjectsGrid');
-  const featured3 = PROJECTS.slice(0,3);
-  if(featured) featured.innerHTML = featured3.map(projectCard).join('');
-  if(all) all.innerHTML = PROJECTS.map(projectCard).join('');
-
-  // Handle video errors - replace with placeholder
-  document.querySelectorAll('.pcard-video').forEach((video, idx) => {
-    const project = PROJECTS[idx % PROJECTS.length];
-    video.onerror = function() {
-      this.parentElement.innerHTML = `<div class="media-placeholder"><div class="media-ph-icon">${project.icon}</div><div class="media-ph-text">${project.category}</div></div>`;
-    };
-  });
-
-  // Autoplay videos when they scroll into view; pause when they leave
-  if('IntersectionObserver' in window){
-    const videoObs = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        const video = entry.target;
-        if(entry.isIntersecting){
-          video.play().catch(()=>{});
-        } else {
-          video.pause();
-          video.currentTime = 0;
-        }
-      });
-    }, { threshold: 0.4 });
-
-    document.querySelectorAll('.pcard-video').forEach(v => videoObs.observe(v));
-  } else {
-    // Fallback: just play all
-    document.querySelectorAll('.pcard-video').forEach(v => v.play().catch(()=>{}));
-  }
-
-  initReveal();
-}
-
-// ─── BLOG ───────────────────────────────────────────────
-function buildBlog(){
-  const grid = document.getElementById('blogGrid');
-  if(!grid) return;
-  grid.innerHTML = BLOGS.map(b=>`
-    <a class="blog-card reveal" href="#" onclick="navigate('blogpost','${b.id}');return false;">
-      <div class="blog-thumb">${b.emoji}</div>
-      <div class="blog-body">
-        <div class="blog-meta-row">
-          <span class="blog-cat">${b.category}</span>
-          <span class="blog-date">${b.date}</span>
-          <span class="blog-read">${b.readTime}</span>
-        </div>
-        <div class="blog-title">${b.title}</div>
-        <div class="blog-excerpt">${b.excerpt}</div>
-        <div class="blog-arrow">Read Article →</div>
-      </div>
-    </a>
-  `).join('');
-  initReveal();
-}
-
-function renderBlogPost(id){
-  const post = BLOGS.find(b=>b.id===id);
-  if(!post) return;
-  document.getElementById('blogPostContent').innerHTML = `
-    <div class="post-header">
-      <div class="post-cat">${post.category}</div>
-      <h1 class="post-title">${post.title}</h1>
-      <div class="post-meta">
-        <span>Viren Sompura</span>
-        <span>·</span>
-        <span>${post.date}</span>
-        <span>·</span>
-        <span>${post.readTime}</span>
-      </div>
-    </div>
-    <div class="post-body">${post.content}</div>
-    <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;gap:1rem;">
-      <button class="btn btn-outline btn-sm" onclick="navigate('blog')">← All Articles</button>
-    </div>
-  `;
-}
-
-// ─── FORM ───────────────────────────────────────────────
-function handleFormSubmit(btn){
-  const form    = btn.closest('.contact-form');
-  const inputs  = form.querySelectorAll('input');
-  const name    = inputs[0].value.trim();
-  const email   = inputs[1].value.trim();
-  const subject = inputs[2].value.trim();
-  const message = form.querySelector('textarea').value.trim();
-
-  if(!name || !email || !message){
-    alert('Please fill in Name, Email and Message.');
-    return;
-  }
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  // Using Web3Forms - free form backend service
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      access_key: '84e28f1a-b396-4280-8df7-ad8e169b9cb7', // Get your free key at https://web3forms.com
-      name: name,
-      email: email,
-      subject: subject || 'New Contact Form Submission',
-      message: message,
-      from_name: 'Portfolio Contact Form'
-    })
-  })
-  .then(res => {
-    if(res.ok){
-      btn.textContent = 'Message Sent! ✓';
-      btn.style.background = 'var(--blue)';
-      // clear fields
-      inputs.forEach(i => i.value = '');
-      form.querySelector('textarea').value = '';
-      setTimeout(()=>{
-        btn.textContent = 'Send Message ↗';
-        btn.disabled = false;
-        btn.style.background = '';
-      }, 3000);
-    } else {
-      throw new Error('Failed');
-    }
-  })
-  .catch(()=>{
-    btn.textContent = 'Failed. Try again.';
-    btn.style.background = '#ef4444';
-    btn.disabled = false;
-    setTimeout(()=>{
-      btn.textContent = 'Send Message ↗';
-      btn.style.background = '';
-    }, 3000);
-  });
-}
-
-// ─── PROJECT MODAL ──────────────────────────────────────
-function openProjectModal(projectId){
-  const project = PROJECTS.find(p => p.id === projectId);
-  if(!project) return;
-  
-  const modal = document.getElementById('projectModal');
-  const mediaEl = document.getElementById('modalMedia');
-  const catEl = document.getElementById('modalCat');
-  const titleEl = document.getElementById('modalTitle');
-  const tagsEl = document.getElementById('modalTags');
-  const descEl = document.getElementById('modalDesc');
-  const linkEl = document.getElementById('modalLink');
-  
-  // Set media (video or placeholder)
-  if(project.videoSrc && project.videoSrc !== ''){
-    mediaEl.innerHTML = `
-      <video src="${project.videoSrc}" controls autoplay loop muted playsinline 
-        style="width:100%;height:100%;object-fit:contain;background:#000;">
-      </video>
-    `;
-  } else {
-    mediaEl.innerHTML = `
-      <div class="media-placeholder" style="height:100%;min-height:300px;">
-        <div class="media-ph-icon">${project.icon}</div>
-        <div class="media-ph-text">${project.category}</div>
-      </div>
-    `;
-  }
-  
-  // Set content
-  catEl.textContent = project.category;
-  titleEl.textContent = project.title;
-  tagsEl.innerHTML = project.tags.map(t => `<span class="tag">${t}</span>`).join('');
-  descEl.innerHTML = project.fullDesc || `<p>${project.desc}</p>`;
-  
-  // Set link
-  if(project.link && project.link !== '#'){
-    linkEl.href = project.link;
-    linkEl.style.display = 'inline-flex';
-  } else {
-    linkEl.style.display = 'none';
-  }
-  
-  // Show modal
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeProjectModal(){
-  const modal = document.getElementById('projectModal');
-  const video = modal.querySelector('video');
-  if(video) video.pause();
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Close modal on Escape key
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape'){
-    closeProjectModal();
-  }
-});
-
-// ─── SCROLL REVEAL ──────────────────────────────────────
-function initReveal(){
-  const els = document.querySelectorAll('.reveal:not(.visible)');
-  if('IntersectionObserver' in window){
-    const obs = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
-      });
-    },{threshold:0.12});
-    els.forEach(el=>obs.observe(el));
-  } else {
-    els.forEach(el=>el.classList.add('visible'));
-  }
-}
-
-// ─── INIT ───────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function(){
-  buildMarquee();
-  buildTimeline();
-  buildProjects();
-  buildBlog();
-  buildHomeTimeline();
-  buildHomeBlog();
-  initReveal();
-  window.openPost = function(id){ navigate('blogpost', id); };
-});
-</script>
 </body>
 </html>

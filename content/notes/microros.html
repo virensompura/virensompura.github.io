@@ -1,0 +1,66 @@
+<h2>What is micro-ROS?</h2>
+<p>micro-ROS extends the ROS2 ecosystem to resource-constrained microcontrollers. Instead of a full Linux-based node, you get a lightweight client that communicates with a ROS2 network through a <strong>micro-ROS Agent</strong> running on a host machine.</p>
+
+<h2>Supported Platforms</h2>
+<ul>
+<li>STM32 series (F4, H7, U5)</li>
+<li>ESP32 and ESP32-S3</li>
+<li>Arduino (limited)</li>
+<li>Raspberry Pi Pico (RP2040)</li>
+</ul>
+
+<h2>Architecture</h2>
+<p>micro-ROS uses a <strong>client–agent</strong> model:</p>
+<ul>
+<li><strong>MCU</strong>: Runs the micro-ROS client, publishers, subscribers, timers</li>
+<li><strong>Agent</strong>: Runs on the host PC, bridges micro-ROS to full ROS2 DDS</li>
+<li><strong>Transport</strong>: Serial, UDP, or USB</li>
+</ul>
+
+<h2>ESP32 Example: IMU Publisher</h2>
+<pre><code>#include &lt;micro_ros_arduino.h&gt;
+#include &lt;sensor_msgs/msg/imu.h&gt;
+
+rcl_publisher_t imu_pub;
+sensor_msgs__msg__Imu imu_msg;
+
+void setup() {
+  set_microros_transports();
+  rcl_node_t node;
+  rclc_node_init_default(&node, "imu_node", "", &support);
+  
+  rclc_publisher_init_default(
+    &imu_pub, &node,
+    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
+    "imu/data"
+  );
+}
+
+void loop() {
+  imu_msg.linear_acceleration.x = readAccelX();
+  rcl_publish(&imu_pub, &imu_msg, NULL);
+  delay(10); // 100 Hz
+}</code></pre>
+
+<h2>Running the Agent</h2>
+<pre><code># Install micro-ROS agent
+pip install micro-ros-agent
+
+# Start agent over serial
+ros2 run micro_ros_agent micro_ros_agent serial \
+  --dev /dev/ttyUSB0 -b 115200</code></pre>
+
+<h2>FreeRTOS Integration</h2>
+<p>For time-critical systems, run the micro-ROS executor within a dedicated FreeRTOS task:</p>
+<pre><code>void microros_task(void *args) {
+  rclc_executor_t executor;
+  rclc_executor_init(&executor, &support.context, 4, &allocator);
+  
+  while(1) {
+    rclc_executor_spin_some(&executor, RCL_MS_TO_NS(10));
+    vTaskDelay(pdMS_TO_TICKS(10));
+  }
+}</code></pre>
+
+<h2>Why micro-ROS?</h2>
+<p>Direct integration of low-level hardware into the ROS2 graph means no ROS-serial bridges, no custom protocol parsers — just native topics and services across your entire robot system from MCU to cloud.</p>

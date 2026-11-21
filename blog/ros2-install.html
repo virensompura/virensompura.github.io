@@ -1,41 +1,52 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
-  <title>Getting Started with ROS2: Complete Installation &amp; Workspace Setup | Viren Sompura</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style/style.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Started with ROS 2: Installation &amp; Workspace Setup · Viren Sompura</title>
+<meta name="description" content="Install ROS 2 Humble on Ubuntu 22.04, configure your environment, and build your first workspace.">
+<link rel="canonical" href="https://virensompura.github.io/blog/ros2-install.html">
+<meta name="author" content="Viren Sompura">
+<meta name="theme-color" content="#F5F6F3">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Viren Sompura">
+<meta property="og:title" content="Getting Started with ROS 2: Installation &amp; Workspace Setup · Viren Sompura">
+<meta property="og:description" content="Install ROS 2 Humble on Ubuntu 22.04, configure your environment, and build your first workspace.">
+<meta property="og:url" content="https://virensompura.github.io/blog/ros2-install.html">
+<meta property="og:image" content="https://virensompura.github.io/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../js/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Getting Started with ROS 2: Installation & Workspace Setup","description":"Install ROS 2 Humble on Ubuntu 22.04, configure your environment, and build your first workspace.","datePublished":"2025-03","author":{"@type":"Person","name":"Viren Sompura","url":"https://virensompura.github.io/"}}</script>
 </head>
 <body>
-  <div class="site-shell">
-    <header class="site-topbar">
-      <a class="site-brand" href="../index.html">Viren Sompura</a>
-      <nav class="site-nav">
-        <a class="btn btn-outline btn-sm" href="../index.html">Home</a>
-        <a class="btn btn-outline btn-sm" href="index.html">Blog Index</a>
-      </nav>
-    </header>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Viren Sompura — home"><span class="brand-mark">VS.</span><span class="brand-name">Viren Sompura</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/" aria-current="page">Notes</a></li><li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume</a></li></ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="../contact/">Get in touch</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
 
-    <main class="blog-article">
-      <section class="section" style="padding:2rem 0 0;">
-        <div class="blog-page-hero">
-          <div class="section-label">ROS2</div>
-          <div class="section-title">Getting Started with ROS2: Complete Installation &amp; Workspace Setup</div>
-          <p class="section-sub">By Viren Sompura · Mar 2025 · 10 min read</p>
-          <div class="blog-toc">
-            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
-              <span style="font-size:1.4rem;">🤖</span>
-              <strong>Article</strong>
-            </div>
-            <div>Use the back links below to return to the full blog list or the home page.</div>
-          </div>
-        </div>
-
-        <article class="post-body">
-          
+<article class="article">
+  <header class="article-head"><div class="container container-narrow">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../blog/">Notes</a></li><li aria-current="page">Getting Started with ROS 2: Installation &amp; Workspace Setup</li></ol></nav>
+    <p class="eyebrow">ROS 2</p>
+    <h1 class="page-title">Getting Started with ROS 2: Installation &amp; Workspace Setup</h1>
+    <p class="page-lead">Install ROS 2 Humble on Ubuntu 22.04, configure your environment, and build your first workspace.</p>
+    <p class="article-meta">By Viren Sompura · <time datetime="2025-03">Mar 2025</time> · 1 min read</p>
+  </div></header>
+  <div class="container container-narrow prose">
 <h2>Introduction</h2>
 <p>ROS2 (Robot Operating System 2) is the industry-standard middleware for building robotic systems. Unlike ROS1, it's built on DDS (Data Distribution Service), offers real-time capability, and supports multiple platforms including Linux, Windows, and macOS.</p>
 <p>In this guide, we'll install <strong>ROS2 Humble</strong> on Ubuntu 22.04 LTS — the most stable and widely-used combination for production robotics work.</p>
@@ -93,15 +104,46 @@ ros2 run demo_nodes_py listener</code></pre>
 <li><strong>ament</strong>: The build system used by ROS2 packages</li>
 </ul>
 <p>Next up: understanding how nodes, topics, and services work together to create a distributed robot system.</p>
-    
-        </article>
 
-        <div class="blog-back-row">
-          <a class="btn btn-outline btn-sm" href="index.html">← All Articles</a>
-          <a class="btn btn-primary btn-sm" href="../index.html">Back to Home ↗</a>
-        </div>
-      </section>
-    </main>
   </div>
+</article>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+  <div><p class="eyebrow">Keep reading</p><h2 class="section-title">Related notes</h2></div><a class="link-arrow" href="../blog/">All notes <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+    <div class="note-grid note-grid-2"><article class="note-card reveal" data-filter-item data-categories="ros2">
+  <p class="card-meta"><span>ROS 2</span><span>Apr 2025 · 1 min read</span></p>
+  <h3 class="card-title"><a class="stretched" href="../blog/nodes-topics.html">ROS 2 Architecture: Nodes, Topics, Services &amp; Actions Explained</a></h3>
+  <p class="card-text">The core communication primitives of ROS 2 and how they map to real robot behaviours, with practical examples.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article><article class="note-card reveal" data-filter-item data-categories="embedded">
+  <p class="card-meta"><span>Embedded Systems</span><span>Aug 2025 · 1 min read</span></p>
+  <h3 class="card-title"><a class="stretched" href="../blog/microros.html">micro-ROS: Bringing ROS 2 to Microcontrollers</a></h3>
+  <p class="card-text">Deploy micro-ROS on STM32 and ESP32 to publish sensor data and subscribe to control commands directly within the ROS 2 ecosystem.</p>
+  <span class="link-arrow" aria-hidden="true">Read note <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</article></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Viren Sompura</p>
+        <p class="footer-role">Robotics Engineer</p>
+        <p class="footer-tagline">Engineering autonomous systems, from hardware to intelligence.</p>
+      </div>
+      <nav aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul class="footer-list"><li><a href="../work/">Work</a></li><li><a href="../experience/">Experience</a></li><li><a href="../about/">About</a></li><li><a href="../lab/">Engineering Lab</a></li><li><a href="../blog/">Notes</a></li><li><a href="../contact/">Contact</a></li></ul></nav>
+      <div><h2 class="footer-heading">Connect</h2><ul class="footer-list">
+        <li><a href="mailto:sompuraviren03@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/viren-sompura/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/virensompura" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="../assets/Viren_Sompura_Resume_1.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> Viren Sompura</p><p>Designed and engineered in-house · Hosted on GitHub Pages</p></div>
+  </div>
+</footer>
 </body>
 </html>

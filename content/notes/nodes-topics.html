@@ -1,0 +1,54 @@
+<h2>The ROS2 Communication Model</h2>
+<p>Everything in ROS2 revolves around <strong>nodes</strong> — processes that perform computation — and several communication patterns they use to talk to each other. Choosing the right pattern is critical for system performance and reliability.</p>
+
+<h2>Nodes</h2>
+<p>A node is the smallest computational unit in ROS2. Each node typically handles one responsibility: reading a sensor, computing odometry, or planning a path.</p>
+<pre><code>import rclpy
+from rclpy.node import Node
+
+class MyRobot(Node):
+    def __init__(self):
+        super().__init__('my_robot_node')
+        self.get_logger().info('Robot node started!')
+
+def main():
+    rclpy.init()
+    node = MyRobot()
+    rclpy.spin(node)
+    rclpy.shutdown()</code></pre>
+
+<h2>Topics: Publish / Subscribe</h2>
+<p>Topics are the backbone of sensor data and state streaming. They're asynchronous and support many-to-many communication.</p>
+<pre><code># Publisher
+self.pub = self.create_publisher(LaserScan, '/scan', 10)
+
+# Subscriber
+self.sub = self.create_subscription(
+    LaserScan, '/scan', self.scan_callback, 10)</code></pre>
+<p><strong>Use topics for</strong>: sensor data (LiDAR, IMU, camera), velocity commands, robot state, and any continuous stream.</p>
+
+<h2>Services: Request / Response</h2>
+<p>Services are synchronous — the client blocks until the server responds. Use for discrete, short-duration tasks.</p>
+<pre><code># Service call
+from nav_msgs.srv import GetMap
+client = self.create_client(GetMap, '/map_server/map')
+req = GetMap.Request()
+future = client.call_async(req)</code></pre>
+<p><strong>Use services for</strong>: getting map data, triggering resets, querying robot configuration.</p>
+
+<h2>Actions: Long-running Tasks</h2>
+<p>Actions are ideal for navigation goals, arm movements, or any task that takes time and needs progress feedback.</p>
+<pre><code>from nav2_msgs.action import NavigateToPose
+from rclpy.action import ActionClient
+
+self._action_client = ActionClient(
+    self, NavigateToPose, 'navigate_to_pose')</code></pre>
+<p><strong>Use actions for</strong>: go-to-pose goals, manipulation sequences, docking procedures.</p>
+
+<h2>Choosing the Right Pattern</h2>
+<ul>
+<li><strong>Continuous stream</strong> → Topic (pub/sub)</li>
+<li><strong>Quick request/response</strong> → Service</li>
+<li><strong>Long task with feedback</strong> → Action</li>
+<li><strong>Shared global state</strong> → Parameter server</li>
+</ul>
